@@ -1,0 +1,61 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "TargetPB";
+
+message TargetMainData {
+	optional MainScheduleData MainSchedule = 1;
+	repeated TeamMatchData matchlist = 2;
+	optional TaskStepData task = 4;
+	optional TaskDayData taskDay = 5;
+	optional DraftData draft = 6;
+	repeated KnockoutMatchPKData knockMatch = 7;
+}
+
+//主线赛程信息
+message MainScheduleData {
+	// 当前关卡ID
+	optional int32 currStageId = 1;
+}
+
+// 新手步骤
+message helpData {
+	optional int32 step = 1;
+}
+
+// 目标任务
+message TaskStepData {
+	optional int32 taskId = 1;
+	//1任务开启
+	//2任务完成
+	//3任务关闭   前台不显示任务
+	optional int32 status = 2;
+}
+
+// 比赛数据
+message TeamMatchData{
+	optional int32 battleType =1;  // 比赛类型
+	optional int32 state = 2;	   // 比赛开启状态(0:未开启)
+	optional int32 applyState = 3; // 报名状态(0:未报名)
+	optional int32 useNum = 4;	   // 每天使用次数
+	optional int32 totalNum = 5;   // 每天总次数
+}
+
+// 日常任务数据
+message TaskDayData {
+	optional int32 starNum = 1;			// 玩家日常任务星数
+	optional int32 totalStarNum = 2;    // 日常总星数
+}
+
+// 选秀数据
+message DraftData{
+	optional int32 useNum = 1;	   // 每天使用次数
+	optional int32 totalNum = 2;   // 每天总次数
+}
+
+// 多人赛信息
+message KnockoutMatchPKData {
+	optional int32 matchId = 1;	   // 比赛ID
+	optional int32 status = 2;	   // 比赛状态(1:开始报名, 2:比赛中, 3:结束,4:报名截止)
+	optional int64 startTime = 3;  // 比赛开启时间
+	optional int32 applyState = 4; // 报名状态(0:未报名)
+}

@@ -1,0 +1,26 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "PlayerInvestmentPB";
+
+message TeamInvestmentMainData{
+	required TeamInvestmentInfoData teamInfo =1;
+	repeated TeamPlayerInvestmentData players =2;
+}
+
+
+message TeamInvestmentInfoData{
+	required int32 maxTotal =1;
+	required int32 money =2;
+	optional int32 buyCount =3;
+
+}
+
+
+message TeamPlayerInvestmentData{
+	required int32 playerId =1;
+	required int32 total =2;
+	required float basePrice =3;
+	required int32 buyDay =4;
+
+}
+

@@ -1,0 +1,22 @@
+package com.ftkj.proto;
+
+import "Prop.proto";
+option java_outer_classname = "EmailPB";
+
+// 邮件
+message EmailData {
+	required int32 id =1;
+	required int32 type =2;
+	required int32 viewId =3;
+	required string title =4;
+	required string content =5;
+	required int32 status =6;
+	required int64 create_time	 =7;
+	repeated PropSimpleData propList = 8;
+}
+
+
+// 列表
+message TeamEmailData {
+	repeated EmailData emailList = 1;
+}

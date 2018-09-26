@@ -1,0 +1,76 @@
+package com.ftkj.proto;
+
+import "Common.proto";
+import "Prop.proto";
+
+option java_outer_classname = "HonorMatchPB";
+
+
+//章节
+message HonorMatchDiv {
+	//章节ID
+	optional int32 divId = 1; 
+    //今天挑战次数
+    optional int32 dayChallengeNum = 2;
+    //今天已购买次数
+    optional int32 dayBuyNum = 3;
+    //3个星级宝箱
+    repeated HonorMatchBoxReward boxRewards = 4;
+    //关卡列表
+    repeated HonorMatchLev matchLevs = 5;
+    //1-本章节可打；2-本章节不可打
+    optional int32 state = 6; 
+}
+
+//关卡
+message HonorMatchLev{
+	//关卡配置ID
+	optional int32 id = 1;
+	//星级
+	optional int32 star = 2;
+}
+
+//宝箱奖励
+message HonorMatchBoxReward{
+	//宝箱ID 1~3
+	optional int32 id = 1;
+	//0-不可领取；1-可领取；2-已领取
+	optional int32 state = 2;
+}
+
+message UpdateBoxReward{
+	//宝箱ID 1~3
+	optional int32 id = 1;
+	//0-不可领取；1-可领取；2-已领取
+	optional int32 state = 2;
+	//章节ID
+	optional int32 divId = 3; 
+}
+
+
+message HonorMatchQuickMatchPushResp {
+  //关卡配置id
+  optional int32 lev_rid = 1;
+  //章节信息
+  optional HonorMatchDiv div = 2;
+  //获得的奖励
+  repeated PropSimpleData props = 3;
+}
+
+//当前挑战章节
+message CurrHonorDiv{
+	//章节ID
+	optional int32 divId = 1; 
+}
+
+// 请求章节信息 :50041  参数：章节ID
+// 推送章节信息 :50042  返回值：HonorMatchDiv
+// 请求挑战：50043 参数：关卡ID
+// 推送挑战 结束:50044 返回值：HonorMatchDiv
+// 打开星级宝箱:50045 参数：关卡ID,宝箱ID（1~3）
+// 更新宝箱信息:50046 返回值：updateBoxReward
+// 扫荡：50048 参数：关卡ID
+// 扫荡返回: 50048  返回值:HonorMatchQuickMatchPushResp
+// 请求当前挑战章节: 50050
+// 推送当前挑战章节: 50051 返回值 CurrHonorDiv
+

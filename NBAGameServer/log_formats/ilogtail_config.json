@@ -1,0 +1,36 @@
+{
+    "config_server_address" : "http://logtail.cn-shenzhen-intranet.log.aliyuncs.com",
+    "data_server_list" :
+    [
+        {
+            "cluster" : "cn-shenzhen",
+            "endpoint" : "cn-shenzhen-intranet.log.aliyuncs.com"
+        }
+    ],
+    "cpu_usage_limit" : 0.4,
+    "mem_usage_limit" : 200,
+    "max_bytes_per_sec" : 2097152,
+    "bytes_per_sec" : 1048576,
+    "buffer_file_num" : 25,
+    "buffer_file_size" : 20971520,
+    "buffer_map_num" : 5,
+    "streamlog_open" : true,
+    "streamlog_pool_size_in_mb" : 50,
+    "streamlog_rcv_size_each_call" : 1024,
+    "streamlog_formats":
+    [
+        {"version": "2.1", "fields": ["level", "method"]},
+        {"version": "2.2", "fields": []},
+        {"version": "2.3", "fields": ["pri-text", "app-name", "syslogtag"]},
+        {"version": "2.4", "fields": ["platform", "shardId","teamId","moneyType","money","total","module","detail","createTime"]},
+        {"version": "2.5", "fields": ["platform", "shardId","teamId","helpStep","createTime"]},
+        {"version": "2.6", "fields": ["platform", "shardId","teamId","second","level","createTime"]},
+        {"version": "2.7", "fields": ["platform", "shardId","teamId","propId","num","total","module","detail","createTime"]},
+        {"version": "3.0", "fields": ["platform", "shardId","key","val","createTime"]},
+        {"version": "3.2", "fields": ["platform", "shardId","teamId","pid","playerId","oldPrice","newPrice","module","detail","createTime"]},
+        {"version": "3.3", "fields": ["platform", "shardId","teamId","id","playerId","price","flag","module","detail","createTime"]},
+        {"version": "3.4", "fields": ["platform", "shardId","teamId","pid","playerId","price","flag","module","detail","createTime"]}
+
+    ],
+    "streamlog_tcp_port" : 11111
+}

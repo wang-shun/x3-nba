@@ -1,0 +1,25 @@
+{
+    "config_server_address" : "http://logtail.cn-shenzhen-intranet.log.aliyuncs.com",
+    "data_server_list" :
+    [
+        {
+            "cluster" : "cn-shenzhen",
+            "endpoint" : "cn-shenzhen-intranet.log.aliyuncs.com"
+        }
+    ],
+    "cpu_usage_limit" : 0.4,
+    "mem_usage_limit" : 200,
+    "max_bytes_per_sec" : 2097152,
+    "bytes_per_sec" : 1048576,
+    "buffer_file_num" : 25,
+    "buffer_file_size" : 20971520,
+    "buffer_map_num" : 5,
+    "streamlog_open" : true,
+    "streamlog_pool_size_in_mb" : 50,
+    "streamlog_rcv_size_each_call" : 1024,
+    "streamlog_formats":
+    [
+        {"version": "3.5", "fields": ["platform", "shardId","teamId","teamName","level","leagueId","leagueName","type","chatMsg","createTime"]}
+    ],
+    "streamlog_tcp_port" : 11111
+}

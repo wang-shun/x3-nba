@@ -1,0 +1,22 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "SystemActivePB";
+
+/**
+ * 系统活动
+ */
+message SystemActiveData{
+	repeated ActiveData activeList = 1;
+	repeated int32 closeList = 2; // 用户屏蔽入口的id列表
+}
+
+/**
+ * 系统活动
+ */
+message ActiveData {
+	required int32 atvId = 1;
+	required int64 startTime = 2;
+	required int64 endTime = 3;
+	// 0未开始 1进行中 2已结束
+	required int32 status = 4;
+}

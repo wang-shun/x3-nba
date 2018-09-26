@@ -1,0 +1,403 @@
+3101
+
+很多
+2018-05-09 10:08:10,446:ERROR node-9-t-1 (SynInvokeThread.java:48) - SynInvokeThread code : 30012 msg java.lang.reflect.InvocationTargetException
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+    at com.ftkj.server.proto.Request.invoke(Request.java:89) ~[code.jar:?]
+    at com.ftkj.server.syn.SynInvokeThread.run(SynInvokeThread.java:43) [code.jar:?]
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [?:1.8.0_65]
+    at java.util.concurrent.FutureTask.run(FutureTask.java:266) [?:1.8.0_65]
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_65]
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_65]
+    at java.lang.Thread.run(Thread.java:745) [?:1.8.0_65]
+Caused by: java.lang.reflect.InvocationTargetException
+    at sun.reflect.GeneratedMethodAccessor85.invoke(Unknown Source) ~[?:?]
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_65]
+    at java.lang.reflect.Method.invoke(Method.java:497) ~[?:1.8.0_65]
+    at com.ftkj.server.proto.Request.invoke(Request.java:85) ~[code.jar:?]
+    ... 6 more
+Caused by: java.lang.NumberFormatException: For input string: ""
+    at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65) ~[?:1.8.0_65]
+    at java.lang.Integer.parseInt(Integer.java:592) ~[?:1.8.0_65]
+    at java.lang.Integer.parseInt(Integer.java:615) ~[?:1.8.0_65]
+    at com.ftkj.util.StringUtil.toIntegerArray(StringUtil.java:72) ~[code.jar:?]
+    at com.ftkj.manager.battle.BaseBattleHandle.updatePlayerPosition(BaseBattleHandle.java:878) ~[common.jar:?]
+    at com.ftkj.manager.battle.BattleManager.pkUpdatePlayer(BattleManager.java:198) ~[common.jar:?]
+    at sun.reflect.GeneratedMethodAccessor85.invoke(Unknown Source) ~[?:?]
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_65]
+    at java.lang.reflect.Method.invoke(Method.java:497) ~[?:1.8.0_65]
+    at com.ftkj.server.proto.Request.invoke(Request.java:85) ~[code.jar:?]
+    ... 6 more
+
+多
+2018-05-09 10:11:47,632:ERROR node-23-t-1 (Request.java:87) - method invoke code : 34121 method public void com.ftkj.manager.logic.SkillManager.levelUp(int,int,int) args.len 3 msg null
+java.lang.reflect.InvocationTargetException: null
+    at sun.reflect.GeneratedMethodAccessor78.invoke(Unknown Source) ~[?:?]
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_65]
+    at java.lang.reflect.Method.invoke(Method.java:497) ~[?:1.8.0_65]
+    at com.ftkj.server.proto.Request.invoke(Request.java:85) [code.jar:?]
+    at com.ftkj.server.syn.SynInvokeThread.run(SynInvokeThread.java:43) [code.jar:?]
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [?:1.8.0_65]
+    at java.util.concurrent.FutureTask.run(FutureTask.java:266) [?:1.8.0_65]
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_65]
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_65]
+    at java.lang.Thread.run(Thread.java:745) [?:1.8.0_65]
+Caused by: java.lang.NullPointerException
+    at com.ftkj.manager.player.TeamPlayer.lambda$18(TeamPlayer.java:365) ~[common.jar:?]
+    at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:174) ~[?:1.8.0_65]
+    at java.util.ArrayList$ArrayListSpliterator.tryAdvance(ArrayList.java:1351) ~[?:1.8.0_65]
+    at java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:126) ~[?:1.8.0_65]
+    at java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:498) ~[?:1.8.0_65]
+    at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:485) ~[?:1.8.0_65]
+    at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471) ~[?:1.8.0_65]
+    at java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:152) ~[?:1.8.0_65]
+    at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[?:1.8.0_65]
+    at java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:464) ~[?:1.8.0_65]
+    at com.ftkj.manager.player.TeamPlayer.getplayerPosition(TeamPlayer.java:365) ~[common.jar:?]
+    at com.ftkj.manager.player.TeamPlayer.getplayerPosition(TeamPlayer.java:357) ~[common.jar:?]
+    at com.ftkj.manager.logic.SkillManager.levelUp(SkillManager.java:78) ~[bin/:?]
+    ... 10 more
+
+偶尔
+2018-05-09 10:30:00,422:ERROR node-96-t-1 (Request.java:87) - method invoke code : 20003 method public void com.ftkj.manager.logic.GameManager.loadData() args.len 0 msg null
+java.lang.reflect.InvocationTargetException: null
+    at sun.reflect.GeneratedMethodAccessor49.invoke(Unknown Source) ~[?:?]
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_65]
+    at java.lang.reflect.Method.invoke(Method.java:497) ~[?:1.8.0_65]
+    at com.ftkj.server.proto.Request.invoke(Request.java:85) [code.jar:?]
+    at com.ftkj.server.syn.SynInvokeThread.run(SynInvokeThread.java:43) [code.jar:?]
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [?:1.8.0_65]
+    at java.util.concurrent.FutureTask.run(FutureTask.java:266) [?:1.8.0_65]
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_65]
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_65]
+    at java.lang.Thread.run(Thread.java:745) [?:1.8.0_65]
+Caused by: java.lang.NullPointerException
+    at com.ftkj.manager.logic.GameManager.loadData(GameManager.java:541) ~[bin/:?]
+    ... 10 more
+
+2018-05-09 11:29:26,231:ERROR node-73-t-1 (Request.java:87) - method invoke code : 20003 method public void com.ftkj.manager.logic.GameManager.loadData() args.len 0 msg null
+java.lang.reflect.InvocationTargetException: null
+    at sun.reflect.GeneratedMethodAccessor49.invoke(Unknown Source) ~[?:?]
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_65]
+    at java.lang.reflect.Method.invoke(Method.java:497) ~[?:1.8.0_65]
+    at com.ftkj.server.proto.Request.invoke(Request.java:85) [code.jar:?]
+    at com.ftkj.server.syn.SynInvokeThread.run(SynInvokeThread.java:43) [code.jar:?]
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [?:1.8.0_65]
+    at java.util.concurrent.FutureTask.run(FutureTask.java:266) [?:1.8.0_65]
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_65]
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_65]
+    at java.lang.Thread.run(Thread.java:745) [?:1.8.0_65]
+Caused by: java.lang.NullPointerException
+    at com.ftkj.manager.cap.CapModule.getJg(CapModule.java:159) ~[common.jar:?]
+    at com.ftkj.manager.cap.PlayerCap.analysis(PlayerCap.java:73) ~[common.jar:?]
+    at com.ftkj.manager.cap.CapModule.initCap(CapModule.java:85) ~[common.jar:?]
+    at com.ftkj.manager.cap.PlayerCap.<init>(PlayerCap.java:55) ~[common.jar:?]
+    at com.ftkj.manager.logic.TeamCapManager.getPlayerBaseCap(TeamCapManager.java:191) ~[bin/:?]
+    at com.ftkj.manager.logic.TeamCapManager.getPlayerCap(TeamCapManager.java:137) ~[bin/:?]
+    at com.ftkj.manager.logic.TeamCapManager.getTeamAllAbility(TeamCapManager.java:84) ~[bin/:?]
+    at com.ftkj.manager.logic.TeamManager.getTeamAllAbility(TeamManager.java:644) ~[bin/:?]
+    at com.ftkj.manager.logic.GameManager.getGameLoadDataMain(GameManager.java:576) ~[bin/:?]
+    at com.ftkj.manager.logic.GameManager.loadData(GameManager.java:565) ~[bin/:?]
+    ... 10 more
+
+
+偶尔
+2018-05-09 11:25:10,814:ERROR rpc-2-t-3 (Request.java:87) - method invoke code : 2137007 method public void com.ftkj.manager.logic.LcRankedMatchManager.masterNodeEndMatch(com.ftkj.manager.battle.model.BattleInfo,com.ftkj.manager.battle.model.BattleTeam,com.ftkj.manager.battle.model.BattleTeam,com.ftkj.manager.battle.model.EndReport) args.len 4 msg null
+java.lang.reflect.InvocationTargetException: null
+    at sun.reflect.GeneratedMethodAccessor255.invoke(Unknown Source) ~[?:?]
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_65]
+    at java.lang.reflect.Method.invoke(Method.java:497) ~[?:1.8.0_65]
+    at com.ftkj.server.proto.Request.invoke(Request.java:85) [code.jar:?]
+    at com.ftkj.server.syn.SynInvokeThread.run(SynInvokeThread.java:43) [code.jar:?]
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [?:1.8.0_65]
+    at java.util.concurrent.FutureTask.run(FutureTask.java:266) [?:1.8.0_65]
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_65]
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_65]
+    at java.lang.Thread.run(Thread.java:745) [?:1.8.0_65]
+Caused by: java.lang.NullPointerException
+    at com.ftkj.manager.cap.CapModule.getJg(CapModule.java:159) ~[common.jar:?]
+    at com.ftkj.manager.cap.PlayerCap.analysis(PlayerCap.java:73) ~[common.jar:?]
+    at com.ftkj.manager.cap.CapModule.initCap(CapModule.java:85) ~[common.jar:?]
+    at com.ftkj.manager.cap.PlayerCap.<init>(PlayerCap.java:55) ~[common.jar:?]
+    at com.ftkj.manager.logic.TeamCapManager.getPlayerBaseCap(TeamCapManager.java:191) ~[bin/:?]
+    at com.ftkj.manager.logic.TeamCapManager.getPlayerCap(TeamCapManager.java:137) ~[bin/:?]
+    at com.ftkj.manager.logic.TeamCapManager.getTeamAllAbility(TeamCapManager.java:84) ~[bin/:?]
+    at com.ftkj.manager.logic.TeamManager.getTeamAllAbility(TeamManager.java:644) ~[bin/:?]
+    at com.ftkj.manager.logic.TrainManager.updateTrainIndexTeam(TrainManager.java:223) ~[bin/:?]
+    at com.ftkj.manager.logic.TeamMoneyManager.upgradeLevByExp(TeamMoneyManager.java:166) ~[bin/:?]
+    at com.ftkj.manager.logic.TeamMoneyManager.updateTeamMoneyUnCheck(TeamMoneyManager.java:120) ~[bin/:?]
+    at com.ftkj.manager.logic.TeamMoneyManager.updateTeamMoney(TeamMoneyManager.java:99) ~[bin/:?]
+    at com.ftkj.manager.logic.TeamMoneyManager.updateTeamMoney(TeamMoneyManager.java:80) ~[bin/:?]
+    at com.ftkj.manager.logic.PropManager.use(PropManager.java:590) ~[bin/:?]
+    at com.ftkj.manager.logic.PropManager.opend(PropManager.java:672) ~[bin/:?]
+    at com.ftkj.manager.logic.PropManager.addPropList(PropManager.java:115) ~[bin/:?]
+    at com.ftkj.manager.logic.PropManager.addPropList(PropManager.java:136) ~[bin/:?]
+    at com.ftkj.manager.logic.LocalBattleManager.battleEndTeam(LocalBattleManager.java:592) ~[bin/:?]
+    at com.ftkj.manager.logic.LocalBattleManager.sendEndMain(LocalBattleManager.java:576) ~[bin/:?]
+    at com.ftkj.manager.logic.LcRankedMatchManager.masterNodeEndMatch(LcRankedMatchManager.java:477) ~[bin/:?]
+    ... 10 more
+
+很多
+2018-05-09 11:40:36,912:ERROR node-65-t-1 (Request.java:87) - method invoke code : 39994 method public void com.ftkj.manager.active.SystemActiveManager.getAtvAward(int,int) args.len 2 msg null
+java.lang.reflect.InvocationTargetException: null
+    at sun.reflect.GeneratedMethodAccessor117.invoke(Unknown Source) ~[?:?]
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_65]
+    at java.lang.reflect.Method.invoke(Method.java:497) ~[?:1.8.0_65]
+    at com.ftkj.server.proto.Request.invoke(Request.java:85) [code.jar:?]
+    at com.ftkj.server.syn.SynInvokeThread.run(SynInvokeThread.java:43) [code.jar:?]
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [?:1.8.0_65]
+    at java.util.concurrent.FutureTask.run(FutureTask.java:266) [?:1.8.0_65]
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_65]
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_65]
+    at java.lang.Thread.run(Thread.java:745) [?:1.8.0_65]
+Caused by: java.lang.NullPointerException
+    at com.ftkj.manager.active.base.ActiveBaseManager.checkGetAwardCommon(ActiveBaseManager.java:803) ~[bin/:?]
+    at com.ftkj.manager.active.base.ActiveBaseManager.checkGetAward(ActiveBaseManager.java:841) ~[bin/:?]
+    at com.ftkj.manager.active.base.ActiveBaseManager.getAward(ActiveBaseManager.java:600) ~[bin/:?]
+    at com.ftkj.manager.active.SystemActiveManager.getAtvAward(SystemActiveManager.java:117) ~[bin/:?]
+    ... 10 more
+
+
+2018-05-09 11:45:15,085:ERROR node-20-t-1 (SynInvokeThread.java:48) - SynInvokeThread code : 32252 msg java.lang.reflect.InvocationTargetException
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+    at com.ftkj.server.proto.Request.invoke(Request.java:89) ~[code.jar:?]
+    at com.ftkj.server.syn.SynInvokeThread.run(SynInvokeThread.java:43) [code.jar:?]
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [?:1.8.0_65]
+    at java.util.concurrent.FutureTask.run(FutureTask.java:266) [?:1.8.0_65]
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_65]
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_65]
+    at java.lang.Thread.run(Thread.java:745) [?:1.8.0_65]
+Caused by: java.lang.reflect.InvocationTargetException
+    at sun.reflect.GeneratedMethodAccessor103.invoke(Unknown Source) ~[?:?]
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_65]
+    at java.lang.reflect.Method.invoke(Method.java:497) ~[?:1.8.0_65]
+    at com.ftkj.server.proto.Request.invoke(Request.java:85) ~[code.jar:?]
+    ... 6 more
+Caused by: java.lang.NullPointerException
+    at com.ftkj.manager.logic.TrainManager.occupy(TrainManager.java:469) ~[bin/:?]
+    at com.ftkj.manager.logic.TrainManager.occupy(TrainManager.java:505) ~[bin/:?]
+    at com.ftkj.manager.logic.TrainManager.lambda$11(TrainManager.java:643) ~[bin/:?]
+    at com.ftkj.manager.battle.handle.BattleQuick.pk(BattleQuick.java:33) ~[common.jar:?]
+    at com.ftkj.manager.logic.LocalBattleManager.startQuick(LocalBattleManager.java:431) ~[bin/:?]
+    at com.ftkj.manager.logic.TrainManager.attackIndex(TrainManager.java:168) ~[bin/:?]
+    at sun.reflect.GeneratedMethodAccessor103.invoke(Unknown Source) ~[?:?]
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_65]
+    at java.lang.reflect.Method.invoke(Method.java:497) ~[?:1.8.0_65]
+    at com.ftkj.server.proto.Request.invoke(Request.java:85) ~[code.jar:?]
+    ... 6 more
+
+2018-05-09 11:45:46,879:ERROR node-70-t-1 (SynInvokeThread.java:48) - SynInvokeThread code : 33004 msg java.lang.reflect.InvocationTargetException
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+    at com.ftkj.server.proto.Request.invoke(Request.java:89) ~[code.jar:?]
+    at com.ftkj.server.syn.SynInvokeThread.run(SynInvokeThread.java:43) [code.jar:?]
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [?:1.8.0_65]
+    at java.util.concurrent.FutureTask.run(FutureTask.java:266) [?:1.8.0_65]
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_65]
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_65]
+    at java.lang.Thread.run(Thread.java:745) [?:1.8.0_65]
+Caused by: java.lang.reflect.InvocationTargetException
+    at sun.reflect.GeneratedMethodAccessor256.invoke(Unknown Source) ~[?:?]
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_65]
+    at java.lang.reflect.Method.invoke(Method.java:497) ~[?:1.8.0_65]
+    at com.ftkj.server.proto.Request.invoke(Request.java:85) ~[code.jar:?]
+    ... 6 more
+Caused by: java.lang.NullPointerException
+    at com.ftkj.proto.TradePB$TranData$Builder.setTeamName(TradePB.java:3093) ~[common.jar:?]
+    at com.ftkj.manager.logic.TradeManager.getTranListData(TradeManager.java:449) ~[bin/:?]
+    at com.ftkj.manager.logic.TradeManager.myTranList(TradeManager.java:430) ~[bin/:?]
+    at sun.reflect.GeneratedMethodAccessor256.invoke(Unknown Source) ~[?:?]
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_65]
+    at java.lang.reflect.Method.invoke(Method.java:497) ~[?:1.8.0_65]
+    at com.ftkj.server.proto.Request.invoke(Request.java:85) ~[code.jar:?]
+    ... 6 more
+
+2018-05-09 11:57:10,930:ERROR node-28-t-1 (SynInvokeThread.java:48) - SynInvokeThread code : 34121 msg java.lang.reflect.InvocationTargetException
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+    at com.ftkj.server.proto.Request.invoke(Request.java:89) ~[code.jar:?]
+    at com.ftkj.server.syn.SynInvokeThread.run(SynInvokeThread.java:43) [code.jar:?]
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [?:1.8.0_65]
+    at java.util.concurrent.FutureTask.run(FutureTask.java:266) [?:1.8.0_65]
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_65]
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_65]
+    at java.lang.Thread.run(Thread.java:745) [?:1.8.0_65]
+Caused by: java.lang.reflect.InvocationTargetException
+    at sun.reflect.GeneratedMethodAccessor78.invoke(Unknown Source) ~[?:?]
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_65]
+    at java.lang.reflect.Method.invoke(Method.java:497) ~[?:1.8.0_65]
+    at com.ftkj.server.proto.Request.invoke(Request.java:85) ~[code.jar:?]
+    ... 6 more
+Caused by: java.lang.NullPointerException
+
+多
+7250 2018-05-09 12:08:41,659:ERROR node-3-t-1 (SynInvokeThread.java:48) - SynInvokeThread code : 36007 msg java.lang.reflect.Invocat     ionTargetException
+7251 java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+7252     at com.ftkj.server.proto.Request.invoke(Request.java:89) ~[code.jar:?]
+7253     at com.ftkj.server.syn.SynInvokeThread.run(SynInvokeThread.java:43) [code.jar:?]
+7254     at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [?:1.8.0_65]
+7255     at java.util.concurrent.FutureTask.run(FutureTask.java:266) [?:1.8.0_65]
+7256     at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_65]
+7257     at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_65]
+7258     at java.lang.Thread.run(Thread.java:745) [?:1.8.0_65]
+7259 Caused by: java.lang.reflect.InvocationTargetException
+7260     at sun.reflect.GeneratedMethodAccessor82.invoke(Unknown Source) ~[?:?]
+7261     at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_65]
+7262     at java.lang.reflect.Method.invoke(Method.java:497) ~[?:1.8.0_65]
+7263     at com.ftkj.server.proto.Request.invoke(Request.java:85) ~[code.jar:?]
+7264     ... 6 more
+7265 Caused by: java.lang.NullPointerException
+
+7455 2018-05-09 12:09:28,914:ERROR rpc-2-t-5 (SynInvokeThread.java:48) - SynInvokeThread code : 3100102 msg java.lang.reflect.Invoca     tionTargetException
+7456 java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+7457     at com.ftkj.server.proto.Request.invoke(Request.java:89) ~[code.jar:?]
+7458     at com.ftkj.server.syn.SynInvokeThread.run(SynInvokeThread.java:43) [code.jar:?]
+7459     at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [?:1.8.0_65]
+7460     at java.util.concurrent.FutureTask.run(FutureTask.java:266) [?:1.8.0_65]
+7461     at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_65]
+7462     at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_65]
+7463     at java.lang.Thread.run(Thread.java:745) [?:1.8.0_65]
+7464 Caused by: java.lang.reflect.InvocationTargetException
+7465     at sun.reflect.GeneratedMethodAccessor247.invoke(Unknown Source) ~[?:?]
+7466     at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_65]
+7467     at java.lang.reflect.Method.invoke(Method.java:497) ~[?:1.8.0_65]
+7468     at com.ftkj.server.proto.Request.invoke(Request.java:85) ~[code.jar:?]
+7469     ... 6 more
+7470 Caused by: java.lang.NullPointerException
+
+
+7501 2018-05-09 12:09:34,440:ERROR node-3-t-1 (Request.java:87) - method invoke code : 31679 method public void com.ftkj.manager.log     ic.KnockoutMatchPKManager.sign(int,int) args.len 2 msg null
+7502 java.lang.reflect.InvocationTargetException: null
+7503     at sun.reflect.GeneratedMethodAccessor211.invoke(Unknown Source) ~[?:?]
+7504     at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_65]
+7505     at java.lang.reflect.Method.invoke(Method.java:497) ~[?:1.8.0_65]
+7506     at com.ftkj.server.proto.Request.invoke(Request.java:85) [code.jar:?]
+7507     at com.ftkj.server.syn.SynInvokeThread.run(SynInvokeThread.java:43) [code.jar:?]
+7508     at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [?:1.8.0_65]
+7509     at java.util.concurrent.FutureTask.run(FutureTask.java:266) [?:1.8.0_65]
+7510     at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_65]
+7511     at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_65]
+7512     at java.lang.Thread.run(Thread.java:745) [?:1.8.0_65]
+7513 Caused by: java.lang.NullPointerException
+
+
+7543 2018-05-09 12:09:39,012:ERROR rpc-2-t-7 (SynInvokeThread.java:48) - SynInvokeThread code : 3100100 msg java.lang.reflect.Invoca     tionTargetException
+7544 java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+7545     at com.ftkj.server.proto.Request.invoke(Request.java:89) ~[code.jar:?]
+7546     at com.ftkj.server.syn.SynInvokeThread.run(SynInvokeThread.java:43) [code.jar:?]
+7547     at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [?:1.8.0_65]
+7548     at java.util.concurrent.FutureTask.run(FutureTask.java:266) [?:1.8.0_65]
+7549     at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_65]
+7550     at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_65]
+7551     at java.lang.Thread.run(Thread.java:745) [?:1.8.0_65]
+7552 Caused by: java.lang.reflect.InvocationTargetException
+7553     at sun.reflect.GeneratedMethodAccessor177.invoke(Unknown Source) ~[?:?]
+7554     at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_65]
+7555     at java.lang.reflect.Method.invoke(Method.java:497) ~[?:1.8.0_65]
+7556     at com.ftkj.server.proto.Request.invoke(Request.java:85) ~[code.jar:?]
+7557     ... 6 more
+
+
+2018-05-09 12:11:31,793:ERROR node-95-t-1 (Request.java:87) - method invoke code : 33001 method public void com.ftkj.manager.logic.TradeManager.queryTradeList(java.lang.String,java.lang.String,int,int,int,int) args.len 6 msg null
+java.lang.reflect.InvocationTargetException: null
+    at sun.reflect.GeneratedMethodAccessor200.invoke(Unknown Source) ~[?:?]
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_65]
+    at java.lang.reflect.Method.invoke(Method.java:497) ~[?:1.8.0_65]
+    at com.ftkj.server.proto.Request.invoke(Request.java:85) [code.jar:?]
+    at com.ftkj.server.syn.SynInvokeThread.run(SynInvokeThread.java:43) [code.jar:?]
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [?:1.8.0_65]
+    at java.util.concurrent.FutureTask.run(FutureTask.java:266) [?:1.8.0_65]
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_65]
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_65]
+    at java.lang.Thread.run(Thread.java:745) [?:1.8.0_65]
+Caused by: java.lang.IllegalArgumentException: Comparison method violates its general contract!
+    at java.util.TimSort.mergeLo(TimSort.java:777) ~[?:1.8.0_65]
+    at java.util.TimSort.mergeAt(TimSort.java:514) ~[?:1.8.0_65]
+    at java.util.TimSort.mergeCollapse(TimSort.java:441) ~[?:1.8.0_65]
+    at java.util.TimSort.sort(TimSort.java:245) ~[?:1.8.0_65]
+    at java.util.Arrays.sort(Arrays.java:1512) ~[?:1.8.0_65]
+    at java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:348) ~[?:1.8.0_65]
+    at java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:358) ~[?:1.8.0_65]
+    at java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:358) ~[?:1.8.0_65]
+    at java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:358) ~[?:1.8.0_65]
+    at java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:358) ~[?:1.8.0_65]
+    at java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:499) ~[?:1.8.0_65]
+    at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:485) ~[?:1.8.0_65]
+    at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471) ~[?:1.8.0_65]
+    at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708) ~[?:1.8.0_65]
+    at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[?:1.8.0_65]
+    at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499) ~[?:1.8.0_65]
+    at com.ftkj.manager.logic.TradeManager.queryTradeList(TradeManager.java:377) ~[bin/:?]
+    ... 10 more
+
+
+2018-05-09 12:11:38,360:ERROR node-3-t-1 (Request.java:87) - method invoke code : 32252 method public void com.ftkj.manager.logic.TrainManager.attackIndex(int) args.len 1 msg null
+java.lang.reflect.InvocationTargetException: null
+    at sun.reflect.GeneratedMethodAccessor103.invoke(Unknown Source) ~[?:?]
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_65]
+    at java.lang.reflect.Method.invoke(Method.java:497) ~[?:1.8.0_65]
+    at com.ftkj.server.proto.Request.invoke(Request.java:85) [code.jar:?]
+    at com.ftkj.server.syn.SynInvokeThread.run(SynInvokeThread.java:43) [code.jar:?]
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [?:1.8.0_65]
+    at java.util.concurrent.FutureTask.run(FutureTask.java:266) [?:1.8.0_65]
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_65]
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_65]
+    at java.lang.Thread.run(Thread.java:745) [?:1.8.0_65]
+Caused by: java.lang.NullPointerException
+
+
+2018-05-09 12:16:23,541:ERROR node-3-t-1 (SynInvokeThread.java:48) - SynInvokeThread code : 32212 msg java.lang.reflect.InvocationTargetException
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+    at com.ftkj.server.proto.Request.invoke(Request.java:89) ~[code.jar:?]
+    at com.ftkj.server.syn.SynInvokeThread.run(SynInvokeThread.java:43) [code.jar:?]
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [?:1.8.0_65]
+    at java.util.concurrent.FutureTask.run(FutureTask.java:266) [?:1.8.0_65]
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_65]
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_65]
+    at java.lang.Thread.run(Thread.java:745) [?:1.8.0_65]
+Caused by: java.lang.reflect.InvocationTargetException
+    at sun.reflect.GeneratedMethodAccessor241.invoke(Unknown Source) ~[?:?]
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_65]
+    at java.lang.reflect.Method.invoke(Method.java:497) ~[?:1.8.0_65]
+    at com.ftkj.server.proto.Request.invoke(Request.java:85) ~[code.jar:?]
+    ... 6 more
+Caused by: java.lang.NullPointerException
+
+2018-05-09 12:20:04,771:ERROR node-7-t-1 (SynInvokeThread.java:48) - SynInvokeThread code : 31506 msg java.lang.reflect.InvocationTargetException
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+    at com.ftkj.server.proto.Request.invoke(Request.java:89) ~[code.jar:?]
+    at com.ftkj.server.syn.SynInvokeThread.run(SynInvokeThread.java:43) [code.jar:?]
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [?:1.8.0_65]
+    at java.util.concurrent.FutureTask.run(FutureTask.java:266) [?:1.8.0_65]
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_65]
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_65]
+    at java.lang.Thread.run(Thread.java:745) [?:1.8.0_65]
+Caused by: java.lang.reflect.InvocationTargetException
+    at sun.reflect.GeneratedMethodAccessor180.invoke(Unknown Source) ~[?:?]
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_65]
+    at java.lang.reflect.Method.invoke(Method.java:497) ~[?:1.8.0_65]
+    at com.ftkj.server.proto.Request.invoke(Request.java:85) ~[code.jar:?]
+    ... 6 more
+Caused by: java.lang.NullPointerException
+    at com.ftkj.manager.logic.BeSignManager.recycleAll(BeSignManager.java:319) ~[bin/:?]
+    at sun.reflect.GeneratedMethodAccessor180.invoke(Unknown Source) ~[?:?]
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_65]
+    at java.lang.reflect.Method.invoke(Method.java:497) ~[?:1.8.0_65]
+    at com.ftkj.server.proto.Request.invoke(Request.java:85) ~[code.jar:?]
+    ... 6 more
+
+2018-05-09 12:55:36,094:ERROR node-89-t-1 (Request.java:87) - method invoke code : 30012 method public void com.ftkj.manager.battle.BattleManager.pkUpdatePlayer(long,java.lang.String) args.len 2 msg null
+java.lang.reflect.InvocationTargetException: null
+    at sun.reflect.GeneratedMethodAccessor85.invoke(Unknown Source) ~[?:?]
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_65]
+    at java.lang.reflect.Method.invoke(Method.java:497) ~[?:1.8.0_65]
+    at com.ftkj.server.proto.Request.invoke(Request.java:85) [code.jar:?]
+    at com.ftkj.server.syn.SynInvokeThread.run(SynInvokeThread.java:43) [code.jar:?]
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [?:1.8.0_65]
+    at java.util.concurrent.FutureTask.run(FutureTask.java:266) [?:1.8.0_65]
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_65]
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_65]
+    at java.lang.Thread.run(Thread.java:745) [?:1.8.0_65]
+Caused by: java.lang.ArrayIndexOutOfBoundsException: 4
+    at java.util.Arrays$ArrayList.get(Arrays.java:3841) ~[?:1.8.0_65]
+    at com.ftkj.manager.battle.BaseBattleHandle.updatePlayerPosition(BaseBattleHandle.java:910) ~[common.jar:?]
+    at com.ftkj.manager.battle.BaseBattleHandle.updatePlayerPosition(BaseBattleHandle.java:879) ~[common.jar:?]
+    at com.ftkj.manager.battle.BattleManager.pkUpdatePlayer(BattleManager.java:198) ~[common.jar:?]

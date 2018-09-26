@@ -1,0 +1,70 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "ScoutPB";
+
+import "Player.proto";
+import "Prop.proto";
+
+message ScoutMain{
+	repeated ScoutPlayerData playerList =1;
+	required int64 refTime = 2;
+	optional int32 code =3;
+
+}
+
+
+message ScoutPlayerData{
+	required int32 playerId =1;
+	required int32 price =2;
+	required int32 status =3;
+	optional bool vip =4;
+	required int32 index =5;
+	optional bool bind = 6;//是否绑定
+}
+
+message ScoutRollMain{
+	repeated ScoutRollData rollList =1;
+}
+
+message ScoutRollData{
+	required int32 type =1;
+	required int32 count =2;
+	required int32 second =3;
+}
+
+message ScoutPlayerMainData{
+	repeated ScoutPlayerInfoData players =1;
+	repeated PropSimpleData awardList = 3;
+	optional int32 code =2;
+}
+
+message ScoutPlayerInfoData{
+	required int32 playerId =1;
+	required PlayerTalentData talent =2;
+	required bool isBasePrice =3;//是否是底薪
+	required bool openSpecial =4;//是否是额外赠送
+	required int32 price =5;//工资
+	optional bool bind = 6;//是否绑定
+}
+
+// 球员兑换
+message ExchangePlayerMain {
+	repeated ExchangePlayerData playerList = 1;
+}
+
+// 球员兑换
+message ExchangePlayerData {
+	required int32 playerId =1;
+	// 原工资
+	required int32 basePrice =2;
+	// 下降后的工资，最终签约工资
+	required int32 nowPrice =3;
+	// 刷新类型
+	required int32 type =4;
+	// 对应类型需要消耗的兑换道具数量
+	required int32 needNum =5;
+	 // 0未签，1已签
+	required bool sign = 6;
+	// 天赋
+	required PlayerTalentData talent =7;
+}

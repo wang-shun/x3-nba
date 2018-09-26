@@ -1,0 +1,9 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "DefaultPB";
+
+message DefaultData{
+	optional int32 code =1;
+	optional string msg =2;
+	optional int64 bigNum =3;
+}

@@ -1,0 +1,20 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "AtvCardAwardPB";
+
+/**
+ * 月卡周卡
+ */
+message AtvCardAwardData {
+	repeated AtvCardData atvList = 1;
+}
+
+/**
+ * 活动
+ */
+message AtvCardData {
+	required int32 atvId = 1; //活动ID
+	required int32 status = 2; //今天是否已领  0否 1是
+	required int32 days = 3; //剩余天数
+	required bool buy = 4; // true 能进行购买
+}

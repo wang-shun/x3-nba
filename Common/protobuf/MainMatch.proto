@@ -1,0 +1,135 @@
+package com.ftkj.proto;
+
+import "Common.proto";
+import "Prop.proto";
+
+option java_outer_classname = "MainMatchPB";
+//==============
+//  主线赛程
+//==============
+
+//36000 所有赛程信息
+// empty req args
+
+//36001 所有赛程信息推送
+// resp MMatchAllResp
+message MMatchAllResp {
+    //球队主线赛程信息
+    optional MMatchBaseResp match_base = 1;
+    //锦标赛信息
+    optional MMatchChampionshipResp championship = 2;
+    //已经开启的赛区
+    repeated MMatchDivResp divs = 3;
+    //已经开启的关卡
+    repeated MMatchLevelResp levs = 4;
+}
+
+//球队主线赛程基础数据
+message MMatchBaseResp {
+    /** 当前挑战次数 */
+    optional int32 match_num = 2;
+    /** 挑战次数最后更新时间(ms) */
+    optional int64 match_num_last_up_time = 3;
+    //已经购买挑战次数
+    optional int32 buy_match_num = 4;
+    /** 最后一场比赛的关卡. 用于计算提供的装备经验. */
+    optional int32 regular_last_lev_rid = 9;
+    /** 最后一场比赛结束时间. 用于计算提供的装备经验. */
+    optional int64 regular_last_match_end_time = 10;
+}
+
+//锦标赛信息
+message MMatchChampionshipResp {
+    /** 锦标赛. 当日最后一场比赛开始时间 */
+//    optional int64 last_match_time = 1;
+    /** 锦标赛. 当前关卡 */
+    optional int32 lev_rid = 2;
+    /** 锦标赛. 比赛胜利次数(进度) */
+    optional int32 win_num = 3;
+    /** 锦标赛. 当前球队列表(包括自己)(第一层所有球队, 可能有npc) */
+    repeated TeamSimpleData targets = 4;
+    /** 锦标赛. 每一层的胜利者(包括自己)(第二层, 第三层) */
+    repeated MMatchChampionshipTeamResp win_teams = 5;
+}
+
+//锦标赛, 球队信息
+message MMatchChampionshipTeamResp {
+    //第几层
+    optional int32 lev = 1;
+    //获胜的球队id
+    repeated int64 teams = 2;
+}
+
+//赛区信息
+message MMatchDivResp {
+    //赛区配置id
+    optional int32 r_id = 3;
+    //已经领取的星级礼包id
+    repeated int32 star_awards = 4;
+}
+
+//关卡信息
+message MMatchLevelResp {
+    //关卡配置id
+    optional int32 r_id = 3;
+    //星级
+    optional int32 star = 4;
+}
+
+// 36003 购买挑战次数
+// req empty args
+// resp DefaultData
+
+// 36004 购买挑战次数成功推送
+// resp MMatchBuyNumResp
+message MMatchBuyNumResp {
+    //次数信息
+    optional MMatchBaseResp base = 2;
+}
+
+// 36005 领取星级礼包
+// req args
+// int32 赛区配置id
+// int32 星级礼包配置id
+// resp DefaultData
+
+// 36006 领取星级礼包推送
+message MMatchReceiveStarAwardResp {
+    optional MMatchDivResp div = 1;
+     //获得的奖励
+    repeated PropSimpleData props = 2;
+}
+
+// 36007 开始比赛
+// req args
+// int32 关卡配置id
+// resp DefaultData
+
+// 36009 扫荡
+// req args
+// int32 关卡配置id
+// resp DefaultData
+
+// 36010 扫荡推送
+message MMatchQuickMatchPushResp {
+  //关卡配置id
+  optional int32 lev_rid = 1;
+  //新的基础信息
+  optional MMatchBaseResp base = 2;
+  //获得的奖励
+  repeated PropSimpleData props = 3;
+}
+
+// 36011 获取锦标赛信息
+// req args
+// int32 关卡配置id
+
+// 36012 获取锦标赛信息推送
+// resp MMatchChampionshipResp
+
+// 36020 获得的装备经验推送
+// resp MMatchQuickMatchPushResp , 客户端忽略 lev_rid
+
+// 36022 比赛获胜推送
+// resp MMatchAllResp
+

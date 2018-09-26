@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="GameCode">
+	<property environment="env"/>
+	<property name="ECLIPSE_HOME" value="F:/eclipse1.8/eclipse/"/>
+	<property name="GameServer.location" value="../GameServer"/>
+	<property name="debuglevel" value="source,lines,vars"/>
+	<property name="target" value="1.8"/>
+	<property name="source" value="1.8"/>
+	<property name="lib.dir" value="lib"/>
+	<property name="src.dir" value="src"/>
+	<property name="classes.dir" value="bin"/>
+	
+	<property name="output.dir" value="../Common/lib"/>
+	<property name="jarname" value="code.jar"/>
+	<property name="project.name" value="GameCode"/>
+
+	<path id="JUnit 4.libraryclasspath">
+		<pathelement location="${ECLIPSE_HOME}plugins/org.junit_4.11.0.v201303080030/junit.jar"/>
+		<pathelement location="${ECLIPSE_HOME}plugins/org.hamcrest.core_1.3.0.v201303031735.jar"/>
+	</path>
+	<!-- 第三方jar包的路径 -->
+	<path id="lib-classpath">
+		<fileset dir="${lib.dir}">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+	<path id="redis.userclasspath">
+		<pathelement location="../../../lib/jredis-master/Release/jredis-core-all-a.0-SNAPSHOT.jar" />
+		<pathelement location="../../../lib/jredis-master/Release/jredis-core-api-a.0-SNAPSHOT.jar" />
+		<pathelement location="../../../lib/jredis-master/Release/jredis-core-bench-a.0-SNAPSHOT.jar"/>
+		<pathelement location="../../../lib/jredis-master/Release/jredis-core-ri-a.0-SNAPSHOT.jar"/>
+	</path>
+	<path id="GameCode.classpath">
+		<pathelement location="bin"/>
+		<pathelement location="lib/mina-core-2.0.0-RC1.jar"/>
+		<pathelement location="lib/slf4j-log4j12-1.5.6.jar"/>
+		<pathelement location="lib/slf4j-simple-1.5.10.jar"/>
+		<pathelement location="lib/slf4j-api-1.5.10.jar"/>
+		<pathelement location="lib/protobuf-java-2.3.0.jar"/>
+		<pathelement location="lib/mysql-connector-java-5.1.6-bin.jar"/>
+		<pathelement location="lib/quartz-2.1.7.jar"/>
+		<pathelement location="lib/joda-time-2.9.1.jar"/>
+		<pathelement location="lib/bonecp-0.8.0.RELEASE.jar"/>
+		<pathelement location="lib/HikariCP-3.2.0.jar"/>
+		<pathelement location="lib/guava-19.0.jar"/>
+		<pathelement location="lib/log4j.jar"/>
+		<path refid="JUnit 4.libraryclasspath"/>
+		<path refid="redis.userclasspath"/>
+	</path>
+	
+		
+	
+	<target name="init">
+		<echo message="create classdir ${classes.dir}"/>
+		<mkdir dir="${classes.dir}"/>
+		<echo message="create outputdir ${output.dir}"/>
+		<mkdir dir="${output.dir}"/>
+		<copy includeemptydirs="false" todir="bin">
+			<fileset dir="src">
+				<exclude name="**/*.java"/>
+			</fileset>
+		</copy>
+	</target>
+	
+	<target name="clean">
+		<delete dir="bin"/>
+	</target>
+	<target depends="clean" name="cleanall"/>
+	<target depends="jar" name="build" />
+	
+	<target name="build-subprojects"/>
+	<target depends="jar" name="build-project">
+		<echo message="${ant.project.name}: ${ant.file}"/>
+		<javac debug="true" debuglevel="source,lines,vars" destdir="bin"  includeAntRuntime="false"  source="${source}" target="${target}">
+			<src path="src"/>
+			<classpath refid="GameCode.classpath"/>
+		</javac>
+	</target>
+	<target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects">
+		<ant antfile="build.xml" dir="${GameServer.location}" inheritAll="false" target="clean"/>
+		<ant antfile="build.xml" dir="${GameServer.location}" inheritAll="false" target="build">
+			<propertyset>
+				<propertyref name="build.compiler"/>
+			</propertyset>
+		</ant>
+	</target>
+	<target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+		<copy todir="${ant.library.dir}">
+			<fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+		</copy>
+		<unzip dest="${ant.library.dir}">
+			<patternset includes="jdtCompilerAdapter.jar"/>
+			<fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+		</unzip>
+	</target>
+	<target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+		<property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+		<antcall target="build"/>
+	</target>
+	
+	
+	<target name="Test">
+	</target>
+
+
+	<!-- 工程目录结构  
+              	    project  
+              	        |-bin  
+              	        |-src  
+              	        |-lib  
+              	        |-out  
+              	        |-build.xml  
+              	    -->
+
+	<!-- 2. 编译 -->
+	<target name="compile" depends="init">
+		<javac srcdir="${src.dir}" destdir="${classes.dir}" debug="true" debuglevel="source,lines,vars">
+			<compilerarg line="-encoding UTF-8"/>
+			<classpath refid="lib-classpath"/>
+		</javac>
+	</target>
+
+	<!-- 3. 打包jar文件 -->
+	<target name="jar" depends="compile">
+		<copy todir="${output.dir}">
+			<fileset dir="${lib.dir}"/>
+		</copy>
+
+		<!--Create a property containing all .jar files,  
+              	        prefix lib/, and seperated with a space-->
+		<pathconvert property="mf.classpath" pathsep=" ">
+			<mapper>
+				<chainedmapper>
+					<!-- jar包文件只留文件名，去掉目录信息 -->
+					<flattenmapper/>
+					<!-- add lib/ prefix -->
+					<globmapper from="*" to="lib/*"/>
+				</chainedmapper>
+			</mapper>
+			<path refid="lib-classpath"/>
+		</pathconvert>
+		
+		<!-- jar文件的输出路径 -->
+		<jar destfile="${output.dir}/${jarname}" basedir="${classes.dir}">
+			<!--
+			<manifest>
+				<attribute name="Class-Path" value="${mf.classpath}"/>
+			</manifest>
+			 -->
+			<!--
+			<zipfileset excludes="META-INF/*.SF" src="${lib.dir}/bonecp-0.8.0.RELEASE.jar" />  
+			<zipfileset excludes="META-INF/*.SF" src="${lib.dir}/guava-19.0.jar" />  
+			<zipfileset excludes="META-INF/*.SF" src="${lib.dir}/log4j.jar" />  
+			<zipfileset excludes="META-INF/*.SF" src="${lib.dir}/joda-time-2.9.1.jar" />  
+			<zipfileset excludes="META-INF/*.SF" src="${lib.dir}/mina-core-2.0.0-RC1.jar" />  
+			<zipfileset excludes="META-INF/*.SF" src="${lib.dir}/mysql-connector-java-5.1.6-bin.jar" />  
+			<zipfileset excludes="META-INF/*.SF" src="${lib.dir}/protobuf-java-2.3.0.jar" />  
+			<zipfileset excludes="META-INF/*.SF" src="${lib.dir}/quartz-2.1.7.jar" />  
+			<zipfileset excludes="META-INF/*.SF" src="${lib.dir}/slf4j-api-1.5.10.jar" />  
+			<zipfileset excludes="META-INF/*.SF" src="${lib.dir}/slf4j-log4j12-1.5.6.jar" />  
+			<zipfileset excludes="META-INF/*.SF" src="${lib.dir}/slf4j-simple-1.5.10.jar" /> 
+			<zipfileset excludes="META-INF/*.SF" src="${lib.dir}/jredis-core-all-a.0-SNAPSHOT.jar" /> 
+			<zipfileset excludes="META-INF/*.SF" src="${lib.dir}/jredis-core-api-a.0-SNAPSHOT.jar" /> 
+			<zipfileset excludes="META-INF/*.SF" src="${lib.dir}/jredis-core-bench-a.0-SNAPSHOT.jar" /> 
+			<zipfileset excludes="META-INF/*.SF" src="${lib.dir}/jredis-core-ri-a.0-SNAPSHOT.jar" /> 
+			-->
+		</jar>
+	</target>
+	
+	<target name="upload" depends="jar">
+		<!-- 打包成zip-->
+			<zip destfile="${output.dir}/${project.name}.zip" basedir="${output.dir}">
+				<exclude name="*.zip" />
+			</zip>
+			<scp port="22" todir="root:123456@192.168.10.70:/usr/local/XGame" trust="true" verbose="true" file="${output.dir}/${project.name}.zip" />
+			<!--<sshexec port="16333" host="10.10.3.117" username="root" password="love7road!" trust="true" command="source /etc/profile;cd /gamerver/app/;./antrun.sh stop;cd /game;unzip -o server_${time}.zip;cd /gamerver/app/;./antrun.sh start;jps" />-->
+	</target>
+</project>

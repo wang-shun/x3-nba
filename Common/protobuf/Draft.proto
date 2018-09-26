@@ -1,0 +1,68 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "DraftPB";
+
+import "Player.proto";
+
+message DraftMainData{
+	repeated DraftRoomMainData rooms =1;
+	optional int32 draftCount =2;
+	optional DraftRoomMainData myRoom =3;
+}
+
+message DraftRoomMainData{
+	required int32 roomLevel =1;
+	required int32 teamCount =2;
+	required int32 roomId =3;
+	optional int32 status = 4; // 房间状态
+	optional int64 lastEndTime = 5; // 该选秀房的结束时间，用作cd
+}
+
+message DraftRoomReadyMain{
+	repeated DraftRoomTeamData teams =1;
+}
+
+message DraftRoomOrderMain{
+	repeated DraftRoomTeamData teams =1;
+	repeated DraftRoomOrderData orders =2;
+	required int32 second =3;
+}
+
+message DraftRoomPlayerMain{
+	repeated DraftRoomTeamData teams =1;//参与选秀的玩家
+	repeated DraftRoomPlayerData players =2;
+	required DraftRoomPlayerStageData stageInfo =3;
+	optional int32 roomLevel = 4;
+}
+
+message DraftRoomPlayerStageData{
+	required int32 curOrder =1;//选秀顺序
+	required int32 second=2;//倒计时
+}
+
+message DraftRoomPlayerData{
+	required int32 playerId =1;
+	required string signTeamName =2;
+	optional PlayerTalentData talent =3;
+}
+
+
+message DraftRoomOrderData{
+	required int32 index =1;
+	required int32 order =2;
+}
+
+message HelpDraftPlayerMain{
+	repeated DraftRoomPlayerData players =1;
+
+}
+
+
+message DraftRoomTeamData{
+	required int64 teamId =1;
+	required string teamName =2;
+	required string shardName =3;
+	required string logo =4;
+	optional int32 order =5;
+}
+

@@ -1,0 +1,134 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "LeagueGroupPB";
+import "Prop.proto";
+/**
+ * 联盟战队协议
+ */
+
+ // 战队基础信息
+ message LgGroupData {
+ 	required int32 gruopId = 1;
+	required string name = 2;
+	required int32 score = 3;
+	required int32 win = 4;
+	required int32 loss = 5;
+	required int32 status = 6; // 0正常状态， 1参战中
+	optional int64 leaderTeam = 7; //队长
+	required int32 teamCount = 8;
+	required int32 leagueId = 9;
+	required string leagueName = 10;
+	optional int32 totalPrivity = 11; //总羁绊值
+}
+
+// 战队详细信息
+message LgGroupDetailData {
+	optional LgGroupData info = 1;
+	repeated LgGroupTeamData teamList = 2;
+	optional int32 myGroupTeir = 3; // 本战队的段位
+}
+
+// 队员信息
+message LgGroupTeamData {
+	required int64 teamId = 1;
+	required string name = 2;
+	required string logo = 3;
+	required int32 privity = 4; // 羁绊值
+	required int32 level = 5; // 1队长，0普通队员
+	required int32 position = 6;
+	required bool isReady = 7; // 是否准备
+	required int32 cap = 8; // 攻防
+}
+
+// 主界面(赛季信息)
+message LgGroupWarMainData {
+	optional int32 seasonId = 1; //赛季
+	optional int64 startTime = 2;
+	optional int64 endTime = 3;
+	optional int32 status = 4; // 0 未开始， 1进行中 2结束
+	optional int32 todayAwardStatus = 5; //今日奖励状态，0未领，1可领，2已领
+}
+
+// 本盟战队
+message LgLeagueGroupMainData {
+	repeated LgGroupData groupList = 1; // 本盟战队列表
+	optional LgGroupDetailData myGruop = 2; // 我的战队
+	repeated int32 applyGroupList = 3; // 我的申请列表
+	optional int32 currRank = 4;  // 当前段位排名
+	optional int32 nextScore = 5; // 下个段位需要积分
+}
+
+// 联盟排行
+message LgRankData {
+	required int32 leagueId = 1;
+	required string name = 2;
+	required int32 score = 3; // 总积分
+	required int32 win = 5;	// 总胜场
+	required int32 loss = 6;	// 总负场
+	required int32 rank = 7;	// 排名
+}
+
+// 联盟排行
+message LgRankMainData {
+	repeated LgRankData rankList = 1;
+	optional LgRankData my = 2;
+}
+
+// 战队排行
+message LgGroupRankMainData {
+	repeated LgGroupRankData rankList = 1; // 排名
+	required int32 nextScore = 2; // 下个段位需要积分
+}
+
+// 战队排名信息
+ message LgGroupRankData {
+ 	required int32 leagueId = 1;
+	required string leagueName = 2;
+ 	required int32 gruopId = 3;
+	required string name = 4;
+	required int32 score = 5;
+	required int32 win = 6;
+	required int32 loss = 7;
+	required int32 rank = 8;
+	required int32 totalPrivity = 9;
+ }
+
+// 申请记录
+message LgApplyData {
+	required int64 teamId = 1;
+	required string name = 2;
+	required int32 cap = 3;
+}
+
+message LgApplyMainData {
+	repeated LgApplyData applyList = 1;
+}
+
+// 开始比赛后每回合的比分信息
+message LgPKRoundData {
+	required string homeName = 1;
+	required string awayName = 2;
+	required int32 homeScore = 3;
+	required int32 awayScore = 4;
+	repeated LgPKMatchData matchDetail = 5;
+}
+
+// 每队的比分
+message LgPKMatchData {
+	required string homeName = 1;
+	required string awayName = 2;
+	required int32 homeScore = 3;
+	required int32 awayScore = 4;
+	required int32 pos = 5; // 位置
+}
+
+message LgPKEndReportData {
+	required LgPKRoundData scoreDetail = 1;
+	required bool win = 2;
+	repeated PropSimpleData awardList = 3;
+	repeated PropSimpleData leagueAward = 4;
+	required int32 addScore = 5; // 得到积分，负者可能是减分
+}
+
+
+

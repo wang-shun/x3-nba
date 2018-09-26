@@ -1,0 +1,63 @@
+package com.ftkj.proto;
+
+
+option java_outer_classname = "HappySevenDayPB";
+
+
+//开服7天乐任务
+message MyHappySevenDay {
+    repeated DayHappyTask dayHappyTask = 1;
+    //已完成任务数
+    optional int32 completeNum = 2;
+    //那3个宝箱
+    repeated BoxReward boxs = 3;
+}
+
+//宝箱
+message BoxReward{
+	optional int32 boxId = 1;//1~3
+	optional int32 state = 2;//0-不可领取;1-可领取；2-已领取
+}
+
+//每任务
+message DayHappyTask{
+	//1~7
+	optional int32 day = 1;
+	//任务列表
+	repeated HappyTask tasks = 2;
+}
+
+//更新任务信息
+message UpdateHappyTask{
+	//1~7
+	optional int32 day = 1;
+	//任务
+	optional HappyTask tasks = 2;
+	//已完成任务数
+    optional int32 completeNum = 3;
+}
+
+//更新宝箱信息
+message UpdateBox{
+    //宝箱
+    optional BoxReward box = 1;
+}
+
+//任务
+message HappyTask{
+	//任务ID
+	optional int32 taskId = 1;
+	//进度
+	optional int32 progress = 2;
+	//0-未完成，1-可领，2-已领
+	optional int32 state = 3;
+	//总次数
+	optional int32 totalNum = 4;
+}
+
+//开服7天乐-请求任务信息 :500101 无参数
+//开服7天乐-推送任务信息:500102 返回值:MyHappySevenDay
+//开服7天乐-更新任务信息:500103 返回值:UpdateHappyTask
+//开服7天乐-领取奖励:500104 参数：任务ID
+//开服7天乐-领取宝箱奖励:500105 参数：宝箱ID(1~3)
+//开服7天乐-推送宝箱奖励更新:500106 返回值:UpdateBox

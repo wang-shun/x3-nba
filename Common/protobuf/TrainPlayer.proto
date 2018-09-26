@@ -1,0 +1,11 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "TrainPlayerPB";
+
+message TrainPlayerData{
+	required int32 playerId =1;
+	required int32 item =2; // 项
+	required int32 step =3; //
+}
+
+

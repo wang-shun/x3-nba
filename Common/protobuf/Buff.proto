@@ -1,0 +1,16 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "BuffPB";
+
+message BuffData {
+	// buffID
+	required int32 id = 1;
+	// 参数列表
+	repeated int32 values = 2;
+	// 结束时间
+	required int64 endTime = 3;
+}
+
+message TeamBuffList {
+	repeated BuffData buffList = 1;
+}

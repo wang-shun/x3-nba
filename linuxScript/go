@@ -1,0 +1,3 @@
+#!/bin/sh
+echo "DRy!NlAl";
+ssh -q -l root -p 22 $1

@@ -1,0 +1,53 @@
+#HOCON https://github.com/lightbend/config/blob/master/HOCON.md
+include "client.conf"
+
+#覆盖 client.conf
+x3.client {
+  server {
+    #默认(首选)服务器分区id
+    shard-id = 101
+    list-path = ["classpath:servers.dev.local"] #内网测试环境
+  }
+  base {
+    #业务逻辑是否输出简单日志
+    simple-log = false
+    #策划配置路径. 相对或者绝对路径, 可以使用 "classpath:"
+    excel-path = "~/x3_plan/游戏配置文档"
+    #消息统计信息是否输出日志
+    log-msg-stats = false
+  }
+  #缓存配置. L1 缓存为 in memory LRU, L2 为 memcached 或者 redis.
+  cache {
+    #app L1 和 L2 缓存全局前缀
+    global-prefix = client/
+    #是否开启 app L2 缓存
+    l2-enable = true
+    #L2 缓存地址, 多个使用";"分隔
+    l2-address = "127.0.0.1:6379"
+    #L2 缓存密码(如果有的话)
+    l2-password = ""
+    #L1 缓存最大缓存 key 的数量
+    l1-max-elment = 20000
+  }
+
+  #机器人配置
+  robot {
+    #模式: prod : 登录所有配置文件中的球队 , test : 只登录一个 test-account 球队
+    mode = "prod"
+    #机器人帐号
+    account {
+      #机器人起始帐号
+      start = 20000000
+      #机器人结束帐号
+      end = 20050000
+    }
+    #当 online-num 比较大时, 每批次登录的球队数量
+    batch-login-num = 1000
+    behavior {
+      #每个球队2次使用所有功能的间隔下限
+      next-delay-min = 10 s
+      #每个球队2次使用所有功能的间隔上限
+      next-delay-max = 180 s
+    }
+  }
+}

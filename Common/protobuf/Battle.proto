@@ -1,0 +1,505 @@
+package com.ftkj.proto;
+import "Common.proto";
+option java_outer_classname = "BattlePB";
+
+//比赛开始
+message BattleStartData {
+    optional int32 type = 1; //比赛类型
+    optional int64 battle_id = 2; //比赛id
+    optional int64 home = 3; //主场球队id
+    optional int64 away = 4; //客场球队id
+    optional string node_ip = 5; //服务器ip
+}
+
+//战斗主界面
+message BattleMainData{
+	//比赛基础数据
+	required BattleInfoData battleInfo =1;
+	//比赛玩家数据
+	optional BattleTeamData teamData =2;
+
+	optional BattleCustomData customData =3;
+}
+
+//message BattleHelpMainData{
+//	//比赛基础数据
+//	required BattleMainData battleMain =1;
+//	repeated BattleRoundMainData roundList =2;
+//}
+
+//赛前准备阶段界面数据
+//message BattleBeforeMainData{
+//	//默认是否开启成功标识，假如拉入比赛异常，返回不为0的错误码
+//	optional int32 code =1;
+//}
+
+//比赛回合信息
+message BattleRoundMainData {
+	//比赛当前小节
+	required int32 step =1;
+	//小节回合数，小节切换时清空
+	required int32 round =2;
+	required int32 homeScore =3;
+	required int32 awayScore =4;
+	required int32 homeAttackCap =5;
+	required int32 homeDefendCap =6;
+	required int32 awayAttackCap =7;
+	required int32 awayDefendCap =8;
+	//行为主体类型
+	required int32 actionType =9;
+	repeated BattleRoundActionData actionList =10;
+	required BattleStatData homeBattleStat =11;
+	required BattleStatData awayBattleStat =12;
+	repeated BattlePlayerRoundData homePlayerData =13;
+	repeated BattlePlayerRoundData awayPlayerData =14;
+	//整个比赛进行到了第几回合
+	optional int32 allRound = 15;
+    //比赛提示
+    repeated BattleHintData hints = 16;
+
+	//比赛唯一标识ID
+	optional int64 battle_id = 17;
+	//比萨类型
+	optional int32 battle_type = 18;
+
+}
+
+//比赛提示
+message BattleHintData {
+    //提示id
+    optional int32 id = 1;
+    //提示的当前行为列表和值
+    repeated BattleHintActionData actions = 2;
+    //触发提示关联的球队id
+    optional int64 team_id = 3;
+    //触发提示关联的球员id
+    optional int32 player_id = 4;
+
+    //附加参数值 int 1.
+    //mvp playerId1
+    optional int32 vi1 = 6;
+    //附加参数值 int 2
+    //mvp playerId2
+    optional int32 vi2 = 7;
+    //附加参数值 int 3
+    //mvp playerId1 评分
+    optional int32 vi3 = 8;
+    //附加参数值 int 4
+    //mvp playerId2 评分
+    optional int32 vi4 = 9;
+//    //附加参数值 int 5
+//    optional int32 vi5 = 10;
+    //附加参数值 long 1
+    optional int64 vl1 = 12;
+    //附加参数值 long 2
+    optional int64 vl2 = 13;
+    //附加参数值 long 3
+    optional int64 vl3 = 14;
+//    //附加参数值 long 4
+//    optional int64 vl4 = 15;
+//    //附加参数值 long 5
+//    optional int64 vl5 = 16;
+}
+
+//提示行为和值
+message BattleHintActionData {
+    //行为类型
+    optional int32 action_type = 1;
+    //值
+    optional int32 v = 2;
+}
+
+message BattleCoachSkillData{
+	required int64 teamId =1;
+	optional int32 skillId =2;
+	repeated BattleBufferData buffList =3;
+}
+
+message BattleBufferData{
+	required int32 bid =1;
+	required int32 endRound =2;
+	optional string val =3;
+	optional int64 teamId =4;
+}
+
+message BattlePlayerRoundData{
+	required int32 playerId =1;
+	optional int32 skillPower =2;
+	optional int32 power =3;
+}
+
+//比赛结算界面数据
+message BattleEndMainData{
+	required BattleEndInfoData endInfo =1;
+	optional int64 battleId  =2;
+	optional int64 winTeamId =3;
+
+}
+
+
+
+//比赛结算界面详细信息
+message BattleEndInfoData{
+	required BattleEndTeamData homeTeam =1;
+	required BattleEndTeamData awayTeam =2;
+
+	//MVP
+	optional BattleEndPlayerData mvp =3;
+	//得分王
+	optional BattleEndPlayerData dfw =4;
+	//篮板王
+	optional BattleEndPlayerData lbw =5;
+	//助攻王
+	optional BattleEndPlayerData zgw =6;
+	//比赛附加信息
+	optional BattleAdditionalData additional = 7;
+}
+//比赛结算球员数据
+message BattleEndPlayerData{
+	required int64 teamId =1;
+	required int32 playerId =2;
+	required int32 df =3;
+	required int32 lb =4;
+	required int32 zg =5;
+}
+
+//结算界面玩家球队信息
+message BattleEndTeamData{
+	required int64 teamId =1;
+	required int32 score =2;
+	required string teamLogo =3;
+	required string teamName =4;
+	//奖励列表
+	repeated BattlePropData giftList =5;
+}
+
+//比赛附加信息
+message BattleAdditionalData {
+    //主线赛程比赛时的 星级
+    optional int32 star = 1;
+    //天梯赛 附加信息
+    optional BADRanked ranked = 2;
+     //全明星 附加信息
+    optional BADAllStar all_star = 3;
+    //竞技场 附加信息
+    optional BADArena arena = 4;
+    //新秀对抗赛 附加信息
+    optional TeamRedix redix = 5;
+}
+
+//竞技场 附加信息
+message BADArena {
+    //比赛结束时 自己的排名. 如果比赛胜利, 并且自己的排名比对方的低, 则排名对调
+    optional int32 self_rank = 1;
+    //比赛结束时 对方的排名
+    optional int32 target_rank = 2;
+    //历史最高排名. 旧最高排名 >0时有效
+    optional int32 old_max_rank = 3;
+    //历史最高排名. 新最高排名 >0时有效
+    optional int32 new_max_rank = 4;
+    //比赛结束时 最高排名发生变化时获得的奖励
+    optional int32 max_rank_award = 5;
+}
+
+ //全明星 附加信息
+message BADAllStar {
+    //比赛开始时的npc难度
+    optional int32 src_lev = 1;
+    //比赛结束时的npc难度
+    optional int32 curr_lev = 2;
+    //按比赛开始时难度造成的总伤害
+    optional int32 src_total_hp = 3;
+    //比赛结束时的npc难度造成的总伤害(难度发生变化, 伤害根据配置可能打折扣)
+    optional int32 sub_total_hp = 4;
+}
+
+//天梯赛附加信息
+message BADRanked {
+    /** 主场 */
+    optional BADRankedTeam home = 1;
+    //客场
+    optional BADRankedTeam away = 2;
+}
+
+//天梯赛附加信息
+message BADRankedTeam {
+    /** 原来的层级 */
+    optional int32 old_tier = 1;
+    /** 新的层级 */
+    optional int32 new_tier = 2;
+    /** 最终评分 */
+    optional int32 final_rating = 3;
+    /** 本场比赛评分变化 */
+    optional int32 change_rating = 4;
+}
+
+//赛前信息
+message BattleBeforeData{
+	//比赛id
+	optional int64 id =  1;
+	//比赛类型
+	optional int32 battle_type = 2;
+	//主场玩家数据
+	optional BattlePKTeamData home = 3;
+	//客场玩家数据
+	optional BattlePKTeamData away = 4;
+}
+
+//比赛技能推送
+message BattleSkillPushData{
+	optional int32 homeSkillId =1;
+	optional int32 awaySkillId =2;
+	optional int32 code =3;
+	optional int32 homePlayerId =4;
+	optional int32 awayPlayerId =5;
+	optional int32 winSkillId =6;
+	optional int32 homeLevel =7;
+	optional int32 awayLevel =8;
+
+
+
+}
+//--------------------------------------------------------------
+
+
+message BattlePlayerSkillData{
+	optional int32 attackSkillId =1;
+	optional int32 defendSkillId =2;
+	optional int32 attackSkillLevel =3;
+	optional int32 defendSkillLevel =4;
+	required int32 skillPower =5;
+}
+
+//比赛行为数据
+message BattleRoundActionData{
+	//行为的ID
+	required int32 actionId =1;
+	//执行这个行为的球队ID
+	required int64 teamId =2;
+	//执行这个行为的球员ID
+	required int32 playerId =3;
+	//这个行为造成的体力变动值(已废弃)
+	required int32 power =4;
+	//行为变量，存放行为所需要的数据。前台根据不同行为取数据
+	required int32 v1 =5;
+	required int32 v2 =6;
+	required int32 v3 =7;
+	//是否强制选定球员0-不是；1-是
+	optional int32 isForce = 8;
+
+}
+
+//比赛信息
+message BattleInfoData {
+	//比赛唯一标识ID
+	required int64 battleId =1;
+	//比萨类型
+	required int32 battleType =2;
+	//主场玩家数据
+	required BattlePKTeamData homeData =3;
+	//客场玩家数据
+	required BattlePKTeamData awayData =4;
+
+	repeated BattleStepData battleStep =5;
+	//主场球队
+	optional int64 homeTeamId = 6;
+    //整个比赛进行到了第几回合
+    optional int32 all_round = 7;
+    //进行到第几小节
+    optional int32 step = 8;
+    //小节进行到第几回合
+    optional int32 round = 9;
+}
+
+
+message BattleStepData{
+	required int32 step =1;
+	required int32 total =2;
+}
+
+//比赛玩家球队数据
+message BattlePKTeamData {
+    //球队id
+	required int64 teamId =1;
+	//球队名称
+	required string teamName =2;
+	//logo
+	required string teamLogo =3;
+	//等级
+	required int32 level =4;
+	//联盟名称
+	optional string leagueName =5;
+	//进攻战力
+	required int32 attackCap =6;
+	//防守战力
+	required int32 defendCap =7;
+	//球员信息
+	repeated BattlePlayerData lineup =8;
+	//技能
+	optional int32 skillId =9;
+	//buff
+	repeated BattleBufferData buffList =10;
+	//战术
+	optional BattleLineupTacticsData tactics =11;
+	//教练id
+	optional int32 coachId =12;
+	//得分
+	optional int32 score = 13;
+}
+//比赛玩家详细信息
+message BattleTeamData{
+	//比赛中的可用道具
+	repeated BattlePropData props =2;
+	//比赛状态
+	optional BattleStatData battleStat =3;
+	//正在使用的战术ID信息
+	required BattleLineupTacticsData tacticsData = 4;
+	//比赛中可使用的战术
+	repeated BattleTacticsData tacticsList =5;
+}
+
+//比赛战术
+message BattleTacticsData{
+	required int32 tid =1;
+}
+
+//比赛中的道具信息
+message BattlePropData{
+	required int32 pid =1;
+	required int32 num =2;
+}
+
+//比赛各种状态
+message BattleStatData{
+	//道具使用CD，0表示可以使用
+	optional int32 propCD =1;
+
+	optional int32 morale =2;
+
+	repeated BattleCoachCDData coachCounts =3;
+
+	optional int32 coachSecond =4;
+
+	optional int32 playerCD = 5;
+	optional int32 tacticsCD = 6;//战术cd
+    optional int32 tactic_num = 7;//战术使用次数
+}
+
+message BattleCoachCDData{
+	required int32 sid =1;
+	required int32 cd =2;
+
+}
+
+message BattleLineupTacticsData{
+	required int32 jg =1;
+	required int32 fs =2;
+}
+
+//比赛球队球员数据
+message BattlePlayerData {
+
+	optional int32 playerId = 1;
+	//体力
+	optional int32 power = 2;
+	//战力
+	optional int32 cap = 3;
+	//球员所在位置
+	optional int32 position = 4;
+	//球员选择的位置
+	optional int32 playerPosition = 5;
+	//荣誉头像ID
+	optional int32 honorLogo = 6;
+
+	optional int32 honorLogoQuality = 7;
+
+	optional BattlePlayerSkillData skill = 8;
+
+	optional int32 maxSkillPower = 9;
+    //球员数据
+    repeated BattlePlayerStatResp stat = 10;
+}
+
+//比赛球员详细数据
+message BattlePlayerStatResp {
+        //数据类型
+//        1	min	上场时间
+//        2	fgm	投篮命中
+//        3	fga	尝试投篮
+//        4	fg%	投篮命中率
+//        5	3pm	3分命中次数
+//        6	3pa	3分出手次数
+//        7	3p%	3分命中率
+//        8	ftm	罚球命中
+//        9	fta	罚球次数
+//        10	ft%	罚球命中率
+//        11	oreb	进攻篮板
+//        12	dreb	防守篮板
+//        13	reb	篮板
+//        14	ast	助攻数
+//        15	blk	盖帽
+//        16	stl	抢断
+//        17	pf	犯规
+//        18	to	失误
+//        19	pts	得分
+    optional int32 type = 1;
+    //数据值
+    optional int32 value = 2;
+}
+
+message BattleHalfTimeData{
+	required BattleHalfTimePlayerData homePlayer =1;
+	required BattleHalfTimePlayerData awayPlayer =2;
+	optional int64 homeId = 3;
+	optional int64 awayId = 4;
+
+}
+
+message BattleHalfTimePlayerData{
+	required int32 playerId = 1;
+	required int32 df = 2;
+	required int32 lb = 3;
+	required int32 zg = 4;
+	required int32 tl = 5;
+	required int32 tlmz = 6;
+}
+
+
+//------------------------------------------------
+
+message BattleCustomData{
+	required int32 roomId =1;
+	required int32 pkType =2;
+	required int32 guessType =3;
+	required int32 winCondition =4;
+	required int32 powerCondition =5;
+	required int32 levelCodition =6;
+	repeated int32 stepCondition =7;
+	required int32 positionCondition =8;
+	required int32 roomStatus =9;
+	required string roomTip =10;
+
+	required int32 roomMoney =11;
+	required int32 roomScore =12;
+
+	required int64 homeTeamId =13;
+
+	}
+
+
+	// 对抗赛结束回包信息
+	message TeamRedix{
+		optional int32 cardType = 1; 				 // 获得基数卡组类型
+		optional int32 redixNum = 2; 				 // 基数值
+	}
+
+// 协议修改
+// BattleCustomData winCondition
+// BattleRoundActionData actionId
+// NBAPlayerAbilityData Type
+// NBAPlayerAvgAbilityData Type
+// CustomRoomData WinCondition
+
+// 协议 32282 winType 修改 action type
+
+// 策划配置 SkillBean 修改 playerAction Val 为 ActionType.cfgName

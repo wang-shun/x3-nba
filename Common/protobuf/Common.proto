@@ -1,0 +1,91 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "CommonPB";
+//==============
+//  通用信息
+//==============
+
+//球队基本信息
+message TeamSimpleData {
+    //id
+	optional int64 team_id = 1;
+	//等级
+	optional int32 level = 2;
+	//名称
+	optional string name = 3;
+	//logo
+	optional string logo = 4;
+	//联盟名称(如果加入了联盟)
+	optional string league_name = 6;
+	//vip等级
+	optional int32 vip = 7;
+	//联盟id(如果加入了联盟)
+	optional int32 league_id = 8;
+}
+
+//球员基本信息
+message PlayerSimpleResp {
+    //球队id
+//    optional int64 tid = 1;
+    //流水id
+//	optional int32 pid = 2;
+	//策划配置id
+	optional int32 rid = 3;
+	//在阵容的位置
+	optional int32 lp_pos = 4;
+	//球员位置
+	optional int32 pos = 5;
+	//身价
+	optional int32 price = 6;
+	//进攻战力
+	optional int32 ocap = 7;
+	//防守战力
+	optional int32 dcap = 8;
+}
+
+
+//比赛历史
+message BattleHisListResp {
+    //比赛历史
+    repeated BattleHisResp his = 1;
+    //比赛类型
+    optional int32 bt = 2;
+    //当前第几页
+    optional int32 page_no = 3;
+    //比赛的主客场球队信息(已经去重)
+    repeated TeamSimpleData teams = 4;
+}
+
+//比赛历史
+message BattleHisResp {
+  optional int64 battle_id = 1; //比赛id
+  optional int32 battle_type = 2; //比赛类型
+
+  optional int64 home_team_id = 10;//主场球队id
+  optional string home_team_name = 11;
+  optional int32 home_score = 12;//主场得分
+
+  optional int64 away_team_id = 20;//客场球队id
+  optional string away_team_name = 21;
+  optional int32 away_score = 22;//客场得分
+  //记录创建时间
+  optional int64 create_time = 30;
+  //附加参数 int 1
+  //竞技场. 我的排名. 比赛结束后, 排名变化前的排名
+  optional int32 vi1 = 31;
+  //附加参数 int 2
+  //竞技场. 对手球队排名. 比赛结束后, 排名变化前的排名
+  optional int32 vi2 = 32;
+  //附加参数 int 3
+  //竞技场. 对手球队当前排名
+  optional int32 vi3 = 33;
+  optional int32 vi4 = 34;
+  //附加参数 long 1
+  optional int64 vl1 = 40;
+  optional int64 vl2 = 41;
+  optional int64 vl3 = 42;
+  optional int64 vl4 = 43;
+  //附加参数 str 1
+  optional string str1 = 50;
+  optional string str2 = 51;
+}

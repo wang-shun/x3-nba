@@ -1,0 +1,141 @@
+package com.ftkj.proto;
+
+import "Common.proto";
+import "Prop.proto";
+
+option java_outer_classname = "RankedMatchPb";
+//==============
+//  跨服天梯赛
+//==============
+
+// 37000 所有天梯赛信息
+// empty req args
+
+// 37001 天梯赛信息推送
+// resp
+message RMatchAllResp {
+    //球队天梯赛信息
+    optional RMatchTeamResp team = 1;
+    //系统赛季信息
+    optional RMatchSysSeasonResp sys = 2;
+}
+
+//系统赛季信息
+message RMatchSysSeasonResp {
+    //赛季id
+    optional int32 id = 1;
+    //开始时间
+    optional int64 start = 2;
+    //结束时间
+    optional int64 end = 3;
+}
+
+//球队天梯赛信息
+message RMatchTeamResp {
+    //team_id = 1
+    //首次奖励领取状态(已经领取奖励的配置id)
+    repeated int32 first_award = 2;
+    /** 总比赛次数 */
+    optional int32 total_match_count = 3;
+    /** 总比赛胜利次数 */
+    optional int32 total_win_count = 4;
+    /** 当前连胜次数 */
+    optional int32 winning_streak = 5;
+    /** 最后比赛结束时间 */
+    optional int64 last_match_time = 6;
+    //本赛季信息
+    optional RMatchSeasonResp curr_season = 7;
+    //上赛季信息
+    optional RMatchSeasonResp pre_season = 8;
+    //每日奖励是否已经领取(true, 已经领取)
+    optional bool daily_reward = 9;
+    //是否在匹配中(true 是)
+    optional bool in_pool = 10;
+}
+
+//赛季信息
+message RMatchSeasonResp {
+    /** 赛季id */
+    optional int32 id = 1;
+    /** 层级id */
+    optional int32 tier_id = 2;
+    /** 段位的排名(定时更新). <= 0 为排名未定 */
+    optional int32 rank = 3;
+    /** 评分 */
+    optional int32 rating = 4;
+    /** 参与比赛次数 */
+    optional int32 match_count = 5;
+    /** 胜利次数 */
+    optional int32 win_count = 6;
+    /** 最大连胜次数 */
+    optional int32 winning_streak_max = 7;
+}
+
+// 37002 赛季历史信息
+// req args
+// int32 第几页(默认为1), 每页50条
+// 37003 赛季历史信息推送
+// resp
+message RMatchHisListResp {
+    //第几页(默认为1)
+    optional int32 page_no = 1;
+    //每页50条, 不足50或者为空表示没有下一页
+    repeated RMatchSeasonResp his = 2;
+}
+
+// 37004 段位排行榜
+// req args
+// int32 段位配置id(不是层级id)
+// resp DefaultData
+
+// 37005 段位排行榜推送
+// resp
+message RMatchMedalRankResp {
+    //段位配置id
+    optional int32 medal_id = 1;
+    //已经按评分由高到底排序好
+    repeated RMatchTeamRankResp teams = 2;
+    //排行榜最后更新时间
+    optional int64 last_up_time = 3;
+}
+
+//排行信息
+message RMatchTeamRankResp {
+    //球队id
+    optional int64 tid = 1;
+    //球队信息
+    optional TeamSimpleData team = 2;
+    //赛季信息
+    optional RMatchSeasonResp season = 3;
+}
+
+// 37006 比赛历史信息
+// req args
+// int32 比赛类型
+// int32 第几页
+// resp DefaultData
+
+// 37007 比赛历史信息 推送
+// resp BattleHisListResp
+
+// 37022 开始比赛(加入匹配). (比赛开始后由通用的比赛开始和结束接口推送)
+// empty req args
+
+// 37024 取消加入匹配
+// empty req args
+// resp DefaultData
+
+// 37040 领取每日奖励
+// empty req args
+// 37041 领取每日奖励推送
+// resp PropListResp
+
+// 37042 领取首次奖励
+// req args
+// int32 首次奖励配置id
+// resp DefaultData
+
+// 37043 领取首次奖励推送
+// resp PropListResp
+// PropListResp.vi1 为奖励配置id
+

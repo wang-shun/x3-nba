@@ -1,0 +1,75 @@
+package com.ftkj.proto;
+import "Common.proto";
+option java_outer_classname = "GameLogPB";
+
+//比赛结算统计日志
+message BattleEndLogData {
+    //主场球队信息
+    optional BattleEndTeamResp home = 1;
+    //客场球队信息
+    optional BattleEndTeamResp away = 2;
+
+    optional int32 code = 3;
+}
+
+//比赛结束球队统计信息
+message BattleEndTeamResp {
+    //球队id
+    optional int64 team_id = 1;
+    //得分
+    optional int32 score = 2;
+    //每小节得分
+    optional BattleStepScoreData step_score = 3;
+    //球员详细数据
+    repeated BattlePlayerSourceData players = 4;
+    //球队信息
+    optional TeamSimpleData team = 5;
+}
+
+//每小节得分
+message BattleStepScoreData {
+	optional int64 teamId =1;
+	optional int32 step1 =2;
+	optional int32 step2 =3;
+	optional int32 step3 =4;
+	optional int32 step4 =5;
+	optional int32 stepot =6;
+}
+
+//比赛结算球员详细数据
+message BattlePlayerSourceData{
+	optional int32 playerId =1;
+	//体力
+	optional int32 power =2;
+	//得分
+	optional int32 df =3;
+	//投篮
+	optional int32 tl =4;
+	//三分
+	optional int32 sf =5;
+	//罚球
+	optional int32 fq =6;
+	//篮板
+	optional int32 lb =7;
+	//助攻
+	optional int32 zg =8;
+	//抢断
+	optional int32 qd =9;
+	//盖帽
+	optional int32 gm =10;
+	//失误
+	optional int32 sw =11;
+	//犯规
+	optional int32 fg =12;
+	//投篮命中
+	optional int32 tlmz =13;
+	//三分命中
+	optional int32 sfmz =14;
+	//罚球命中
+	optional int32 fqmz =15;
+	//上场时间
+	optional int32 time =16;
+	//在阵容上的位置
+	optional int32 pos =17;
+
+}

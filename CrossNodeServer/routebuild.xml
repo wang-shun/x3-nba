@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="PKNodeServer">
+	<property environment="env" />
+	<property name="ECLIPSE_HOME" value="F:/eclipse1.8/eclipse/" />
+	<property name="RouteServer.location" value="../RouteServer" />
+	<property name="GameCode.location" value="../GameCode" />
+	<property name="Common.location" value="../Common" />
+	<property name="debuglevel" value="source,lines,vars" />
+	<property name="target" value="1.8" />
+	<property name="source" value="1.8" />
+	
+	<property name="src.dir" value="src" />
+	<property name="classes.dir" value="bin" />
+	<property name="excel.dir" value="excel" />
+	<property name="output.dir" value="../GameCode/zgame" />
+	<property name="jarname" value="crossnode.jar" />
+	<property name="project.name" value="CrossNodeServer" />
+	<property name="lib.dir" value="../GameCode/lib" />
+	<property name="mainclass" value="com.ftkj.CrossNodeStartup" />
+	<property name="des.config" value="true" />
+
+	<property name="code.path" value="../GameCode" />
+	<property name="common.path" value="../Common" />
+
+	<!--是否打包配置文件 -->
+	<property name="des.log" value="false" />
+	<!--是否打包log4j文件 -->
+
+	<property name="server.path" value="/data/ZGame" />
+	<property name="server.ip" value="192.168.10.69" />
+	<property name="server.port" value="22" />
+	<property name="server.password" value="123456" />
+
+	<path id="Game.classpath">
+		<pathelement location="bin" />
+	</path>
+	<target name="clean">
+		<delete dir="bin" />
+	</target>
+	<target depends="clean" name="cleanall" />
+	<!-- ================================= 
+              	          target: build              
+              	         ================================= -->
+	<path id="lib-classpath">
+		<fileset dir="${lib.dir}">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+	<target depends="jar" name="build" />
+	<!-- 第三方jar包的路径 -->
+	<path id="lib-classpath">
+		<fileset dir="${lib.dir}">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+	
+	<target name="init">
+		<mkdir dir="bin" />
+		<copy includeemptydirs="false" todir="bin">
+			<fileset dir="src">
+				<exclude name="**/*.launch" />
+				<exclude name="**/*.xtend" />
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+	</target>
+	
+	<!-- 2. 编译 -->
+	<target name="compile" depends="init">
+		<javac srcdir="${src.dir}" destdir="${classes.dir}" debug="true" debuglevel="source,lines,vars">
+			<compilerarg line="-encoding UTF-8" />
+			<classpath refid="lib-classpath" />
+		</javac>
+	</target>
+
+	<!-- 3. 打包jar文件 -->
+	<target name="jar" depends="compile">
+		<!-- <copy todir="${output.dir}">
+			<fileset dir="${lib.dir}" />
+		</copy>
+
+		Create a property containing all .jar files,refix lib/, and seperated with a space-->
+		<pathconvert property="mf.classpath" pathsep="">
+			<mapper>
+				<chainedmapper>
+					<!-- jar包文件只留文件名，去掉目录信息 -->
+					<flattenmapper />
+					<!-- add lib/ prefix -->
+					<globmapper from="*" to="lib/*" />
+				</chainedmapper>
+			</mapper>
+			<path refid="lib-classpath" />
+		</pathconvert>
+
+		<!-- jar文件的输出路径 -->
+		<jar destfile="${output.dir}/${jarname}" basedir="${classes.dir}">
+			<exclude name="**/*.xml" />
+		</jar>
+	</target>
+</project>

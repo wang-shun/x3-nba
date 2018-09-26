@@ -1,0 +1,163 @@
+-Dx3.excel.local=true -Dx3.excel.local.path=F:/nba/FTXNBADataSystem/游戏配置文档
+-----------------------------------IOS------------------------------------
+ios-2101		39.108.9.3		22		root	DRy!NlAl		3306		zgame2017	logic-2101.logic.ftxgame.com
+ios-2102	120.79.171.53	22	root	DRy!NlAl	3306	zgame2017	logic-2102.logic.ftxgame.com
+ios-中心服	119.23.26.51	22	root	DRy!NlAl	3306	zgame2017	battle-2001.battle.ftxgame.com
+----------------------------------android---------------------------------
+android-中心服	120.78.133.186	22	root	ftx-nbagame2017	3306	zgame2017	battle-test.battle.ftxgame.com
+android-3101	120.79.37.214	22	root	DRy!NlAl	3306	zgame2017	logic-3101.logic.ftxgame.com
+----------------------------------海外服务器	----------------------------------						
+IOS审核海外服务器	169.55.68.219	22	root	fuhua3iso	3306	zgame2017	ios-examine.logic.ftxgame.com
+
+兑换次数key:ItemConvert_Limit_
+172.18.81.225   logic-3100
+172.18.145.99   logic-3101
+172.18.145.104  logic-3102
+172.18.81.217   logic-3103
+172.18.81.226   logic-3104
+172.18.145.105  logic-3105
+172.18.81.224   logic-3106
+172.18.81.223   logic-3801
+Task_Day_20180112_10110000002667
+---------------------------------------------------------------------------------------------------------------
+1.执行F:\nba\Server\clear_ant_tmp.bat清理临时文件
+
+2.删除服务器包
+	/data/tools/gameUtils/lib
+	rm -rf *.zip
+
+3.打包
+		route -->  build_unload.xml
+		pk -->  build_unload.xml
+		cross -->  build_unload.xml
+		logic -->  build_unload.xml
+		gm -->  build_unload.xml
+		nbasource (nba_data)--> build_unload.xml
+
+4.停掉所有服
+			停安卓服：/data/tools/gameUtils      ./stopAndroid.sh
+			停公共服：/data/tools/gameUtils		./go master-android（只有master需要密码）      密码：ftx-nbagame2017
+			route
+			./stop.py
+			
+			gm
+			./stop.py
+			
+			nba
+			./stop.py
+			--------------------------------------------------
+			/data/tools/gameUtils	./go cross-android-01
+			cross
+			./stop.py
+			
+			/data/tools/gameUtils	./go battle-android-01
+			pk
+			./stop.py
+	-----------------------------------------------------------------		
+	-- RouteServer 						route
+	-- CrossGameServer					cross
+	-- PKNodeServer						pk
+	-- GmServer								gm
+	-- NBASourceServer    			nba
+	
+	master-android   -- RouteServer, GmServer, NBASourceServer
+	cross-android-01  -- CrossGameServer
+	battle-android-01  -- PKNodeServer
+	--------------------------------------------------------------------
+	
+	5.刷游戏配置
+	把需要更新的配置放到F:\nba\FTXNBADataSystem\游戏配置文档\更新配置到服务器\精英后台更新
+	执行 更新精英测试服.bat
+	
+	6.执行sql脚本
+	手动上传 120.79.37.214	22  root	 DRy!NlAl
+	/data/tools/gameUtils/script
+	
+	#所有的机器都配置hosts文件下面.
+	cat /etc/hosts
+	mysql -h logic-3101 -uroot -pzageme -pzgame2017 nba_3101  <  xxxx.sql &
+	mysql -h logic-3102 -uroot -pzageme -pzgame2017 nba_3102  <  xxxx.sql &
+	mysql -h logic-3103 -uroot -pzageme -pzgame2017 nba_3104  <  xxxx.sql &
+	
+	
+	mysql -h 127.0.0.1 -uroot -pzageme -pzgame2017
+	
+	7.各个公共服拉取jar包并重启
+	./go master-android    ftx-nbagame2017
+	route
+	删除原来包：rm -rf bin/ lib/ excel/ XXXX.zip
+	拉取新包：./copyJar.sh
+	解压重启：./unzipStart.py
+	
+	gm
+	删除原来包：rm -rf bin/ lib/ excel/ XXXX.zip
+	拉取新包：./copyJar.sh
+	解压重启：./unzipStart.py
+	
+	nba
+	删除原来包：rm -rf bin/ lib/ excel/ XXXX.zip
+	拉取新包：./copyJar.sh
+	解压重启：./unzipStart.py
+	
+	/data/tools/gameUtils	./go cross-android-01
+	cross
+	删除原来包：rm -rf bin/ lib/ excel/ XXXX.zip
+	拉取新包：./copyJar.sh
+	解压重启：./unzipStart.py
+	
+	/data/tools/gameUtils	./go battle-android-01
+	pk
+	删除原来包：rm -rf bin/ lib/ excel/ XXXX.zip
+	拉取新包：./copyJar.sh
+	解压重启：./unzipStart.py
+	
+	8.上传安卓服jar包并重启
+	/data/tools/gameUtils
+	./scp_jar_android.sh
+	startAndroid.sh
+	
+	9.去zk查看服务器注册情况
+	./zkCli_android.sh
+	ls /z            --------------->zgame       zookeeper
+	ls /zgame/node -------------->[logic-3104, logic-3103, logic-3105, logic-3801, gmserver-tim, battle-android-01, cross-android-01,   logic-3100, logic-3102, logic-3101]
+	
+	10.看日志，看进程有没问题
+	
+	------------------------更新ok---------------------
+	
+	
+	
+	
+	==============================开新服==================================
+	redis配置
+	executable:/data/tools/redis-3.2.8/src/./redis-server
+	config_file:/data/tools/redis-3.2.8/src/redis3.conf
+	拷贝：
+	scp -r /data/tools/redis-3.2.8/src/redis3.conf  root@logic-3107:/data/ZGame/logic
+	手动拷贝redis配置文件
+	
+	启动redis：./redis-server redis3.conf
+	
+	1.邮件申请一台新机器：  IP
+	2.去3101机器,   vim /etc/hosts   配置新机器      xxx.xxx.xxx.xx  logic-3106
+	3. ./go logic-3106    如果跳转不过去  执行/root/.ssh/know_hosts 再./go logic-3106  不行就通过ip跳转
+	4.修改hostname ,执行hostname nba-logic-3106
+	5.vim /etc/hosts     修改 127.0.0.1  的机器名为对应的hostname,就是3106
+	6.清空redis缓存  ,  执行./clearkey.py       key:*
+	7.创建数据库 mysql -h127.0.0.1 -uroot -pzgame2017
+	创建数据库 CREATE DATABASE `nba_3106` DEFAULT CHARACTER SET utf8mb4;
+	exit,去已有在服导出一个nba_xxxx表结构：mysqldump -h127.0.0.1 -uroot -pzgame2017 -d dbname >db.sql;
+	把表刷到新库上：mysql -h logic-3106 -uroot -pzageme -pzgame2017 nba_3106  <  db.sql
+	8.回到3101的gameUtli目录
+		--  addToWeb.sh  添加新区到运营后台 -->3106
+		-- ./scp_game.py  同步配置到指定区    config.js 同步  (开服时间以执行脚本当天为准)
+		-- ./scp_jar_android  同步所有的jar包
+		ip_android  添加
+		
+		-- ./go logic-3106        ./unzipStart.sh 启动 , 可以测试。        vim config/config.js  查看配置有没对。
+		
+		你在跳板机上执行 ssh-copy-id logic-3107   不需要每次输入密码
+		
+		-- 开服时间（如果是隔天开服，注意修改）
+	
+	

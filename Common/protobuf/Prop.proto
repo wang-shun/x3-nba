@@ -1,0 +1,51 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "PropPB";
+
+
+// 道具
+message PropData {
+	required int32 id =1;
+	required int32 propId =2;
+	required int32 num =3;
+	required int32 endTime =4;
+}
+
+// 简单道具
+message PropSimpleData {
+	required int32 propId =1;
+	required int32 num =2;
+}
+
+// 简单列表
+message PropListData {
+	repeated PropSimpleData propList = 1;
+}
+
+message PropListResp {
+    //long 1
+    optional int64 vl1 = 1;
+    //long 2
+    optional int64 vl2 = 2;
+    //int 1
+    optional int32 vi1 = 3;
+    //int 2
+    optional int32 vi2 = 4;
+
+	repeated PropSimpleData props = 8;
+}
+
+// 列表
+message TeamPropsData {
+	repeated PropData propList = 1;
+	optional bool tip =2;
+
+}
+
+//打开宝箱
+message OpenBox{
+	//获得球员列表
+	repeated int32 playerId = 1;
+}
+
+// 打开宝箱获得球员 50035  OpenBox

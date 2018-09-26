@@ -1,0 +1,155 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "PlayerPB";
+
+
+message PlayerSimpleData{
+	required int32 pid =1;
+	required int32 playerId =2;
+	required int32 position =3;
+	required int32 playerPosition =4;
+	required int32 price =5;
+	optional PlayerTalentData talent =6;
+	optional bool bind = 7;//是否绑定
+}
+
+message PlayerPositionData {
+	required int32 pid =1;
+	required int32 playerPosition =2;
+}
+
+// 球员阵容位置调整推包
+message PlayerListPosData {
+	repeated PlayerPositionData playerPosList = 1;
+}
+
+message PlayerData{
+	required int32 pid =1;
+	required int32 playerId =2;
+	required int32 position =3;
+	required int32 playerPosition =4;
+	required int32 price =5;
+	optional int32 attack =6;
+	optional int32 defend =7;
+	optional int32 status =8; // 0阵容 1仓库 2交易市场
+	optional PlayerTalentData playerTalent =9;
+	optional bool bind = 10;//是否绑定
+}
+
+message PlayerMoneyDataMain{
+	repeated PlayerMoneyData moneys =1;
+	optional int32 playerId =2;
+	repeated PlayerBoardDetailData nbaData=3;
+	repeated NBAVSData vsData =4;
+	required NBAPlayerAvgData playerAvg =5;
+}
+
+message NBAPlayerAvgData{
+	required int32 playerId =1;
+	repeated NBAPlayerAvgAbilityData abilitys =2;
+}
+
+message NBAPlayerAvgAbilityData{
+	required int32 type =1;
+	required float value =2;
+}
+
+message TeamPlayerAvgMain{
+	repeated NBAPlayerAvgData playerAvgs =1;
+}
+
+
+message PlayerBoardDetailData{
+	required int32 isStarter =5;
+	required int32 fgm =6;
+	required int32 fga =7;
+	required int32 ftm =8;
+	required int32 fta =9;
+	required int32 threePM =10;
+	required int32 threePa =11;
+	required int32 oreb =12;
+	required int32 dreb =13;
+	required int32 reb =14;
+	required int32 ast =15;
+	required int32 stl =16;
+	required int32 blk =17;
+	required int32 to =18;
+	required int32 pf =19;
+	required int32 pts =20;
+	required int32 effectPoint =21;
+	required int32 min =22;
+	required string time =23;
+}
+
+
+
+message PlayerMoneyData{
+	required int64 time = 1;
+	required int32 price =2;
+}
+
+
+message PlayerGradeMainData{
+	repeated PlayerGradeData playerGradeList =1;
+}
+
+
+message PlayerGradeData{
+	required int32 playerId =1;
+	required int32 grade =2;
+	required int32 exp =3;
+	required int32 star =4;
+	required int32 starGrade =5;
+}
+
+
+message NBAVSData{
+	required int32 homeId =1;
+	required int32 awayId =2;
+	required int64 time =3;
+}
+
+
+message NBAGuessMainData{
+	repeated NBAGuessData vsData =1;
+}
+
+message NBAGuessData{
+	required int32 gameId =1;
+	required int32 homeId =2;//1=主队
+	required int32 awayId =3;//2=客队
+	required int32 guessId =4;//1=主队赢,2=客队赢
+	required int32 winId =5;//比赛结果:0=还没有出比赛结果,1=主队赢,2=客队赢
+	required string time =6;
+	optional string homeName = 7;//主队名字
+	optional string awayName = 8;//客队名字
+	optional string startTimeStr = 9;//竞猜开始时间
+	optional string endTimeStr = 10;//竞猜结束时间
+	optional string reward = 11;//奖励物品
+}
+
+
+message PlayerTalentData{
+	required int32 df =1;
+	required int32 zg =3;
+	required int32 lb =4;
+	required int32 qd =5;
+	required int32 gm =6;
+	required int32 tlmz =7;
+	required int32 fqmz =8;
+	required int32 sfmz =9;
+
+}
+
+// 20080 降低球员工资
+// req
+// -> args [int32 playerId 玩家唯一ID]
+// resp
+// -> LowerPlayerPriceData
+// -> 100002(推送球员变动)
+
+// 球员降薪回包
+message LowerPlayerPriceData {
+	optional int32 calParice = 1; //本次计算降薪结果
+}
+

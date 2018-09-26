@@ -1,0 +1,165 @@
+package com.ftkj.proto;
+
+import "Common.proto";
+
+option java_outer_classname = "AllStarPb";
+//==============
+//  全明星
+//==============
+
+// 38000 获取信息
+// req args
+// int32 全明星配置id
+// resp DefaultData
+
+// 38001 信息推送
+// resp
+message AllStarAllResp {
+    //npc信息
+    optional AllStarNpcResp npc = 1;
+    //自己排行信息(只有排名和伤害)
+    optional AllStarTeamRankResp team = 2;
+    //排行榜
+    optional AllStarRankResp ranks = 3;
+    //推荐球员
+    repeated int32 tjPlayers = 4;
+     //击杀奖
+    optional KillReward killReward = 5;
+     //积分奖
+    optional ScoreReward scoreReward = 6;
+}
+
+//今日挑战的全明星队
+message TodayAllStarNpcResp {
+	//全明星队配置ID
+ 	optional int32 id = 1;
+}
+
+//本服击杀奖励
+message KillReward{
+	//1-可领取；0-不可领取
+	optional int32 rewardState = 1;
+	//已击杀最大等级npc
+	optional int32 killMaxNpcLevel = 2;
+	//已领取的npc等级
+	repeated int32 npcLevel = 3;
+}
+
+//个人分数奖励
+message ScoreReward{
+	//我的积分
+	optional int32 myScore = 1;
+	//已领取的积分奖励-积分
+	repeated int32 score = 2;
+}
+
+//npc信息
+message AllStarNpcResp {
+    //全明星配置id
+    optional int32 id = 1;
+    //行为id
+    optional int32 act = 2;
+    //当前难度
+    optional int32 lev = 3;
+    //当前血量
+    optional int32 hp = 4;
+    //已挑战次数
+    optional int32 challengeNum = 5;
+    //总挑战次数
+    optional int32 totalChallengeNum = 6;
+   	//已激励次数
+    optional int32 jiliNum = 7;
+    //购买次数
+    optional int32 buyNum = 8;
+}
+
+//排行榜
+message AllStarRankResp {
+    //全明星配置id
+    optional int32 id = 1;
+    //已经按伤害由高到底排序好
+    repeated AllStarTeamRankResp teams = 2;
+    //击杀榜
+    repeated AllStarKillRankResp killRank = 3;
+}
+
+//排行信息
+message AllStarTeamRankResp {
+    //球队id
+    optional int64 tid = 1;
+    //球队信息
+    optional TeamSimpleData team = 2;
+    //排名 > 0 才是有效排名
+    optional int32 rank = 3;
+    //累计伤害
+    optional int32 hp = 4;
+}
+
+//击杀榜
+message AllStarKillRankResp {
+    //球队id
+    optional int64 tid = 1;
+    //球队信息
+    optional TeamSimpleData team = 2;
+    //全明星npcID
+    optional int32 npcId = 3;
+}
+
+
+// 38002 开始比赛(加入匹配). (比赛开始后由通用的比赛开始和结束接口推送)
+// req args
+// int32 全明星配置id
+// resp DefaultData
+
+// 38003 比赛结束推送
+// resp AllStarAllResp
+
+// 38004 获取npc状态
+// req args
+// int32 全明星配置id
+// resp DefaultData
+
+// 38005 npc状态推送
+// resp AllStarNpcResp
+
+// 38005 npc状态推送
+// resp AllStarNpcResp
+
+
+//---------------------new-------------------
+
+// 38001 信息推送 ---新添加击杀榜数据在里面
+
+// 38006 获取今日全明星球队信息
+//  返回38001
+
+// 38007 推送-今日全明星球队信息（废除）
+// resp TodayAllStarNpcResp
+
+// 38008 获取我的全明星赛击杀奖励信息
+
+// 38009 推送-全明星赛击杀奖励信息
+// resp KillReward
+	
+// 38010 领取-击杀奖励
+// req args
+// int32 全明星配置id,int32 npc等级
+// 推38008
+
+// 38011 领取-个人积分奖励
+// req args
+// int32 配置积分阶段-积分
+// 推 38013 
+
+// 38012 获取我的全明星赛个人积分奖励信息
+
+// 38013 推送-全明星赛-领取个人积分奖励
+// resp ScoreReward
+
+
+// 38014 购买比赛次数
+// 推 38005
+
+// 38015 激励
+// 推 38005
+

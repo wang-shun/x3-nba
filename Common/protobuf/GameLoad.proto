@@ -1,0 +1,185 @@
+package com.ftkj.proto;
+import "Team.proto";
+import "Player.proto";
+import "TeamEqui.proto";
+import "PlayerCard.proto";
+import "Prop.proto";
+import "PlayerLogo.proto";
+import "Email.proto";
+import "Friend.proto";
+import "League.proto";
+import "SystemActive.proto";
+import "Vip.proto";
+import "Buff.proto";
+import "RedPoint.proto";
+import "Trade.proto";
+import "Train.proto";
+
+option java_outer_classname = "GameLoadPB";
+
+message GameLoadDataMain{
+	required TeamData teamData =1;
+	repeated TeamCapData teamCapList=2;
+	repeated TeamAbilityData teamAbilityList=3;
+	required TeamMoneyData teamMoneyData =4;
+	repeated PlayerData teamPlayerList =5;
+	required TeamEquiData teamEquiData =6;
+	required TeamPropsData teamPropData =7;
+	// 球星卡
+	optional PlayerCardMainData tpcData =8;
+	// 球员头像
+	required PlayerLogoData tplData =9;
+	repeated PlayerData stroagePlayerList =10;
+	// 邮件
+	required TeamEmailData teamEmail =11;
+	required TeamFriendData teamFriends =12;
+
+	//
+	required TeamStatusData teamStatus =15;
+	// 我的交易球员（上架列表）
+	repeated TradeData tradeList = 16;
+
+	optional GameLoadLeagueData leagueData = 17;
+	// 开服时间
+	required int64 serverStartTime = 18;
+	// 活动
+	optional SystemActiveData systemActive = 19;
+	// vip
+	optional VipData vip = 20;
+
+	optional PlayerGradeMainData playerGrade =21;
+	// buff列表
+	repeated BuffData buffList = 23;
+	// 领奖提示
+	optional RedPointData redPoint= 24;
+	//
+	optional int32 customMoney = 25;
+	// 联盟训练馆基础信息
+	optional LeagueTrainData leagueTrain = 26;
+}
+
+
+message PlayerCreateMain{
+	repeated PlayerCreateData players =1;
+	required int32 index =2;
+
+}
+
+
+//创建球队时候球员临时数据
+message PlayerCreateData{
+	required int32 playerId =1;
+	required int32 position =2;
+	required string grade =3;
+	required int32 playerPosition =4;
+	required int32 price =5;
+	required int32 attack =6;
+	required int32 defend =7;
+	required string playerName =8;
+	required int32 teamId = 9;
+
+}
+
+message NBAPlayerDataMain{
+	required int32 version =1;
+	repeated NBAPlayerData playerDatas =2;
+}
+
+message NBAPlayerData{
+	required int32 playerId =1;
+	required int32 teamId =2;
+	required string grade =3;
+	required int32 price =4;
+	required int32 beforePrice =5;
+	required int32 playerTitle =6;
+	required bool injured =7;
+	repeated NBAPlayerAbilityData abilitys =8;
+	required int32 beforeCap =9;
+	required int32 basePrice =10;
+	required string position = 11;
+	required string name =12;
+	required string shortName =13;
+	required string enName =14;
+
+}
+
+message NBAPlayerAbilityData{
+	required int32 type =1;
+	required float value =2;
+}
+
+
+message NBAPKInfoDataMain{
+	repeated NBAPKScoreBoardData scoreboard =1;
+	repeated NBAPKScoreBoardDetailData playerDetail =2;
+}
+
+message NBAPKDataMain{
+	repeated NBAPKScheduleInfoData scheduleList =1;
+}
+
+message NBAPKScheduleInfoData{
+	required NBAPKScheduleData schedule = 1;
+	repeated NBAPKScoreBoardData scoreBoard =2;
+}
+
+
+message NBAPKScheduleData{
+	required int32 gameId =1;
+	required int32 seasonId =2;
+	required int32 status =3;
+	required int32 gameType =4;
+	required int32 homeTeamId =5;
+	required int32 awayTeamId =6;
+	required int32 homeTeamScore =7;
+	required int32 awayTeamScore =8;
+	required int64 gameTime =9;
+}
+
+message NBAPKScoreBoardData{
+	required int32 gameId =1;
+	required int32 teamId =2;
+	required int32 q1 =3;
+	required int32 q2 =4;
+	required int32 q3 =5;
+	required int32 q4 =6;
+	required int32 o1 =7;
+	required int32 o2 =8;
+	required int32 o3 =9;
+	required int32 o4 =10;
+	required int32 o5 =11;
+	required int32 o6 =12;
+	required int32 o7 =13;
+	required int32 total =14;
+}
+
+message NBAPKScoreBoardDetailData{
+	required int32 id = 1;
+	required int32 playerId =2;
+	required int32 gameId =3;
+	required int32 teamId =4;
+	required int32 isStarter =5;
+	required int32 fgm =6;
+	required int32 fga =7;
+	required int32 ftm =8;
+	required int32 fta =9;
+	required int32 threePM =10;
+	required int32 threePa =11;
+	required int32 oreb =12;
+	required int32 dreb =13;
+	required int32 reb =14;
+	required int32 ast =15;
+	required int32 stl =16;
+	required int32 blk =17;
+	required int32 to =18;
+	required int32 pf =19;
+	required int32 pts =20;
+	required int32 effectPoint =21;
+	required int32 min =22;
+
+}
+
+
+
+
+

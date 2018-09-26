@@ -1,0 +1,41 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "ShopPB";
+import "Prop.proto";
+
+message LeagueShopMain{
+	repeated ShopPropData props =1;
+	optional int32 curFeats =2;
+	optional int32 limitScore =3;
+	optional int32 curScore =4;
+}
+
+message ShopPropData{
+	required int32 propId =1;
+	required int32 num =2;
+}
+
+message MoneyShopMain{
+	repeated ShopPropData props = 1;//已经购买了多少道具
+}
+
+// 兑换限量
+message ConvertLimitData {
+	required int32 cid =1;
+	required int32 num =2;
+}
+// 一般兑换通用
+message ConvertMainData {
+	repeated ShopPropData currProp = 1; // 当前拥有数据
+	repeated ConvertLimitData limit = 2; // 已兑换次数，每日
+	repeated ConvertLimitData totalLimit = 3; // 已兑换次数，总的
+}
+
+//默认回包，带奖励列表
+message ConvertResultData {
+	optional int32 cid =1;
+	optional int32 num =2;
+	optional int32 code =3;
+	repeated ShopPropData currProp = 4; // 当前拥有数据
+	repeated PropSimpleData awardList = 5; // 奖励
+}

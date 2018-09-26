@@ -1,0 +1,35 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "PVPBattlePB";
+
+message BattleRoomMain{
+	repeated BattleRoomData rooms =1;
+	required int32 dayCount =2;
+	optional int32 roomGroup =3;
+	optional int32 status =4;
+}
+
+message BattleRoomData{
+	required int64 battleId = 1;
+	required int32 roomId =2;
+	required string node =3;
+	required BattleRoomTeamData home =4;
+	required BattleRoomTeamData away =5;
+
+}
+
+message BattleRoomTeamData{
+
+	required string teamName =1;
+	required string leagueName =2;
+	required string shardName =3;
+	required string logo =4;
+	required int64 teamId =5;
+	optional int32 level =6;
+
+}
+
+
+
+
+

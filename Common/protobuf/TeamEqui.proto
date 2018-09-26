@@ -1,0 +1,61 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "TeamEquiPB";
+
+//玩家装备数据
+message EquiData {
+	//唯一ID
+	required int32 id =1;
+	//模板ID
+	required int32 eid =2;
+	// 所属球员，套装ID
+	required int32 playerId =3;
+	//球衣进阶经验
+	required int32 exp =4;
+	//等级
+	required int32 lv =5;
+	//强化等级
+	required int32 strlv =6;
+	//强化祝福
+	required float strBless =7;
+	//结束时间
+	required int32 endTime =8;
+	// 所属球队, 球衣专用，其他装备是0
+	required int32 equiTeam = 9;
+	// 随机属性
+	repeated EquiAttrData randAttr = 10;
+}
+
+/**
+ * 随机属性加成
+ */
+message EquiAttrData {
+	// 加成类型
+	required string attr = 1;
+	// 加成百分比
+	required float val = 2;
+}
+
+// 转换装备
+message PlyaerSuitChangeData {
+	repeated PlayerEquiData suitList = 1;
+}
+
+message PlayerEquiData {
+	//球员套装ID
+	required int32 playerId =1;
+	// 各部位
+	repeated EquiData list = 2;
+}
+
+message TeamEquiData {
+	// 球队
+	required int64 teamId =1;
+	//装备
+	repeated PlayerEquiData playerEquiList = 2;
+	// 球衣
+	repeated PlayerEquiData clothesEquiList = 3;
+
+}
+
+

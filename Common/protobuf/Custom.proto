@@ -1,0 +1,63 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "CustomPB";
+
+import "Team.proto";
+message CustomMainData{
+	repeated CustomRoomData rooms =1;
+	optional int32 money =2;
+
+}
+
+
+message CustomSeachRoomData{
+	optional CustomRoomData room =1;
+	required int32 code =2;
+
+}
+
+message CustomRoomData{
+	required int32 roomId =1;
+	required int32 pkType =2;
+	required int32 guessType =3;
+	required int32 winCondition =4;
+	required int32 powerCondition =5;
+	required int32 levelCodition =6;
+	repeated int32 stepCondition =7;
+	required int32 positionCondition =8;
+	required int32 roomStatus =9;
+	required string roomTip =10;
+
+	required int32 roomMoney =11;
+	required int32 roomScore =12;
+
+	optional bool autoStart =13;
+
+	optional TeamBattleStatusData battleInfo =14;
+
+	required CustomRoomTeamData homeTeam =20;
+	optional CustomRoomTeamData awayTeam =21;
+}
+
+
+message CustomGuessData{
+	required int32 roomId =1;
+	required float homeRate =2;
+	required float awayRate =3;
+	optional int32 home =4;
+	optional int32 away =5;
+	optional int32 money =6;
+
+}
+
+
+message CustomRoomTeamData{
+	required int64 teamId =1;
+	required string teamName =2;
+	required string logo =3;
+	required int32 level =4;
+	optional int32 power =5;
+	optional string nodeName =6;
+
+
+}

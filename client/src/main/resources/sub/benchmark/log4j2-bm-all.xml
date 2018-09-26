@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration shutdownHook="disable">
+    <!-- OFF,FATAL,ERROR,WARN,INFO,DEBUG -->
+    <Properties>
+        <Property name="filename">log/client-bm</Property>
+    </Properties>
+
+    <!-- Don't forget to set system property
+-DLog4jContextSelector=org.apache.logging.log4j.core.async.AsyncLoggerContextSelector
+     to make all loggers asynchronous. -->
+    <Appenders>
+        <Console name="CONSOLE" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%-5p] %d{MM-dd HH:mm:ss:SSS} [%t] %.60l: %m%n"/>
+        </Console>
+        <!-- Async Loggers will auto-flush in batches, so switch off immediateFlush. -->
+        <RollingRandomAccessFile name="file" fileName="${filename}-main.log"
+                                 immediateFlush="false" append="true"
+                                 filePattern="${filename}_%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout pattern="[%-5p] %d{MM-dd HH:mm:ss:SSS} [%t] %l: %m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="250 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingRandomAccessFile>
+        <RollingRandomAccessFile name="error" fileName="${filename}-error.log"
+                                 immediateFlush="false" append="true"
+                                 filePattern="${filename}-error_%d{yyyy-MM-dd}-%i.log">
+            <ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="[%-5p] %d{MM-dd HH:mm:ss:SSS} [%t] %l: %m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="250 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingRandomAccessFile>
+    </Appenders>
+
+    <Loggers>
+        <Logger level="WARN" name="org.apache"/>
+        <Logger level="WARN" name="org.hibernate"/>
+        <Logger level="WARN" name="org.springframework"/>
+        <Logger level="WARN" name="org.springframework.jdbc.core"/>
+
+        <Logger level="ERROR" name="com.ftkj"/>
+
+        <Logger level="info" name="benchmark"/>
+
+        <Logger level="INFO" name="com.ftkj"/>
+
+        <Root level="WARN">
+            <!--<AppenderRef ref="CONSOLE"/>-->
+            <AppenderRef ref="file"/>
+            <AppenderRef ref="error"/>
+        </Root>
+    </Loggers>
+
+</Configuration>
+

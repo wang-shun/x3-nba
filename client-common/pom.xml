@@ -1,0 +1,49 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>x3-parent</artifactId>
+        <groupId>com.ftkj.x3</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>x3-client-common</artifactId>
+
+    <packaging>jar</packaging>
+    <name>x3-client-common</name>
+
+    <!--<repositories>-->
+        <!--<repository>-->
+            <!--<id>nexus</id>-->
+            <!--<name>nexus repo</name>-->
+            <!--<url>http://192.168.10.167:8081/nexus/content/groups/public</url>-->
+        <!--</repository>-->
+    <!--</repositories>-->
+
+    <properties>
+        <xxs.version>0.0.1</xxs.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.ftkj.xxs</groupId>
+            <artifactId>xxs-net</artifactId>
+            <version>${xxs.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ftkj.xxs</groupId>
+            <artifactId>xxs-proto</artifactId>
+            <version>${xxs.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-ant-plugin</artifactId>
+                <version>2.4</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>

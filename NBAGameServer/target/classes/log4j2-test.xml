@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Log4j 2.x 配置文件。每30秒自动检查和应用配置文件的更新； -->
+<Configuration monitorInterval="10" strict="true" shutdownHook="disable">
+    <Properties>
+        <Property name="logdir">${sys:mnba.log.path}</Property>
+        <!--<Property name="appname">logic${sys:x3.log.nodename}</Property>-->
+        <Property name="appname">logic</Property>
+        <!--<Property name="location">false</Property>-->
+    </Properties>
+    <Appenders>
+        <!-- 输出到控制台 -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS}:%4p %t .\(%F:%L\) - %m%n"/>
+        </Console>
+
+        <!-- 输出到文件，按天或者超过80MB分割 -->
+        <RollingFile name="RollingFile" fileName="./logs/${appname}-main.log"
+                     filePattern="./logs/$${date:yyyy-MM}/${appname}-main-%d{yyyy-MM-dd}-%i.log.gz">
+            <!-- 需要记录的级别 -->
+            <!-- <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"
+                /> -->
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS}:%4p %t (%F:%L) - %m%n"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="80 MB"/>
+            </Policies>
+        </RollingFile>
+
+        <!-- 格式化的消息统计信息 -->
+        <RollingFile name="msgstats" fileName="./logs/${appname}-msgstats.log"
+                     filePattern="./logs/$${date:yyyy-MM}/${appname}-msgstats-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS}:%4p %t (%F:%L) - %m%n"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+        </RollingFile>
+
+        <!-- 格式化的消息统计信息 -->
+        <RollingFile name="DBManagerLog" fileName="./logs/${appname}-db.log"
+                     filePattern="./logs/$${date:yyyy-MM}/${appname}-db-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS}:%4p %t (%F:%L) - %m%n"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+        </RollingFile>
+
+
+        <Socket name="GameMoneyLog" protocol="TCP" host="120.79.37.214" port="11111">
+            <PatternLayout pattern="%X{GameMoneyLogVersion} %X{GameMoneyLogTag} %d{UNIX} %X{ip} %X{platform} %X{shardId} %enc{%m}%n"/>
+        </Socket>
+
+        <Socket name="GameHelpStepLog" protocol="TCP" host="120.79.37.214" port="11111">
+            <PatternLayout pattern="%X{GameHelpStepLogVersion} %X{GameHelpStepLogTag} %d{UNIX} %X{ip} %X{platform} %X{shardId} %enc{%m}%n"/>
+        </Socket>
+
+        <Socket name="GameOlineLog" protocol="TCP" host="120.79.37.214" port="11111">
+            <PatternLayout pattern="%X{GameOlineLogVersion} %X{GameOlineLogTag} %d{UNIX} %X{ip} %X{platform} %X{shardId} %enc{%m}%n"/>
+        </Socket>
+
+        <Socket name="GamePropLog" protocol="TCP" host="120.79.37.214" port="11111">
+            <PatternLayout pattern="%X{GamePropLogVersion} %X{GamePropLogTag} %d{UNIX} %X{ip} %X{platform} %X{shardId} %enc{%m}%n"/>
+        </Socket>
+    </Appenders>
+    <Loggers>
+        <logger name="GameMoneyLogManager" level="trace" additivity="false">
+            <appender-ref ref="GameMoneyLog"/>
+        </logger>
+        <logger name="GameHelpStepLogManager" level="trace" additivity="false">
+            <appender-ref ref="GameHelpStepLog"/>
+        </logger>
+        <logger name="GameOlineLogManager" level="trace" additivity="false">
+            <appender-ref ref="GameOlineLog"/>
+        </logger>
+        <logger name="GamePropLogManager" level="trace" additivity="false">
+            <appender-ref ref="GamePropLog"/>
+        </logger>
+        <logger name="DBManager" level="trace" additivity="false">
+            <appender-ref ref="DBManagerLog"/>
+        </logger>
+
+        <logger name="org.quartz" level="error" additivity="false">
+            <appender-ref ref="RollingFile"/>
+        </logger>
+        <logger name="log4j.category.com.jolbox" level="error"
+                additivity="false">
+            <appender-ref ref="RollingFile"/>
+        </logger>
+
+        <logger name="org.apache.mina.core" level="error" additivity="false">
+            <appender-ref ref="RollingFile"/>
+        </logger>
+
+        <logger name="org.apache.mina.filter" level="error" additivity="false">
+            <appender-ref ref="RollingFile"/>
+        </logger>
+        <logger name="org.apache.zookeeper" level="info" additivity="false">
+            <appender-ref ref="RollingFile"/>
+        </logger>
+        <logger name="msgstats" level="DEBUG" additivity="false">
+            <appender-ref ref="msgstats"/>
+        </logger>
+
+        <logger name="com" level="WARN"/>
+        <logger name="net" level="WARN"/>
+        <logger name="org" level="WARN"/>
+        <logger name="com.ftkj" level="INFO"/>
+        <logger name="com.ftkj.xxs" level="INFO"/>
+        <logger name="com.ftkj.manager.logic.MessageStatsManager" level="WARN"/>
+        <logger name="com.ftkj.job.logic.TeamOfflineJob" level="INFO"/>
+        <logger name="com.ftkj.job.logic.TeamDataGcJob" level="DEBUG"/>
+        <logger name="com.ftkj.server.ServerStat" level="WARN"/>
+        <logger name="com.ftkj.server.GameSource" level="DEBUG"/>
+        <logger name="com.ftkj.server.instance.InstanceFactory" level="INFO"/>
+        <!-- msg -->
+        <logger name="com.ftkj.server.socket.LogicMethod" level="debug"/>
+        <logger name="com.ftkj.server.syn.SynInvokeThread" level="debug"/>
+        <logger name="com.ftkj.server.proto.coder.GoogleEncoder" level="debug"/>
+        <logger name="com.ftkj.server.socket.handler.GameSocketHandler" level="debug"/>
+
+        <logger name="com.ftkj.console.CM" level="debug"/>
+        <logger name="com.ftkj.server.rpc.handler.RPCHandler" level="INFO"/>
+        <logger name="com.ftkj.server.ServerStat" level="ERROR"/>
+        <logger name="com.ftkj.manager.logic.log.GameKeyValLogManager" level="ERROR"/>
+        <logger name="com.ftkj.server.rpc.RpcTask" level="TRACE"/>
+        <logger name="com.ftkj.server.rpc.coder.RPCCodecDecoder" level="DEBUG"/>
+        <logger name="com.ftkj.server.rpc.coder.RPCCodecEncoder" level="DEBUG"/>
+        <!--battle log -->
+        <logger name="com.ftkj.manager.battle.BattleAPI" level="INFO"/>
+        <logger name="com.ftkj.manager.battle.BattleManager" level="INFO"/>
+        <logger name="com.ftkj.manager.battle.BaseBattleHandle" level="WARN"/>
+        <logger name="com.ftkj.manager.battle.BaseBattleHandle.EndLog" level="INFO"/>
+        <logger name="com.ftkj.manager.battle.BaseBattleHandle.WeightLog" level="INFO"/>
+
+        <logger name="com.ftkj.manager.battle.model.RoundReport" level="INFO"/>
+        <logger name="com.ftkj.manager.battle.BattlePb" level="INFO"/>
+        <logger name="com.ftkj.manager.battle.DefaultActionPlayerHandle" level="INFO"/>
+
+        <logger name="com.ftkj.manager.battle.BattleHintHandle" level="WARN"/>
+        <logger name="com.ftkj.manager.battle.model.RoundSkill" level="INFO"/>
+        <logger name="com.ftkj.manager.battle.model.Round" level="INFO"/>
+        <logger name="com.ftkj.manager.logic.LocalBattleManager" level="INFO"/>
+        <!-- other logic -->
+        <logger name="com.ftkj.manager.logic.MainMatchManager" level="DEBUG"/>
+        <logger name="com.ftkj.manager.logic.LcRankedMatchManager" level="INFO"/>
+        <logger name="com.ftkj.manager.logic.PlayerManager" level="DEBUG"/>
+        <!-- custom battle -->
+        <!--<logger name="com.ftkj.manager.battle.handle.BattleDesignCustomHandle" level="debug"/>-->
+        <logger name="com.ftkj.manager.battle.handle.BattleMainMatch" level="INFO"/>
+        <!--<logger name="com.ftkj.manager.battle.subaction" level="TRACE"/>-->
+        <!-- battle calc cap -->
+        <!--<logger name="com.ftkj.manager.battle.model.BattleTeam" level="INFO"/>-->
+        <!--<logger name="com.ftkj.manager.battle.model.BattlePlayer" level="INFO"/>-->
+        <!--<logger name="com.ftkj.manager.battle.model.TacticsAbility" level="INFO"/>-->
+        <!-- battle AI -->
+        <!--<logger name="com.ftkj.manager.battle.model.BattleAI" level="trace"/>-->
+
+        <logger name="com.ftkj.manager.logic.ArenaService" level="trace"/>
+        <logger name="com.ftkj.manager.logic.ArenaManager" level="trace"/>
+        <logger name="com.ftkj.manager.battle.handle.AutoBattleQuickHandle" level="trace"/>
+        <logger name="com.ftkj.manager.logic.TaskManager" level="DEBUG"/>
+        <logger name="com.ftkj.manager.logic.RankManager" level="DEBUG"/>
+        <logger name="com.ftkj.manager.logic.ScoutManager" level="DEBUG"/>
+        <logger name="com.ftkj.manager.logic.ChatManager" level="DEBUG"/>
+
+        <Root level="INFO"> <!-- 全局配置 -->
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="RollingFile"/>
+        </Root>
+    </Loggers>
+</Configuration>

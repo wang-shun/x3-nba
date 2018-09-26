@@ -1,0 +1,24 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "StreetBallPB";
+
+import "Prop.proto";
+
+// 街球副本
+message StreetBallData {
+	repeated StreetBallStage stageList =1;
+}
+
+message StreetBallStage {
+	required int32 type = 1;
+	// 副本1的最大通关数
+	required int32 stageMax = 2;
+	// 今日剩余挑战次数
+	required int32 fightNum = 3;
+}
+
+// 扫荡回包
+message SweepStreetBallStage {
+	required StreetBallStage stage = 1;
+	repeated PropSimpleData awardList = 2;
+}

@@ -1,0 +1,16 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "RedPointPB";
+
+message AwardTipData {
+	// buffID
+	required int32 id = 1;
+	// 可领奖数，0没有可领
+	required int32 num = 2;
+}
+
+
+// 列表
+message RedPointData {
+	repeated AwardTipData statusList = 1;
+}

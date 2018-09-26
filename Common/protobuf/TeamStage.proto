@@ -1,0 +1,16 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "TeamStagePB";
+
+// 头像
+message TeamStageData {
+	//大关卡
+	required int32 scene = 1;
+	//关卡ID
+	required int32 stage = 2;
+	//今天挑战次数
+	required int32 todayNum = 3;
+	// 已通过关卡比分
+	repeated string scoreList = 4;
+}
+

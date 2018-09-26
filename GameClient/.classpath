@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0_65"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="lib/log4j.jar"/>
+	<classpathentry kind="lib" path="lib/mina-core-2.0.13.jar"/>
+	<classpathentry kind="lib" path="lib/protobuf-java-2.4.1.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-api-1.5.10.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-log4j12-1.5.6.jar"/>
+	<classpathentry kind="lib" path="lib/gson-2.8.0.jar"/>
+	<classpathentry kind="lib" path="lib/mangosdkjava.jar"/>
+	<classpathentry kind="lib" path="lib/zookeeper-3.4.8.jar"/>
+	<classpathentry kind="lib" path="lib/c10001_sample.jar"/>
+	<classpathentry kind="lib" path="lib/commons-codec-1.9.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/http-client"/>
+	<classpathentry kind="lib" path="lib/httpclient-4.5.2.jar"/>
+	<classpathentry kind="lib" path="lib/httpclient-cache-4.5.2.jar"/>
+	<classpathentry kind="lib" path="lib/httpcore-4.4.4.jar"/>
+	<classpathentry kind="lib" path="lib/fluent-hc-4.5.2.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Common"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/GameCode"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/NBAGameServer"/>
+	<classpathentry kind="lib" path="/Common/lib/joda-time-2.9.9.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

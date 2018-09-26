@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Log4j 2.x 配置文件。每30秒自动检查和应用配置文件的更新； -->
+<Configuration monitorInterval="10" strict="true" shutdownHook="disable">
+    <Appenders>
+        <!-- 输出到控制台 -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS}:%4p %t .\(%F:%L\) - %m%n"/>
+        </Console>
+
+        <!-- 输出到文件，按天或者超过80MB分割 -->
+        <RollingFile name="RollingFile" fileName="./logs/route-main.log"
+                     filePattern="./logs/$${date:yyyy-MM}/route-main-%d{yyyy-MM-dd}-%i.log.gz">
+            <!-- 需要记录的级别 -->
+            <!-- <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"
+                /> -->
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS}:%4p %t (%F:%L) - %m%n"/>
+            <Policies>
+                <!-- 				每半天封存一次数据 -->
+                <TimeBasedTriggeringPolicy/>
+                <!-- <SizeBasedTriggeringPolicy size="80 MB" /> -->
+            </Policies>
+        </RollingFile>
+
+        <!-- 输出到文件，按天或者超过80MB分割 -->
+        <RollingFile name="RollingFileDebug" fileName="./logs/route-debug.log"
+                     filePattern="./logs/$${date:yyyy-MM}/route-debug-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS}:%4p %t (%F:%L) - %m%n"/>
+            <!-- 需要记录的级别 -->
+            <Filters>
+                <ThresholdFilter level="trace" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+                <!-- <SizeBasedTriggeringPolicy size="80 MB" /> -->
+            </Policies>
+        </RollingFile>
+        <!-- 格式化的消息统计信息 -->
+        <RollingFile name="msgstats" fileName="./logs/route-msgstats.log"
+                     filePattern="./logs/$${date:yyyy-MM}/route-msgstats-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS}:%4p %t (%F:%L) - %m%n"/>
+            <Policies>
+                <!-- 				每半天封存一次数据 -->
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+        </RollingFile>
+
+        <!--<Socket name="GameMoneyLog" protocol="TCP" host="192.168.10.181"
+            port="11111">
+            <PatternLayout pattern="%X{GameMoneyLogVersion} %X{GameMoneyLogTag} %d{UNIX} %X{ip} %-5p %X{shardId} %enc{%m}%n" />
+        </Socket> -->
+
+    </Appenders>
+    <Loggers>
+        <!--<logger name="GameMoneyLogManager" level="error" additivity="false">
+            <appender-ref ref="GameMoneyLog" />
+        </logger> -->
+        <logger name="org.quartz" level="error" additivity="false">
+            <appender-ref ref="RollingFile"/>
+        </logger>
+        <logger name="log4j.category.com.jolbox" level="error"
+                additivity="false">
+            <appender-ref ref="RollingFile"/>
+        </logger>
+        <logger name="org.apache.mina.core" level="error" additivity="false">
+            <appender-ref ref="RollingFile"/>
+        </logger>
+        <logger name="org.apache.mina.filter" level="error" additivity="false">
+            <appender-ref ref="RollingFile"/>
+        </logger>
+        <logger name="org.apache.zookeeper" level="info" additivity="false">
+            <appender-ref ref="RollingFile"/>
+        </logger>
+        <logger name="msgstats" level="DEBUG" additivity="false">
+            <appender-ref ref="msgstats"/>
+        </logger>
+
+        <logger name="com" level="WARN"/>
+        <logger name="net" level="WARN"/>
+        <logger name="org" level="WARN"/>
+        <logger name="com.ftkj" level="INFO"/>
+        <logger name="com.ftkj.xxs" level="INFO"/>
+        <logger name="com.ftkj.manager.logic.MessageStatsManager" level="INFO"/>
+        <logger name="com.ftkj.server.ServerStat" level="WARN"/>
+        <!-- msg -->
+        <logger name="com.ftkj.server.socket.LogicMethod" level="debug"/>
+        <logger name="com.ftkj.server.syn.SynInvokeThread" level="debug"/>
+        <logger name="com.ftkj.server.proto.coder.GoogleEncoder" level="debug"/>
+        <logger name="com.ftkj.server.socket.handler.GameSocketHandler" level="debug"/>
+
+        <logger name="com.ftkj.console.CM" level="debug"/>
+        <logger name="com.ftkj.server.rpc.handler.RPCHandler" level="INFO"/>
+        <logger name="com.ftkj.server.rpc.RpcTask" level="TRACE"/>
+
+        <logger name="com.ftkj.server.rpc.coder.RPCCodecDecoder" level="DEBUG"/>
+        <logger name="com.ftkj.server.rpc.coder.RPCCodecEncoder" level="DEBUG"/>
+
+        <Root level="INFO"> <!-- 全局配置 -->
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="RollingFile"/>
+        </Root>
+    </Loggers>
+</Configuration>

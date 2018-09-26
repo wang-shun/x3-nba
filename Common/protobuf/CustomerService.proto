@@ -1,0 +1,29 @@
+package com.ftkj.proto;
+import "Common.proto";
+
+option java_outer_classname = "CustomerServicePB";
+
+message CustomerServiceMsgData{
+	required int64 csId =1;	//唯一Id
+	optional string areaName =2;//区服名称
+	optional int64 teamId = 3;//球队ID
+	optional int32 vipLevel = 4;//VIP等级
+	optional string playerName = 5;//玩家名称
+	optional string telphone = 6;//电话号码
+	optional string qq = 7;//QQ号
+	optional string problem = 8;//问题描述
+	optional string response = 9;//客服回答
+	optional string respStatus = 10;//提问回复状态:0未回复,1已回复未读,2已回复已读
+	optional string occurTime = 11;//问题发生的时间
+	optional int64 createTime = 12;//创建时间
+}
+
+message CustomerServiceMsgList{
+	repeated CustomerServiceMsgData csMsgList = 1; 	// 提问列表
+}
+
+// 客服有最新回复
+message CustomerServiceMsgNotice{
+	required int64 csId =1;	//唯一Id
+	optional string response = 2;//客服回答
+}

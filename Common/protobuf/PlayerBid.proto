@@ -1,0 +1,83 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "PlayerBidPB";
+
+import "GameLoad.proto";
+
+//34208 获取新星基本信息
+// resp
+message PlayerBidInfoResp {
+    optional PlayerBidBaseResp base = 1;;
+}
+
+message PlayerBidBaseResp {
+    //竞价开始时间(毫秒)
+    optional int64 start_time = 1;
+    //竞价结束时间(毫秒)
+    optional int64 end_time = 2;
+}
+
+message PlayerBidBeforeMainData{
+	repeated PlayerBidPlayerDetailData bidPlayerList =1;
+}
+
+
+message PlayerBidBeforeDetailMainData{
+	required PlayerBidBeforeMainData mainData =1;
+	repeated PlayerBidBeforeDetailClockData clockList =2;
+}
+
+message PlayerBidBeforeDetailClockData{
+	required int32 id =1;
+	required string clock =2;
+
+}
+
+message PlayerBidPlayerDetailData{
+	required int32 playerPosition =1;
+	required NBAPKScoreBoardDetailData abilitys =2;
+	required int32 playerGroup =3;
+	required int32 id =4;
+
+}
+
+
+message PlayerBidMainData{
+	repeated PlayerBidMainDetailData detailList =1;
+	required int32 endSecond =2;
+	optional int32 myId = 3;
+}
+
+message PlayerBidMainDetailData{
+	required int32 playerGroup =1;
+	required int32 playerPosition =2;
+	required int32 id =3;
+}
+
+message PlayerBigGuessMainData{
+	required int32 totalPeople =1;
+	required int32 myPrice =2;
+	required int32 maxPrice =3;
+	required int32 endSecond =4;
+	repeated PlayerBidTeamInfoData teamInfoList =5;
+	optional int32 id =6;
+	optional int32 status =7;
+
+}
+
+message PlayerBidTeamInfoData{
+	required string node =1;
+	required string teamName =2;
+	required int64 teamId =3;
+}
+
+message PlayerBidTrainMainData{
+		optional int32 grade =1;
+		optional int32 maxGrade =2;
+		optional int32 endSecond =3;
+		required int32 status =4;
+		optional int32 group =5;
+		optional int32 position =6;
+}
+
+

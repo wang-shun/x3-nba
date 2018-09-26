@@ -1,0 +1,85 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "TeamPB";
+
+import "Prop.proto";
+import "Player.proto";
+
+message TeamData{
+	required int64 teamId =1;
+	optional string teamName =2;
+	optional int32 level =3;
+	optional string teamLogo =4;
+	optional string title =5;
+	optional string help =6;
+	optional int32 createDay = 7;
+	optional int32 lineup_count =8;
+	//球队创建时间(毫秒)
+	optional int64 create_time = 9;
+}
+
+// 球队信息，查看
+message TeamInfoData {
+	optional TeamData teamInfo =1;
+	optional int32 vip =2;
+	optional int32 totalCap =3;  // 战力值
+	optional int32 rank = 4;
+	optional string league =5;
+	repeated PlayerData playerList= 6;
+	repeated TeamAbilityData capList =7; // 攻防
+	repeated TeamAbilityData myCapList =8; // 我的攻防
+}
+
+message TeamCapData{
+	required int32 capType =1;
+	required int32 cap =2;
+}
+
+message TeamMoneyData{
+	required int32 exp =1;
+	required int32 gold =2;
+	required int32 money =3;
+	required int32 bdMoney =4;
+}
+
+message TeamAbilityData{
+	required int32 abilityType =1;
+	required int32 attack =2;
+	required int32 defend =3;
+}
+
+message TeamBattleConfigData{
+	repeated PropSimpleData props =1;
+	repeated int32 tactics =2;
+	optional int32 jg =3;
+	optional int32 fs =4;
+}
+
+message TeamStatusData{
+	repeated TeamBattleStatusData battleStatus =1;
+	required int32 draftRoomId =2;
+}
+
+message TeamBattleStatusData{
+	required int32 battleType =1;
+	required int64 battleId =2;
+	optional string node =3;
+}
+
+// 20081 球队目标信息获取
+// req
+// resp
+// -> TeamTargetData
+message TeamTargetDataList{
+	repeated TeamTargetData list = 1; // 信息列表
+}
+
+message TeamTargetData{
+	optional int32 battleType =1;  // 比赛类型(选秀:10000)
+	optional int32 state = 2;	   // 比赛开启状态(0:未开启)
+	optional int32 applyState = 3; // 报名状态(0:未报名)
+	optional int32 useNum = 4;	   // 每天使用次数
+	optional int32 totalNum = 5;   // 每天总次数
+}
+
+

@@ -1,0 +1,27 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "AtvStarLoadPB";
+
+/**
+ * 活动巨星之路
+ */
+message StarLoadData{
+	// 每个奖励的领取状态 0 是未达成， 1是达成  2是已领
+	required int32 value = 1;  // 当天完成
+	repeated int32 status = 2; // 注意 0~13是每天奖励； 14~16是排名1-3的奖励领取状态，不用处理
+	required int32 rank = 3; // 排名，0未上榜
+	required int32 rankStatus = 4; //排名领奖状态,同上
+	repeated AtvTeamRankData rankList = 5;
+	optional int32 serverStartDay = 6; // 开服第几天 1是第一天
+	required int32 atvId = 7; //活动id
+}
+
+/**
+ * 排名
+ */
+message AtvTeamRankData {
+	required int64 teamId = 1;
+	required string teamName = 2;
+	required int32 lv = 3;
+	required int32 rank = 4;
+}

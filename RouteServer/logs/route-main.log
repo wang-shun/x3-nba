@@ -1,0 +1,287 @@
+2018-09-25 10:07:39,367:INFO main (JedisUtil.java:77) - redis init. host 127.0.0.1:6379 db 1
+2018-09-25 10:07:40,776:INFO main (InstanceFactory.java:162) - 添加服务器停服钩子操作[DemoManager]
+2018-09-25 10:07:44,961:INFO main (InstanceFactory.java:162) - 添加服务器停服钩子操作[ShutdownManager]
+2018-09-25 10:07:45,127:ERROR main (GameRouteStartup.java:115) - java.io.IOException: Error while binding on /192.168.12.82:6078
+original message : Cannot assign requested address: bind
+java.lang.RuntimeException: java.io.IOException: Error while binding on /192.168.12.82:6078
+original message : Cannot assign requested address: bind
+	at com.ftkj.server.socket.GameSocketServer.main_init_socket(GameSocketServer.java:171) ~[classes/:?]
+	at com.ftkj.server.socket.GameSocketServer.startRoute(GameSocketServer.java:81) ~[classes/:?]
+	at com.ftkj.route.GameRouteStartup.main(GameRouteStartup.java:113) [classes/:?]
+Caused by: java.io.IOException: Error while binding on /192.168.12.82:6078
+original message : Cannot assign requested address: bind
+	at org.apache.mina.transport.socket.nio.NioSocketAcceptor.open(NioSocketAcceptor.java:257) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.transport.socket.nio.NioSocketAcceptor.open(NioSocketAcceptor.java:50) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.core.polling.AbstractPollingIoAcceptor$Acceptor.registerHandles(AbstractPollingIoAcceptor.java:591) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.core.polling.AbstractPollingIoAcceptor$Acceptor.run(AbstractPollingIoAcceptor.java:460) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64) ~[mina-core-2.0.18.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) ~[?:1.8.0_66]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) ~[?:1.8.0_66]
+	at java.lang.Thread.run(Thread.java:745) ~[?:1.8.0_66]
+2018-09-25 10:11:44,546:INFO main (JedisUtil.java:77) - redis init. host 127.0.0.1:6379 db 1
+2018-09-25 10:11:45,831:INFO main (InstanceFactory.java:162) - 添加服务器停服钩子操作[DemoManager]
+2018-09-25 10:42:38,351:INFO main (JedisUtil.java:77) - redis init. host 127.0.0.1:6379 db 1
+2018-09-25 10:42:40,304:INFO main (InstanceFactory.java:162) - 添加服务器停服钩子操作[DemoManager]
+2018-09-25 10:42:45,817:INFO main (InstanceFactory.java:162) - 添加服务器停服钩子操作[ShutdownManager]
+2018-09-25 10:42:45,983:ERROR main (GameRouteStartup.java:115) - java.io.IOException: Error while binding on /192.168.12.82:6078
+original message : Cannot assign requested address: bind
+java.lang.RuntimeException: java.io.IOException: Error while binding on /192.168.12.82:6078
+original message : Cannot assign requested address: bind
+	at com.ftkj.server.socket.GameSocketServer.main_init_socket(GameSocketServer.java:171) ~[classes/:?]
+	at com.ftkj.server.socket.GameSocketServer.startRoute(GameSocketServer.java:81) ~[classes/:?]
+	at com.ftkj.route.GameRouteStartup.main(GameRouteStartup.java:113) [classes/:?]
+Caused by: java.io.IOException: Error while binding on /192.168.12.82:6078
+original message : Cannot assign requested address: bind
+	at org.apache.mina.transport.socket.nio.NioSocketAcceptor.open(NioSocketAcceptor.java:257) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.transport.socket.nio.NioSocketAcceptor.open(NioSocketAcceptor.java:50) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.core.polling.AbstractPollingIoAcceptor$Acceptor.registerHandles(AbstractPollingIoAcceptor.java:591) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.core.polling.AbstractPollingIoAcceptor$Acceptor.run(AbstractPollingIoAcceptor.java:460) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64) ~[mina-core-2.0.18.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) ~[?:1.8.0_66]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) ~[?:1.8.0_66]
+	at java.lang.Thread.run(Thread.java:745) ~[?:1.8.0_66]
+2018-09-25 10:45:28,919:INFO main (JedisUtil.java:77) - redis init. host 127.0.0.1:6379 db 1
+2018-09-25 10:45:30,511:INFO main (InstanceFactory.java:162) - 添加服务器停服钩子操作[DemoManager]
+2018-09-25 10:45:36,263:INFO main (InstanceFactory.java:162) - 添加服务器停服钩子操作[ShutdownManager]
+2018-09-25 10:45:36,430:ERROR main (GameRouteStartup.java:115) - java.io.IOException: Error while binding on /192.168.12.82:6078
+original message : Cannot assign requested address: bind
+java.lang.RuntimeException: java.io.IOException: Error while binding on /192.168.12.82:6078
+original message : Cannot assign requested address: bind
+	at com.ftkj.server.socket.GameSocketServer.main_init_socket(GameSocketServer.java:171) ~[classes/:?]
+	at com.ftkj.server.socket.GameSocketServer.startRoute(GameSocketServer.java:81) ~[classes/:?]
+	at com.ftkj.route.GameRouteStartup.main(GameRouteStartup.java:113) [classes/:?]
+Caused by: java.io.IOException: Error while binding on /192.168.12.82:6078
+original message : Cannot assign requested address: bind
+	at org.apache.mina.transport.socket.nio.NioSocketAcceptor.open(NioSocketAcceptor.java:257) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.transport.socket.nio.NioSocketAcceptor.open(NioSocketAcceptor.java:50) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.core.polling.AbstractPollingIoAcceptor$Acceptor.registerHandles(AbstractPollingIoAcceptor.java:591) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.core.polling.AbstractPollingIoAcceptor$Acceptor.run(AbstractPollingIoAcceptor.java:460) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64) ~[mina-core-2.0.18.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) ~[?:1.8.0_66]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) ~[?:1.8.0_66]
+	at java.lang.Thread.run(Thread.java:745) ~[?:1.8.0_66]
+2018-09-25 10:46:06,339:INFO main (JedisUtil.java:77) - redis init. host 127.0.0.1:6379 db 1
+2018-09-25 10:47:29,392:INFO main (JedisUtil.java:77) - redis init. host 127.0.0.1:6379 db 1
+2018-09-25 10:47:35,549:INFO main (InstanceFactory.java:162) - 添加服务器停服钩子操作[DemoManager]
+2018-09-25 10:47:41,684:INFO main (InstanceFactory.java:162) - 添加服务器停服钩子操作[ShutdownManager]
+2018-09-25 10:47:41,847:INFO main (GameSocketServer.java:173) - Game Server is Listing on 192.168.12.26:6078
+2018-09-25 10:47:44,004:INFO main (Environment.java:100) - Client environment:zookeeper.version=3.4.10-39d3a4f269333c922ed3db283be479f9deacaa0f, built on 03/23/2017 10:13 GMT
+2018-09-25 10:47:44,005:INFO main (Environment.java:100) - Client environment:host.name=pw-0017.ftxgame.local
+2018-09-25 10:47:44,005:INFO main (Environment.java:100) - Client environment:java.version=1.8.0_66
+2018-09-25 10:47:44,005:INFO main (Environment.java:100) - Client environment:java.vendor=Oracle Corporation
+2018-09-25 10:47:44,005:INFO main (Environment.java:100) - Client environment:java.home=C:\Program Files\Java\jdk1.8.0_66\jre
+2018-09-25 10:47:44,005:INFO main (Environment.java:100) - Client environment:java.class.path=C:\Program Files\Java\jdk1.8.0_66\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_66\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_66\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_66\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_66\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_66\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_66\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_66\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_66\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_66\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_66\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_66\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_66\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_66\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_66\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_66\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_66\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_66\jre\lib\ext\zipfs.jar;F:\nba\Server\RouteServer\target\classes;F:\Tools\mmo_eclipse\eclipse-committers-oxygen-3a-win32-x86_64\eclipse\plugins\org.junit_4.12.0.v201504281640\junit.jar;F:\Tools\mmo_eclipse\eclipse-committers-oxygen-3a-win32-x86_64\eclipse\plugins\org.hamcrest.core_1.3.0.v201303031735.jar;F:\nba\Server\CrossNodeServer\target\classes;F:\nba\Server\Common\target\classes;F:\nba\Server\GameCode\target\classes;C:\Users\zehong.he\.m2\repository\com\zaxxer\HikariCP\3.2.0\HikariCP-3.2.0.jar;C:\Users\zehong.he\.m2\repository\mysql\mysql-connector-java\5.1.46\mysql-connector-java-5.1.46.jar;C:\Users\zehong.he\.m2\repository\org\quartz-scheduler\quartz\2.3.0\quartz-2.3.0.jar;C:\Users\zehong.he\.m2\repository\com\esotericsoftware\kryo\4.0.1\kryo-4.0.1.jar;C:\Users\zehong.he\.m2\repository\com\esotericsoftware\reflectasm\1.11.3\reflectasm-1.11.3.jar;C:\Users\zehong.he\.m2\repository\org\ow2\asm\asm\5.0.4\asm-5.0.4.jar;C:\Users\zehong.he\.m2\repository\com\esotericsoftware\minlog\1.3.0\minlog-1.3.0.jar;C:\Users\zehong.he\.m2\repository\org\objenesis\objenesis\2.5.1\objenesis-2.5.1.jar;C:\Users\zehong.he\.m2\repository\de\javakaffee\kryo-serializers\0.42\kryo-serializers-0.42.jar;C:\Users\zehong.he\.m2\repository\org\apache\zookeeper\zookeeper\3.4.10\zookeeper-3.4.10.jar;C:\Users\zehong.he\.m2\repository\jline\jline\0.9.94\jline-0.9.94.jar;C:\Users\zehong.he\.m2\repository\io\netty\netty\3.10.5.Final\netty-3.10.5.Final.jar;C:\Users\zehong.he\.m2\repository\org\apache\curator\curator-framework\4.0.0\curator-framework-4.0.0.jar;C:\Users\zehong.he\.m2\repository\org\apache\curator\curator-client\4.0.0\curator-client-4.0.0.jar;C:\Users\zehong.he\.m2\repository\org\apache\poi\poi-ooxml\3.15\poi-ooxml-3.15.jar;C:\Users\zehong.he\.m2\repository\org\apache\poi\poi\3.15\poi-3.15.jar;C:\Users\zehong.he\.m2\repository\org\apache\commons\commons-collections4\4.1\commons-collections4-4.1.jar;C:\Users\zehong.he\.m2\repository\org\apache\poi\poi-ooxml-schemas\3.15\poi-ooxml-schemas-3.15.jar;C:\Users\zehong.he\.m2\repository\org\apache\xmlbeans\xmlbeans\2.6.0\xmlbeans-2.6.0.jar;C:\Users\zehong.he\.m2\repository\stax\stax-api\1.0.1\stax-api-1.0.1.jar;C:\Users\zehong.he\.m2\repository\com\github\virtuald\curvesapi\1.04\curvesapi-1.04.jar;C:\Users\zehong.he\.m2\repository\joda-time\joda-time\2.9.9\joda-time-2.9.9.jar;C:\Users\zehong.he\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\zehong.he\.m2\repository\com\google\code\gson\gson\2.8.2\gson-2.8.2.jar;C:\Users\zehong.he\.m2\repository\com\google\protobuf\protobuf-java\2.4.1\protobuf-java-2.4.1.jar;C:\Users\zehong.he\.m2\repository\com\google\guava\guava\24.0-jre\guava-24.0-jre.jar;C:\Users\zehong.he\.m2\repository\com\google\code\findbugs\jsr305\1.3.9\jsr305-1.3.9.jar;C:\Users\zehong.he\.m2\repository\org\checkerframework\checker-compat-qual\2.0.0\checker-compat-qual-2.0.0.jar;C:\Users\zehong.he\.m2\repository\com\google\errorprone\error_prone_annotations\2.1.3\error_prone_annotations-2.1.3.jar;C:\Users\zehong.he\.m2\repository\com\google\j2objc\j2objc-annotations\1.1\j2objc-annotations-1.1.jar;C:\Users\zehong.he\.m2\repository\org\codehaus\mojo\animal-sniffer-annotations\1.14\animal-sniffer-annotations-1.14.jar;C:\Users\zehong.he\.m2\repository\org\apache\httpcomponents\fluent-hc\4.5.3\fluent-hc-4.5.3.jar;C:\Users\zehong.he\.m2\repository\org\apache\httpcomponents\httpclient\4.5.3\httpclient-4.5.3.jar;C:\Users\zehong.he\.m2\repository\org\apache\httpcomponents\httpclient-cache\4.5.3\httpclient-cache-4.5.3.jar;C:\Users\zehong.he\.m2\repository\org\apache\httpcomponents\httpcore\4.4.8\httpcore-4.4.8.jar;C:\Users\zehong.he\.m2\repository\org\apache\mina\mina-core\2.0.18\mina-core-2.0.18.jar;C:\Users\zehong.he\.m2\repository\redis\clients\jedis\2.9.0\jedis-2.9.0.jar;C:\Users\zehong.he\.m2\repository\org\apache\commons\commons-pool2\2.4.2\commons-pool2-2.4.2.jar;C:\Users\zehong.he\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Users\zehong.he\.m2\repository\org\apache\logging\log4j\log4j-slf4j-impl\2.9.1\log4j-slf4j-impl-2.9.1.jar;C:\Users\zehong.he\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.25\jcl-over-slf4j-1.7.25.jar;C:\Users\zehong.he\.m2\repository\org\slf4j\jul-to-slf4j\1.7.25\jul-to-slf4j-1.7.25.jar;C:\Users\zehong.he\.m2\repository\org\apache\logging\log4j\log4j-api\2.9.1\log4j-api-2.9.1.jar;C:\Users\zehong.he\.m2\repository\org\apache\logging\log4j\log4j-core\2.9.1\log4j-core-2.9.1.jar;C:\Users\zehong.he\.m2\repository\com\lmax\disruptor\3.3.6\disruptor-3.3.6.jar;F:\nba\Server\PKNodeServer\target\classes;F:\nba\Server\NBAGameServer\target\classes;F:\nba\Server\client-common\target\classes;C:\Users\zehong.he\.m2\repository\com\ftkj\xxs\xxs-net\0.0.1\xxs-net-0.0.1.jar;C:\Users\zehong.he\.m2\repository\com\ftkj\xxs\xxs-core\0.0.1\xxs-core-0.0.1.jar;C:\Users\zehong.he\.m2\repository\com\ftkj\xxs\xxs-common\0.0.1\xxs-common-0.0.1.jar;C:\Users\zehong.he\.m2\repository\org\springframework\spring-core\5.0.1.RELEASE\spring-core-5.0.1.RELEASE.jar;C:\Users\zehong.he\.m2\repository\com\typesafe\config\1.3.2\config-1.3.2.jar;C:\Users\zehong.he\.m2\repository\io\netty\netty-all\4.1.9.Final\netty-all-4.1.9.Final.jar;C:\Users\zehong.he\.m2\repository\io\dropwizard\metrics\metrics-core\3.2.5\metrics-core-3.2.5.jar;C:\Users\zehong.he\.m2\repository\com\ftkj\xxs\xxs-proto\0.0.1\xxs-proto-0.0.1.jar
+2018-09-25 10:47:44,006:INFO main (Environment.java:100) - Client environment:java.library.path=C:\Program Files\Java\jdk1.8.0_66\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jdk1.8.0_66/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_66/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_66/bin/../jre/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Java\jdk1.8.0_66\bin;C:\Program Files\Java\jdk1.8.0_66\jre\bin;F:\Tools\SVN\bin;F:\Tools\ant\apache-ant-1.9.2\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;F:\Tools\mysql-5.6.40-winx64\mysql-5.6.40-winx64\bin;C:\Python27;F:\git\Git\cmd;C:\Program Files\TortoiseGit\bin;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\GtkSharp\2.12\bin;;F:\Microsoft VS Code\bin;F:\Tools\mmo_eclipse\eclipse-committers-oxygen-3a-win32-x86_64\eclipse;;.
+2018-09-25 10:47:44,006:INFO main (Environment.java:100) - Client environment:java.io.tmpdir=C:\Users\zehong.he\AppData\Local\Temp\
+2018-09-25 10:47:44,006:INFO main (Environment.java:100) - Client environment:java.compiler=<NA>
+2018-09-25 10:47:44,006:INFO main (Environment.java:100) - Client environment:os.name=Windows 7
+2018-09-25 10:47:44,006:INFO main (Environment.java:100) - Client environment:os.arch=amd64
+2018-09-25 10:47:44,006:INFO main (Environment.java:100) - Client environment:os.version=6.1
+2018-09-25 10:47:44,006:INFO main (Environment.java:100) - Client environment:user.name=zehong.he
+2018-09-25 10:47:44,007:INFO main (Environment.java:100) - Client environment:user.home=C:\Users\zehong.he
+2018-09-25 10:47:44,007:INFO main (Environment.java:100) - Client environment:user.dir=F:\nba\Server\RouteServer
+2018-09-25 10:47:44,008:INFO main (ZooKeeper.java:438) - Initiating client connection, connectString=127.0.0.1:2181 sessionTimeout=10000 watcher=org.apache.curator.ConnectionState@2bc378f7
+2018-09-25 10:47:44,033:INFO main-SendThread(127.0.0.1:2181) (ClientCnxn.java:1032) - Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2018-09-25 10:47:44,034:INFO main-SendThread(127.0.0.1:2181) (ClientCnxn.java:876) - Socket connection established to 127.0.0.1/127.0.0.1:2181, initiating session
+2018-09-25 10:47:44,054:INFO main-SendThread(127.0.0.1:2181) (ClientCnxn.java:1299) - Session establishment complete on server 127.0.0.1/127.0.0.1:2181, sessionid = 0x10000234a1c0000, negotiated timeout = 10000
+2018-09-25 10:47:44,055:INFO main (ZookeepServer.java:61) - zk create 127.0.0.1:2181
+2018-09-25 10:47:45,162:INFO main-EventThread (ZookeepServer.java:288) - 创建一个zookeep节点[/zgame/route/route-dev],节点信息[{"pool":"route","serverName":"route-dev","ip":"192.168.12.26","port":6078,"open":1,"master":false,"sid":101}]
+2018-09-25 10:47:46,181:INFO main-EventThread (ZookeepServer.java:215) - 路由ZK启动---->null
+2018-09-25 10:48:00,121:INFO NioProcessor-2 (RouteIoHandlerAdapter.java:63) - Session Created [(0x00000001: nio socket, server, /192.168.12.26:50329 => /192.168.12.26:6078)]
+2018-09-25 10:48:00,127:INFO x3_worker-10-t-1 (RouteIoHandlerAdapter.java:57) - Session Opened [(0x00000001: nio socket, server, /192.168.12.26:50329 => /192.168.12.26:6078)]
+2018-09-25 10:48:00,373:INFO x3_worker-10-t-2 (RouteServerManager.java:118) - 节点注册开始--->{"pool":"battle", "serverName":"battle-tim", "ip":"192.168.12.26", "port":8068, "open":1, "master":true, "sid":101, "session":(0x00000001: nio socket, server, /192.168.12.26:50329 => /192.168.12.26:6078)}
+2018-09-25 10:48:10,701:DEBUG NioProcessor-2 (RPCCodecDecoder.java:78) - rpcdec reqid 0 code 2000000 size 604 sender battle-tim
+2018-09-25 10:48:10,718:DEBUG Disruptor Thread (RPCCodecEncoder.java:38) - rpcenc reqid 0 code 2000000 size 604 receive null
+2018-09-25 10:48:10,746:DEBUG NioProcessor-2 (RPCCodecDecoder.java:78) - rpcdec reqid 0 code 2100003 size 665 sender battle-tim
+2018-09-25 10:48:10,758:DEBUG Disruptor Thread (RPCCodecEncoder.java:38) - rpcenc reqid 0 code 2100003 size 665 receive [battle-tim]
+2018-09-25 10:48:20,527:INFO NioProcessor-3 (RouteIoHandlerAdapter.java:63) - Session Created [(0x00000002: nio socket, server, /192.168.12.26:50394 => /192.168.12.26:6078)]
+2018-09-25 10:48:20,528:INFO x3_worker-10-t-5 (RouteIoHandlerAdapter.java:57) - Session Opened [(0x00000002: nio socket, server, /192.168.12.26:50394 => /192.168.12.26:6078)]
+2018-09-25 10:48:20,603:INFO x3_worker-10-t-6 (RouteServerManager.java:118) - 节点注册开始--->{"pool":"logic", "serverName":"logic-3108", "ip":"192.168.12.26", "port":7038, "open":1, "master":true, "sid":101, "session":(0x00000002: nio socket, server, /192.168.12.26:50394 => /192.168.12.26:6078)}
+2018-09-25 10:48:22,864:DEBUG NioProcessor-3 (RPCCodecDecoder.java:78) - rpcdec reqid 0 code 2000000 size 603 sender logic-3108
+2018-09-25 10:48:22,865:DEBUG Disruptor Thread (RPCCodecEncoder.java:38) - rpcenc reqid 0 code 2000000 size 603 receive null
+2018-09-25 10:48:22,866:DEBUG Disruptor Thread (RPCCodecEncoder.java:38) - rpcenc reqid 0 code 2000000 size 603 receive null
+2018-09-25 10:48:23,150:DEBUG NioProcessor-2 (RPCCodecDecoder.java:78) - rpcdec reqid 0 code 2100003 size 665 sender battle-tim
+2018-09-25 10:48:23,151:DEBUG Disruptor Thread (RPCCodecEncoder.java:38) - rpcenc reqid 0 code 2100003 size 665 receive [logic-3108]
+2018-09-25 10:48:23,714:DEBUG NioProcessor-3 (RPCCodecDecoder.java:78) - rpcdec reqid 1 code 3100200 size 449 sender logic-3108
+2018-09-25 10:48:23,714:DEBUG NioProcessor-3 (RPCCodecDecoder.java:78) - rpcdec reqid 2 code 3100203 size 449 sender logic-3108
+2018-09-25 10:48:23,715:ERROR Disruptor Thread (RouteServerManager.java:284) - 无可用节点，导致请求抛出RPCSource [pool=logic, sender=logic-3108, receive=null] mc 3100203 null
+2018-09-25 10:48:23,715:ERROR Disruptor Thread (RouteServerManager.java:284) - 无可用节点，导致请求抛出RPCSource [pool=logic, sender=logic-3108, receive=null] mc 3100200 null
+2018-09-25 10:48:23,817:DEBUG NioProcessor-3 (RPCCodecDecoder.java:78) - rpcdec reqid 3 code 2100205 size 454 sender logic-3108
+2018-09-25 10:48:23,867:ERROR Disruptor Thread (RouteServerManager.java:284) - 无可用节点，导致请求抛出RPCSource [pool=logic, sender=logic-3108, receive=null] mc 2100205 null
+2018-09-25 10:48:23,935:DEBUG NioProcessor-3 (RPCCodecDecoder.java:78) - rpcdec reqid 0 code 2100003 size 664 sender logic-3108
+2018-09-25 10:48:23,935:DEBUG Disruptor Thread (RPCCodecEncoder.java:38) - rpcenc reqid 0 code 2100003 size 664 receive [logic-3108]
+2018-09-25 10:48:26,428:DEBUG NioProcessor-3 (RPCCodecDecoder.java:78) - rpcdec reqid 4 code 2100002 size 526 sender logic-3108
+2018-09-25 10:48:26,430:DEBUG Disruptor Thread (RPCCodecEncoder.java:38) - rpcenc reqid 4 code 2100002 size 526 receive null
+2018-09-25 10:48:26,488:DEBUG NioProcessor-2 (RPCCodecDecoder.java:78) - rpcdec reqid 4 code -1 size 776 sender battle-tim
+2018-09-25 10:48:26,489:DEBUG Disruptor Thread (RPCCodecEncoder.java:38) - rpcenc reqid 4 code -1 size 776 receive [logic-3108]
+2018-09-25 10:48:30,652:INFO main-EventThread (RouteServerManager.java:145) - 逻辑节点删除,节点名称:logic-3108, path:/zgame/node/logic-3108
+2018-09-25 10:48:31,729:INFO NioProcessor-4 (RouteIoHandlerAdapter.java:63) - Session Created [(0x00000003: nio socket, server, /192.168.12.26:50456 => /192.168.12.26:6078)]
+2018-09-25 10:48:31,737:INFO x3_worker-10-t-3 (RouteIoHandlerAdapter.java:57) - Session Opened [(0x00000003: nio socket, server, /192.168.12.26:50456 => /192.168.12.26:6078)]
+2018-09-25 10:48:31,763:INFO x3_worker-10-t-4 (RouteServerManager.java:118) - 节点注册开始--->{"pool":"logic", "serverName":"logic-3108", "ip":"192.168.12.26", "port":7038, "open":1, "master":true, "sid":101, "session":(0x00000003: nio socket, server, /192.168.12.26:50456 => /192.168.12.26:6078)}
+2018-09-25 10:48:33,996:DEBUG NioProcessor-4 (RPCCodecDecoder.java:78) - rpcdec reqid 0 code 2000000 size 603 sender logic-3108
+2018-09-25 10:48:33,997:DEBUG Disruptor Thread (RPCCodecEncoder.java:38) - rpcenc reqid 0 code 2000000 size 603 receive null
+2018-09-25 10:48:33,997:DEBUG Disruptor Thread (RPCCodecEncoder.java:38) - rpcenc reqid 0 code 2000000 size 603 receive null
+2018-09-25 10:48:34,095:DEBUG NioProcessor-2 (RPCCodecDecoder.java:78) - rpcdec reqid 0 code 2100003 size 665 sender battle-tim
+2018-09-25 10:48:34,138:INFO x3_worker-10-t-8 (RouteIoHandlerAdapter.java:44) - Session Closed [(0x00000003: nio socket, server, null => 0.0.0.0/0.0.0.0:6078)]
+2018-09-25 10:48:34,171:ERROR x3_worker-10-t-1 (RouteIoHandlerAdapter.java:34) - Session Exception (0x00000003: nio socket, server, null => 0.0.0.0/0.0.0.0:6078)
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method) ~[?:1.8.0_66]
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43) ~[?:1.8.0_66]
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223) ~[?:1.8.0_66]
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197) ~[?:1.8.0_66]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380) ~[?:1.8.0_66]
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:378) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:47) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:519) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$1200(AbstractPollingIoProcessor.java:68) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.process(AbstractPollingIoProcessor.java:1242) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.process(AbstractPollingIoProcessor.java:1231) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:683) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64) ~[mina-core-2.0.18.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_66]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_66]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_66]
+2018-09-25 10:48:42,809:INFO main-EventThread (RouteServerManager.java:145) - 逻辑节点删除,节点名称:logic-3108, path:/zgame/node/logic-3108
+2018-09-25 10:48:47,927:INFO NioProcessor-4 (RouteIoHandlerAdapter.java:63) - Session Created [(0x00000004: nio socket, server, /192.168.12.26:50508 => /192.168.12.26:6078)]
+2018-09-25 10:48:47,928:INFO x3_worker-10-t-5 (RouteIoHandlerAdapter.java:57) - Session Opened [(0x00000004: nio socket, server, /192.168.12.26:50508 => /192.168.12.26:6078)]
+2018-09-25 10:48:47,956:INFO x3_worker-10-t-7 (RouteServerManager.java:118) - 节点注册开始--->{"pool":"cross", "serverName":"cross-tim", "ip":"192.168.12.26", "port":8069, "open":1, "master":true, "sid":101, "session":(0x00000004: nio socket, server, /192.168.12.26:50508 => /192.168.12.26:6078)}
+2018-09-25 10:48:48,338:DEBUG NioProcessor-4 (RPCCodecDecoder.java:78) - rpcdec reqid 0 code 2000000 size 602 sender cross-tim
+2018-09-25 10:48:48,340:DEBUG Disruptor Thread (RPCCodecEncoder.java:38) - rpcenc reqid 0 code 2000000 size 602 receive null
+2018-09-25 10:48:48,349:DEBUG Disruptor Thread (RPCCodecEncoder.java:38) - rpcenc reqid 0 code 2000000 size 602 receive null
+2018-09-25 10:48:48,354:DEBUG NioProcessor-2 (RPCCodecDecoder.java:78) - rpcdec reqid 0 code 2100003 size 664 sender battle-tim
+2018-09-25 10:48:48,355:DEBUG Disruptor Thread (RPCCodecEncoder.java:38) - rpcenc reqid 0 code 2100003 size 664 receive [cross-tim]
+2018-09-25 10:48:48,768:DEBUG NioProcessor-4 (RPCCodecDecoder.java:78) - rpcdec reqid 0 code 3100250 size 448 sender cross-tim
+2018-09-25 10:48:48,768:ERROR Disruptor Thread (RouteServerManager.java:284) - 无可用节点，导致请求抛出RPCSource [pool=cross, sender=cross-tim, receive=null] mc 3100250 null
+2018-09-25 10:48:48,797:DEBUG NioProcessor-4 (RPCCodecDecoder.java:78) - rpcdec reqid 0 code 2100003 size 662 sender cross-tim
+2018-09-25 10:48:48,803:DEBUG Disruptor Thread (RPCCodecEncoder.java:38) - rpcenc reqid 0 code 2100003 size 662 receive [cross-tim]
+2018-09-25 10:53:06,735:INFO x3_worker-10-t-4 (RouteIoHandlerAdapter.java:44) - Session Closed [(0x00000001: nio socket, server, null => 0.0.0.0/0.0.0.0:6078)]
+2018-09-25 10:53:06,739:ERROR x3_worker-10-t-3 (RouteIoHandlerAdapter.java:34) - Session Exception (0x00000001: nio socket, server, null => 0.0.0.0/0.0.0.0:6078)
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method) ~[?:1.8.0_66]
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43) ~[?:1.8.0_66]
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223) ~[?:1.8.0_66]
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197) ~[?:1.8.0_66]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380) ~[?:1.8.0_66]
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:378) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:47) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:519) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$1200(AbstractPollingIoProcessor.java:68) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.process(AbstractPollingIoProcessor.java:1242) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.process(AbstractPollingIoProcessor.java:1231) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:683) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64) ~[mina-core-2.0.18.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_66]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_66]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_66]
+2018-09-25 18:02:38,030:INFO main (JedisUtil.java:77) - redis init. host 127.0.0.1:6379 db 1
+2018-09-25 18:02:39,750:INFO main (InstanceFactory.java:162) - 添加服务器停服钩子操作[DemoManager]
+2018-09-25 18:02:40,131:INFO main (InstanceFactory.java:162) - 添加服务器停服钩子操作[ShutdownManager]
+2018-09-25 18:02:40,343:INFO main (GameSocketServer.java:173) - Game Server is Listing on 192.168.12.26:6078
+2018-09-25 18:02:42,466:INFO main (Environment.java:100) - Client environment:zookeeper.version=3.4.10-39d3a4f269333c922ed3db283be479f9deacaa0f, built on 03/23/2017 10:13 GMT
+2018-09-25 18:02:42,466:INFO main (Environment.java:100) - Client environment:host.name=pw-0017.ftxgame.local
+2018-09-25 18:02:42,466:INFO main (Environment.java:100) - Client environment:java.version=1.8.0_66
+2018-09-25 18:02:42,466:INFO main (Environment.java:100) - Client environment:java.vendor=Oracle Corporation
+2018-09-25 18:02:42,467:INFO main (Environment.java:100) - Client environment:java.home=C:\Program Files\Java\jdk1.8.0_66\jre
+2018-09-25 18:02:42,467:INFO main (Environment.java:100) - Client environment:java.class.path=C:\Program Files\Java\jdk1.8.0_66\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_66\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_66\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_66\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_66\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_66\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_66\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_66\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_66\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_66\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_66\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_66\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_66\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_66\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_66\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_66\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_66\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_66\jre\lib\ext\zipfs.jar;F:\nba\Server\RouteServer\target\classes;F:\Tools\mmo_eclipse\eclipse-committers-oxygen-3a-win32-x86_64\eclipse\plugins\org.junit_4.12.0.v201504281640\junit.jar;F:\Tools\mmo_eclipse\eclipse-committers-oxygen-3a-win32-x86_64\eclipse\plugins\org.hamcrest.core_1.3.0.v201303031735.jar;F:\nba\Server\CrossNodeServer\target\classes;F:\nba\Server\Common\target\classes;F:\nba\Server\GameCode\target\classes;C:\Users\zehong.he\.m2\repository\com\zaxxer\HikariCP\3.2.0\HikariCP-3.2.0.jar;C:\Users\zehong.he\.m2\repository\mysql\mysql-connector-java\5.1.46\mysql-connector-java-5.1.46.jar;C:\Users\zehong.he\.m2\repository\org\quartz-scheduler\quartz\2.3.0\quartz-2.3.0.jar;C:\Users\zehong.he\.m2\repository\com\esotericsoftware\kryo\4.0.1\kryo-4.0.1.jar;C:\Users\zehong.he\.m2\repository\com\esotericsoftware\reflectasm\1.11.3\reflectasm-1.11.3.jar;C:\Users\zehong.he\.m2\repository\org\ow2\asm\asm\5.0.4\asm-5.0.4.jar;C:\Users\zehong.he\.m2\repository\com\esotericsoftware\minlog\1.3.0\minlog-1.3.0.jar;C:\Users\zehong.he\.m2\repository\org\objenesis\objenesis\2.5.1\objenesis-2.5.1.jar;C:\Users\zehong.he\.m2\repository\de\javakaffee\kryo-serializers\0.42\kryo-serializers-0.42.jar;C:\Users\zehong.he\.m2\repository\org\apache\zookeeper\zookeeper\3.4.10\zookeeper-3.4.10.jar;C:\Users\zehong.he\.m2\repository\jline\jline\0.9.94\jline-0.9.94.jar;C:\Users\zehong.he\.m2\repository\io\netty\netty\3.10.5.Final\netty-3.10.5.Final.jar;C:\Users\zehong.he\.m2\repository\org\apache\curator\curator-framework\4.0.0\curator-framework-4.0.0.jar;C:\Users\zehong.he\.m2\repository\org\apache\curator\curator-client\4.0.0\curator-client-4.0.0.jar;C:\Users\zehong.he\.m2\repository\org\apache\poi\poi-ooxml\3.15\poi-ooxml-3.15.jar;C:\Users\zehong.he\.m2\repository\org\apache\poi\poi\3.15\poi-3.15.jar;C:\Users\zehong.he\.m2\repository\org\apache\commons\commons-collections4\4.1\commons-collections4-4.1.jar;C:\Users\zehong.he\.m2\repository\org\apache\poi\poi-ooxml-schemas\3.15\poi-ooxml-schemas-3.15.jar;C:\Users\zehong.he\.m2\repository\org\apache\xmlbeans\xmlbeans\2.6.0\xmlbeans-2.6.0.jar;C:\Users\zehong.he\.m2\repository\stax\stax-api\1.0.1\stax-api-1.0.1.jar;C:\Users\zehong.he\.m2\repository\com\github\virtuald\curvesapi\1.04\curvesapi-1.04.jar;C:\Users\zehong.he\.m2\repository\joda-time\joda-time\2.9.9\joda-time-2.9.9.jar;C:\Users\zehong.he\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\zehong.he\.m2\repository\com\google\code\gson\gson\2.8.2\gson-2.8.2.jar;C:\Users\zehong.he\.m2\repository\com\google\protobuf\protobuf-java\2.4.1\protobuf-java-2.4.1.jar;C:\Users\zehong.he\.m2\repository\com\google\guava\guava\24.0-jre\guava-24.0-jre.jar;C:\Users\zehong.he\.m2\repository\com\google\code\findbugs\jsr305\1.3.9\jsr305-1.3.9.jar;C:\Users\zehong.he\.m2\repository\org\checkerframework\checker-compat-qual\2.0.0\checker-compat-qual-2.0.0.jar;C:\Users\zehong.he\.m2\repository\com\google\errorprone\error_prone_annotations\2.1.3\error_prone_annotations-2.1.3.jar;C:\Users\zehong.he\.m2\repository\com\google\j2objc\j2objc-annotations\1.1\j2objc-annotations-1.1.jar;C:\Users\zehong.he\.m2\repository\org\codehaus\mojo\animal-sniffer-annotations\1.14\animal-sniffer-annotations-1.14.jar;C:\Users\zehong.he\.m2\repository\org\apache\httpcomponents\fluent-hc\4.5.3\fluent-hc-4.5.3.jar;C:\Users\zehong.he\.m2\repository\org\apache\httpcomponents\httpclient\4.5.3\httpclient-4.5.3.jar;C:\Users\zehong.he\.m2\repository\org\apache\httpcomponents\httpclient-cache\4.5.3\httpclient-cache-4.5.3.jar;C:\Users\zehong.he\.m2\repository\org\apache\httpcomponents\httpcore\4.4.8\httpcore-4.4.8.jar;C:\Users\zehong.he\.m2\repository\org\apache\mina\mina-core\2.0.18\mina-core-2.0.18.jar;C:\Users\zehong.he\.m2\repository\redis\clients\jedis\2.9.0\jedis-2.9.0.jar;C:\Users\zehong.he\.m2\repository\org\apache\commons\commons-pool2\2.4.2\commons-pool2-2.4.2.jar;C:\Users\zehong.he\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Users\zehong.he\.m2\repository\org\apache\logging\log4j\log4j-slf4j-impl\2.9.1\log4j-slf4j-impl-2.9.1.jar;C:\Users\zehong.he\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.25\jcl-over-slf4j-1.7.25.jar;C:\Users\zehong.he\.m2\repository\org\slf4j\jul-to-slf4j\1.7.25\jul-to-slf4j-1.7.25.jar;C:\Users\zehong.he\.m2\repository\org\apache\logging\log4j\log4j-api\2.9.1\log4j-api-2.9.1.jar;C:\Users\zehong.he\.m2\repository\org\apache\logging\log4j\log4j-core\2.9.1\log4j-core-2.9.1.jar;C:\Users\zehong.he\.m2\repository\com\lmax\disruptor\3.3.6\disruptor-3.3.6.jar;F:\nba\Server\PKNodeServer\target\classes;F:\nba\Server\NBAGameServer\target\classes;F:\nba\Server\client-common\target\classes;C:\Users\zehong.he\.m2\repository\com\ftkj\xxs\xxs-net\0.0.1\xxs-net-0.0.1.jar;C:\Users\zehong.he\.m2\repository\com\ftkj\xxs\xxs-core\0.0.1\xxs-core-0.0.1.jar;C:\Users\zehong.he\.m2\repository\com\ftkj\xxs\xxs-common\0.0.1\xxs-common-0.0.1.jar;C:\Users\zehong.he\.m2\repository\org\springframework\spring-core\5.0.1.RELEASE\spring-core-5.0.1.RELEASE.jar;C:\Users\zehong.he\.m2\repository\com\typesafe\config\1.3.2\config-1.3.2.jar;C:\Users\zehong.he\.m2\repository\io\netty\netty-all\4.1.9.Final\netty-all-4.1.9.Final.jar;C:\Users\zehong.he\.m2\repository\io\dropwizard\metrics\metrics-core\3.2.5\metrics-core-3.2.5.jar;C:\Users\zehong.he\.m2\repository\com\ftkj\xxs\xxs-proto\0.0.1\xxs-proto-0.0.1.jar
+2018-09-25 18:02:42,467:INFO main (Environment.java:100) - Client environment:java.library.path=C:\Program Files\Java\jdk1.8.0_66\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jdk1.8.0_66/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_66/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_66/bin/../jre/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Java\jdk1.8.0_66\bin;C:\Program Files\Java\jdk1.8.0_66\jre\bin;F:\Tools\SVN\bin;F:\Tools\ant\apache-ant-1.9.2\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;F:\Tools\mysql-5.6.40-winx64\mysql-5.6.40-winx64\bin;C:\Python27;F:\git\Git\cmd;C:\Program Files\TortoiseGit\bin;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\GtkSharp\2.12\bin;;F:\Microsoft VS Code\bin;F:\Tools\mmo_eclipse\eclipse-committers-oxygen-3a-win32-x86_64\eclipse;;.
+2018-09-25 18:02:42,467:INFO main (Environment.java:100) - Client environment:java.io.tmpdir=C:\Users\zehong.he\AppData\Local\Temp\
+2018-09-25 18:02:42,468:INFO main (Environment.java:100) - Client environment:java.compiler=<NA>
+2018-09-25 18:02:42,468:INFO main (Environment.java:100) - Client environment:os.name=Windows 7
+2018-09-25 18:02:42,468:INFO main (Environment.java:100) - Client environment:os.arch=amd64
+2018-09-25 18:02:42,468:INFO main (Environment.java:100) - Client environment:os.version=6.1
+2018-09-25 18:02:42,468:INFO main (Environment.java:100) - Client environment:user.name=zehong.he
+2018-09-25 18:02:42,468:INFO main (Environment.java:100) - Client environment:user.home=C:\Users\zehong.he
+2018-09-25 18:02:42,469:INFO main (Environment.java:100) - Client environment:user.dir=F:\nba\Server\RouteServer
+2018-09-25 18:02:42,471:INFO main (ZooKeeper.java:438) - Initiating client connection, connectString=127.0.0.1:2181 sessionTimeout=10000 watcher=org.apache.curator.ConnectionState@1921994e
+2018-09-25 18:02:42,491:INFO main-SendThread(127.0.0.1:2181) (ClientCnxn.java:1032) - Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2018-09-25 18:02:42,492:INFO main-SendThread(127.0.0.1:2181) (ClientCnxn.java:876) - Socket connection established to 127.0.0.1/127.0.0.1:2181, initiating session
+2018-09-25 18:02:42,504:INFO main (ZookeepServer.java:61) - zk create 127.0.0.1:2181
+2018-09-25 18:02:42,505:INFO main-SendThread(127.0.0.1:2181) (ClientCnxn.java:1299) - Session establishment complete on server 127.0.0.1/127.0.0.1:2181, sessionid = 0x10000234a1c0005, negotiated timeout = 10000
+2018-09-25 18:02:43,586:INFO main-EventThread (ZookeepServer.java:288) - 创建一个zookeep节点[/zgame/route/route-dev],节点信息[{"pool":"route","serverName":"route-dev","ip":"192.168.12.26","port":6078,"open":1,"master":false,"sid":101}]
+2018-09-25 18:02:44,600:INFO main-EventThread (ZookeepServer.java:215) - 路由ZK启动---->null
+2018-09-25 18:02:58,308:INFO NioProcessor-2 (RouteIoHandlerAdapter.java:63) - Session Created [(0x00000001: nio socket, server, /192.168.12.26:54256 => /192.168.12.26:6078)]
+2018-09-25 18:02:58,520:INFO x3_worker-10-t-1 (RouteIoHandlerAdapter.java:57) - Session Opened [(0x00000001: nio socket, server, /192.168.12.26:54256 => /192.168.12.26:6078)]
+2018-09-25 18:02:58,760:INFO x3_worker-10-t-2 (RouteServerManager.java:118) - 节点注册开始--->{"pool":"battle", "serverName":"battle-tim", "ip":"192.168.12.26", "port":8068, "open":1, "master":true, "sid":101, "session":(0x00000001: nio socket, server, /192.168.12.26:54256 => /192.168.12.26:6078)}
+2018-09-25 18:03:07,473:DEBUG NioProcessor-2 (RPCCodecDecoder.java:78) - rpcdec reqid 0 code 2000000 size 604 sender battle-tim
+2018-09-25 18:03:07,480:DEBUG Disruptor Thread (RPCCodecEncoder.java:38) - rpcenc reqid 0 code 2000000 size 604 receive null
+2018-09-25 18:03:07,567:DEBUG NioProcessor-2 (RPCCodecDecoder.java:78) - rpcdec reqid 0 code 2100003 size 665 sender battle-tim
+2018-09-25 18:03:07,571:DEBUG Disruptor Thread (RPCCodecEncoder.java:38) - rpcenc reqid 0 code 2100003 size 665 receive [battle-tim]
+2018-09-25 18:03:20,173:INFO NioProcessor-3 (RouteIoHandlerAdapter.java:63) - Session Created [(0x00000002: nio socket, server, /192.168.12.26:54333 => /192.168.12.26:6078)]
+2018-09-25 18:03:20,175:INFO x3_worker-10-t-5 (RouteIoHandlerAdapter.java:57) - Session Opened [(0x00000002: nio socket, server, /192.168.12.26:54333 => /192.168.12.26:6078)]
+2018-09-25 18:03:20,223:INFO x3_worker-10-t-6 (RouteServerManager.java:118) - 节点注册开始--->{"pool":"cross", "serverName":"cross-tim", "ip":"192.168.12.26", "port":8069, "open":1, "master":true, "sid":101, "session":(0x00000002: nio socket, server, /192.168.12.26:54333 => /192.168.12.26:6078)}
+2018-09-25 18:03:21,082:DEBUG NioProcessor-3 (RPCCodecDecoder.java:78) - rpcdec reqid 0 code 2000000 size 602 sender cross-tim
+2018-09-25 18:03:21,096:DEBUG Disruptor Thread (RPCCodecEncoder.java:38) - rpcenc reqid 0 code 2000000 size 602 receive null
+2018-09-25 18:03:21,099:DEBUG Disruptor Thread (RPCCodecEncoder.java:38) - rpcenc reqid 0 code 2000000 size 602 receive null
+2018-09-25 18:03:21,120:DEBUG NioProcessor-2 (RPCCodecDecoder.java:78) - rpcdec reqid 0 code 2100003 size 664 sender battle-tim
+2018-09-25 18:03:21,123:DEBUG Disruptor Thread (RPCCodecEncoder.java:38) - rpcenc reqid 0 code 2100003 size 664 receive [cross-tim]
+2018-09-25 18:03:21,475:DEBUG NioProcessor-3 (RPCCodecDecoder.java:78) - rpcdec reqid 0 code 3100250 size 448 sender cross-tim
+2018-09-25 18:03:21,475:ERROR Disruptor Thread (RouteServerManager.java:284) - 无可用节点，导致请求抛出RPCSource [pool=cross, sender=cross-tim, receive=null] mc 3100250 null
+2018-09-25 18:03:21,533:DEBUG NioProcessor-3 (RPCCodecDecoder.java:78) - rpcdec reqid 0 code 2100003 size 662 sender cross-tim
+2018-09-25 18:03:21,538:DEBUG Disruptor Thread (RPCCodecEncoder.java:38) - rpcenc reqid 0 code 2100003 size 662 receive [cross-tim]
+2018-09-25 18:03:57,192:INFO NioProcessor-4 (RouteIoHandlerAdapter.java:63) - Session Created [(0x00000003: nio socket, server, /192.168.12.26:54405 => /192.168.12.26:6078)]
+2018-09-25 18:03:57,200:INFO x3_worker-10-t-3 (RouteIoHandlerAdapter.java:57) - Session Opened [(0x00000003: nio socket, server, /192.168.12.26:54405 => /192.168.12.26:6078)]
+2018-09-25 18:03:57,238:INFO x3_worker-10-t-4 (RouteServerManager.java:118) - 节点注册开始--->{"pool":"logic", "serverName":"logic-3108", "ip":"192.168.12.26", "port":7038, "open":1, "master":true, "sid":101, "session":(0x00000003: nio socket, server, /192.168.12.26:54405 => /192.168.12.26:6078)}
+2018-09-25 18:04:00,195:DEBUG NioProcessor-4 (RPCCodecDecoder.java:78) - rpcdec reqid 0 code 2000000 size 603 sender logic-3108
+2018-09-25 18:04:00,196:DEBUG Disruptor Thread (RPCCodecEncoder.java:38) - rpcenc reqid 0 code 2000000 size 603 receive null
+2018-09-25 18:04:00,196:DEBUG Disruptor Thread (RPCCodecEncoder.java:38) - rpcenc reqid 0 code 2000000 size 603 receive null
+2018-09-25 18:04:00,198:DEBUG Disruptor Thread (RPCCodecEncoder.java:38) - rpcenc reqid 0 code 2000000 size 603 receive null
+2018-09-25 18:04:00,232:DEBUG NioProcessor-2 (RPCCodecDecoder.java:78) - rpcdec reqid 0 code 2100003 size 665 sender battle-tim
+2018-09-25 18:04:00,233:DEBUG NioProcessor-3 (RPCCodecDecoder.java:78) - rpcdec reqid 0 code 2100003 size 663 sender cross-tim
+2018-09-25 18:04:00,256:DEBUG Disruptor Thread (RPCCodecEncoder.java:38) - rpcenc reqid 0 code 2100003 size 665 receive [logic-3108]
+2018-09-25 18:04:00,257:DEBUG Disruptor Thread (RPCCodecEncoder.java:38) - rpcenc reqid 0 code 2100003 size 663 receive [logic-3108]
+2018-09-25 18:04:00,912:DEBUG NioProcessor-4 (RPCCodecDecoder.java:78) - rpcdec reqid 1 code 3100200 size 449 sender logic-3108
+2018-09-25 18:04:00,913:DEBUG Disruptor Thread (RPCCodecEncoder.java:38) - rpcenc reqid 1 code 3100200 size 449 receive null
+2018-09-25 18:04:00,927:DEBUG NioProcessor-4 (RPCCodecDecoder.java:78) - rpcdec reqid 2 code 3100203 size 449 sender logic-3108
+2018-09-25 18:04:00,959:DEBUG Disruptor Thread (RPCCodecEncoder.java:38) - rpcenc reqid 2 code 3100203 size 449 receive null
+2018-09-25 18:04:00,962:DEBUG NioProcessor-3 (RPCCodecDecoder.java:78) - rpcdec reqid 1 code -1 size 991 sender cross-tim
+2018-09-25 18:04:00,998:DEBUG NioProcessor-4 (RPCCodecDecoder.java:78) - rpcdec reqid 3 code 2100205 size 454 sender logic-3108
+2018-09-25 18:04:01,013:DEBUG NioProcessor-3 (RPCCodecDecoder.java:78) - rpcdec reqid 2 code -1 size 729 sender cross-tim
+2018-09-25 18:04:01,013:DEBUG Disruptor Thread (RPCCodecEncoder.java:38) - rpcenc reqid 1 code -1 size 990 receive [logic-3108]
+2018-09-25 18:04:01,014:DEBUG Disruptor Thread (RPCCodecEncoder.java:38) - rpcenc reqid 3 code 2100205 size 454 receive null
+2018-09-25 18:04:01,022:DEBUG Disruptor Thread (RPCCodecEncoder.java:38) - rpcenc reqid 2 code -1 size 730 receive [logic-3108]
+2018-09-25 18:04:01,030:DEBUG NioProcessor-3 (RPCCodecDecoder.java:78) - rpcdec reqid 3 code -1 size 563 sender cross-tim
+2018-09-25 18:04:01,030:DEBUG Disruptor Thread (RPCCodecEncoder.java:38) - rpcenc reqid 3 code -1 size 563 receive [logic-3108]
+2018-09-25 18:04:01,190:DEBUG NioProcessor-4 (RPCCodecDecoder.java:78) - rpcdec reqid 0 code 2100003 size 664 sender logic-3108
+2018-09-25 18:04:01,191:DEBUG Disruptor Thread (RPCCodecEncoder.java:38) - rpcenc reqid 0 code 2100003 size 664 receive [logic-3108]
+2018-09-25 18:04:03,730:DEBUG NioProcessor-4 (RPCCodecDecoder.java:78) - rpcdec reqid 4 code 2100002 size 526 sender logic-3108
+2018-09-25 18:04:03,730:DEBUG Disruptor Thread (RPCCodecEncoder.java:38) - rpcenc reqid 4 code 2100002 size 526 receive null
+2018-09-25 18:04:03,748:DEBUG NioProcessor-2 (RPCCodecDecoder.java:78) - rpcdec reqid 4 code -1 size 776 sender battle-tim
+2018-09-25 18:04:03,749:DEBUG Disruptor Thread (RPCCodecEncoder.java:38) - rpcenc reqid 4 code -1 size 776 receive [logic-3108]
+2018-09-25 18:05:53,949:INFO x3_worker-10-t-3 (RouteIoHandlerAdapter.java:44) - Session Closed [(0x00000001: nio socket, server, null => 0.0.0.0/0.0.0.0:6078)]
+2018-09-25 18:05:53,949:ERROR x3_worker-10-t-4 (RouteIoHandlerAdapter.java:34) - Session Exception (0x00000001: nio socket, server, null => 0.0.0.0/0.0.0.0:6078)
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method) ~[?:1.8.0_66]
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43) ~[?:1.8.0_66]
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223) ~[?:1.8.0_66]
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197) ~[?:1.8.0_66]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380) ~[?:1.8.0_66]
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:378) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:47) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:519) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$1200(AbstractPollingIoProcessor.java:68) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.process(AbstractPollingIoProcessor.java:1242) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.process(AbstractPollingIoProcessor.java:1231) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:683) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64) ~[mina-core-2.0.18.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_66]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_66]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_66]
+2018-09-25 18:05:55,272:INFO x3_worker-10-t-5 (RouteIoHandlerAdapter.java:44) - Session Closed [(0x00000003: nio socket, server, null => 0.0.0.0/0.0.0.0:6078)]
+2018-09-25 18:05:55,272:ERROR x3_worker-10-t-6 (RouteIoHandlerAdapter.java:34) - Session Exception (0x00000003: nio socket, server, null => 0.0.0.0/0.0.0.0:6078)
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method) ~[?:1.8.0_66]
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43) ~[?:1.8.0_66]
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223) ~[?:1.8.0_66]
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197) ~[?:1.8.0_66]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380) ~[?:1.8.0_66]
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:378) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:47) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:519) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$1200(AbstractPollingIoProcessor.java:68) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.process(AbstractPollingIoProcessor.java:1242) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.process(AbstractPollingIoProcessor.java:1231) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:683) ~[mina-core-2.0.18.jar:?]
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64) ~[mina-core-2.0.18.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_66]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_66]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_66]

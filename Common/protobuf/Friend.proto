@@ -1,0 +1,64 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "FriendPB";
+
+// 列表
+message TeamFriendData {
+	// 好友
+	repeated FriendData friendList = 1;
+	// 黑名单
+	repeated FriendData blackList = 2;
+}
+
+// 推荐
+message FindFriendData {
+	repeated FriendData friendList = 1;
+}
+
+// 好友
+message FriendData {
+	required int64 teamId = 1;
+	required string logo = 2;
+	required string name =3;
+	required int32 lv =4;
+	// 最后登录地点
+	required string address  = 5;
+
+	optional bool online =6;
+
+	optional int32 leagueId =7;
+
+	required int64 refusedTime = 8; // 拒绝切磋邀请的时间节点
+}
+
+message FriendPushData{
+	required int32 friendType =1;
+	required FriendData friend =2;
+	optional int32 operation =3;
+
+}
+
+message FriendOnlineMain{
+	repeated FriendOnlineData onlineList =1;
+	repeated FriendOnlineData blackOnlineList = 2;
+
+}
+
+message FriendOnlineData{
+	required int64 teamId =1;
+	required bool online =2;
+}
+
+message InitiateCompareNotes{ // 发起切磋
+	required int64 teamId =1;		// 发起切磋的球队ID
+	required string teamName =2;	// 发起切磋的球队名字
+}
+
+message CompareNotesDeal{ // 切磋请求回复
+	required int64 targetTeamId =1;	// 目标球队ID
+	required int32 state =2;		// 回应状态(0:拒绝,1:同意)
+}
+
+message CompareNotesInfo{ // 当前切磋信息
+	required int64 teamId =1;	// 切磋中的球队ID(0则未在切磋比赛中)
+}

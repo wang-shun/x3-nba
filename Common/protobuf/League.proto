@@ -1,0 +1,154 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "LeaguePB";
+
+
+message LeagueListMain{
+	repeated LeagueData leagues =1;
+	optional int32 maxPage =2;
+}
+
+
+message LeagueMain{
+	required LeagueData league =1;
+	repeated LeagueHonorData honors =2;
+	optional int32 shopLimit =3;
+	optional int32 honorLimit =4;
+	optional int32 teamLevel =5;//盟主(1),副盟主(2),理事(3),精英(4),成员(5);
+	optional int32 honor =6;
+}
+
+//联盟成就捐赠返回的数据
+message LeagueHonorDonateResp{
+	optional int32 leagueLevel =1;//联盟等级
+	optional int32 leagueExp =2;//联盟当前经验值
+	optional int32 leagueTotalExp =3;//联盟累计经验值
+	optional int32 leagueDailyTotalScore = 4;//每日联盟累计贡献值
+	//每日累计联盟贡献奖励领取列表,存放的已领取奖励的对应贡献值
+	//repeated int32 leagueScroeRewardList = 5;
+}
+
+message LeagueLogMain{
+	repeated LeagueLogData logList =1;
+}
+
+message LeagueLogData{
+	required string time =1;
+	required string context =2;
+	required string teamName =3;
+}
+
+
+message LeagueAceeptMain{
+	repeated LeagueTeamSimpleData teams =1;
+}
+
+
+message LeagueDonateMain{
+	repeated LeagueDonateData logs = 1;
+}
+
+
+message LeagueTeamMain{
+	repeated LeagueTeamSimpleData teams =1;
+	optional int32 oline =2;
+	optional int32 peopleCount =3;
+}
+
+//联盟成员勋章捐献的数据,增加了第2个字段
+message LeagueHonorMain{
+	repeated LeagueHonorPropData props =1;
+	//每日累计联盟贡献奖励领取列表,存放的已领取奖励的对应贡献值
+	repeated int32 leagueScroeRewardList = 2;
+	//玩家每日捐赠球券的数量
+	optional int32 leagueDailyTotalBallTicket = 3;
+}
+
+message LeagueTaskMain{
+	repeated LeagueTaskData tasks =1;
+
+}
+
+message LeagueTaskData{
+	required int32 tid =1;
+	required int32 status =2;
+	required int32 endSecond =3;
+	repeated int32 counts =4;
+	optional bool gift =5;
+	optional int32 honor =6;
+	optional int32 total =7;
+}
+
+
+
+
+message LeagueHonorPropData{
+	required int32 propId =1;
+	required int32 num =2;
+}
+
+message LeagueDonateData{
+	required string time =1;
+	required string teamName =2;
+	required int32 money =3;
+}
+
+
+message LeagueTeamSimpleData{
+	required int64 teamId =1;
+	required int32 teamLevel =2;
+	optional string time =3;
+	required string teamName =4;
+	optional int32 score =5;
+	optional int32 level =6;
+	optional bool online =7;
+}
+
+
+message LeagueHonorData{
+	required int32 honorId =1;
+	required int32 level =2;
+	optional bool activate =3;
+}
+
+
+message LeagueData{
+	required string leagueName =1;
+	required int32 leagueLevel =2;//联盟等级
+	required int32 count =3;
+	required string teamName =4;
+	optional string leagueTip =5;
+	required string leagueLogo =6;
+	optional string leagueNotice =7;
+	optional int32 rank =8;
+	required int32 leagueId =9;
+	optional int32 leagueExp =10;//当前经验值
+	optional int32 leagueTotalExp =11;//累计总的经验值
+	optional int32 leagueDailyTotalScore = 12;//每日联盟累计贡献值
+}
+
+message LeagueJoinMain{
+	repeated LeagueSimpleData leagues =1;
+}
+
+message LeagueInviteMain{
+	repeated LeagueSimpleData leagues =1;
+}
+
+message LeagueSimpleData{
+	required string leagueName =1;
+	required int32 leagueId =2;
+	optional int32 leagueLevel =3;
+
+}
+
+message GameLoadLeagueData{
+	required int32 leagueId =1;
+	required string leagueName =2;
+	repeated LeagueHonorData honorList =3;
+	optional int32 shopLimit =4;
+	optional int32 honorLimit =5;
+	optional int32 honor =6;//贡献值
+	optional int32 feats =7;//功勋
+	optional int32 level =8;//盟主(1),副盟主(2),理事(3),精英(4),成员(5);
+}

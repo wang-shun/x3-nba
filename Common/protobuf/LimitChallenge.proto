@@ -1,0 +1,55 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "LimitChallengePB";
+
+
+//主界面
+message LimitChallengeView {
+	//今日挑战主题  0-两双王（得分+篮板），1-两双王（得分+助攻），2-三双王（得分+篮板+助攻），3-全能王（得分+篮板+助攻+抢断+盖帽），4-得分王，5-助攻王，6-篮板王
+	optional int32 todayTitle = 1;
+	//排行列表
+	repeated LimitChallengeRank playerRank = 2;
+	//我的数据
+	optional LimitChallengeRank myData = 3;
+	//剩余挑战次数
+	optional int32 leftChallengeNum = 4;
+	//冷却结束时间(时间戳，秒)
+	optional int32 cdEndTime = 5;
+	//购买次数
+    optional int32 buyNum = 6;
+    //npcId
+    optional int32 npcId = 7;
+     //开始时间
+    optional string startTime = 8;
+     //结束时间
+    optional string endTime = 9;
+     //发奖时间
+    optional string rewardTime = 10;
+}
+
+//排行数据
+message LimitChallengeRank{
+	//服务器ID
+	optional int32 serverId = 1;
+	//球队名
+	optional string teamName = 2;
+	//得分
+	optional int32 df = 3;
+	//篮板
+	optional int32 lb = 4;
+	//助攻
+	optional int32 zg = 5;
+	//抢断
+	optional int32 qd = 6;
+	//盖帽
+	optional int32 gm = 7;
+	//排名
+	optional int32 rank = 8;
+}
+
+ //------------------------协议-------------------------
+ //极限挑战-获取主界面信息  50030;
+ //极限挑战-推送主界面信息   50031  resp LimitChallengeView;
+ //极限挑战. 开始比赛  50032;
+ //极限挑战. 比赛结束推送  50033; resp LimitChallengeView
+ //极限挑战-购买挑战次数  50034;

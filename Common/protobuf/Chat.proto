@@ -1,0 +1,41 @@
+package com.ftkj.proto;
+import "Common.proto";
+
+option java_outer_classname = "ChatPB";
+
+message ChatMsgData{
+	required string msg =1;
+	optional int32 type =2;
+	optional TeamSimpleData team = 3;
+}
+
+message GameTipData{
+	required int32 moduleId =1;		// 消息ID
+	optional string vals =2;		// 消息参数
+	optional int32 level =3;
+}
+
+message ChatOfflineMsgList{
+	repeated ChatOfflineMsg offline = 1; 	// 留言列表
+}
+
+/* message ChatOfflineMsg{
+	optional TeamSimpleData team = 1;//发送球队
+	repeated ChatMsg chatInfo = 2;
+} */
+
+message ChatOfflineMsg{
+	/*发送消息球队的基本数据*/
+	optional TeamSimpleData team = 1;
+	repeated ChatMsg chatInfo = 2;
+	/**是否有最新未读的留言，1有，否则0*/
+	optional int32 isRead = 3;
+}
+
+message ChatMsg{
+	optional int64 cerateTime = 1; 		// 创建时间
+	optional string content = 2;		// 消息内容
+	/*发送消息的球队Id*/
+	optional int64 teamId = 3;
+}
+

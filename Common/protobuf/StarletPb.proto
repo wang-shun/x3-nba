@@ -1,0 +1,138 @@
+package com.ftkj.proto;
+
+import "Battle.proto";
+
+option java_outer_classname = "StarletPb";
+
+//	/**
+//	 * 新秀对抗赛.获取数据(主界面)
+//	 * req 50000
+//	 * resp 50010 StarletDualMeetData (阵容对抗赛相关数据)
+//	 * resp DefaultData
+//	 *
+//	 * 新秀对抗赛.挑战
+//	 * req 50001
+//	 * 	-> 参数  type  npc类型
+//	 * resp DefaultData
+//	 *
+//	 * 新秀对抗赛.购买挑战次数
+//	 * req 50002
+//	 * resp DefaultData
+//	 *
+//	 * 新秀排位赛.阵容数据
+//	 * req 50003
+//	 *    -> 参数  球队唯一ID
+//	 * resp DefaultData
+//	 * resp 50013 StarletTeam
+//	 *
+//	 * 新秀排位赛.购买挑战次数
+//	 * req 50004
+//	 * resp DefaultData
+//	 *
+//	 * 新秀排位赛.出战阵容设定
+//	 * req 50005
+//	 * 	-> 参数  1,2,3,4,5 对应位置的球员唯一ID
+//	 * resp DefaultData
+//	 * resp 50013 StarletTeam
+//	 *
+//	 * 新秀排位赛.获取主界面数据
+//	 * req 50006
+//	 * resp DefaultData
+//	 * resp 50016 RankMatchData (玩家的排位赛主界面数据)
+//	 *
+//	 * 新秀排位赛.挑战
+//	 * req 50007
+//	 * 	-> 参数  挑战的排名
+//	 * resp DefaultData bigNum 挑战状态(1:成功, 2:失败)
+//	 * resp 50020 StarletRankList (改变的排位数据)
+//	 *
+//	 * 新秀排位赛.排行榜
+//	 *	req 50008
+//	 *	resp DefaultData
+//	 *	resp 50018 StarletRankList  (排位数据)
+//	 *
+//	 * 新秀排位赛.获取挑战记录
+//	 * req 50009
+//	 * resp DefaultData
+//	 * resp 50019 StarletRankInfoList  (排位挑战记录数据)
+//	 *
+//	 * 新秀对抗赛.获取正在比赛中的类型
+//	 * req 50011
+//	 * resp DefaultData bigNum (对抗赛类型)
+//	 *
+//	 * 新秀对抗赛.获取基数信息
+//	 * req 50014
+//   * resp DefaultData
+//	 * resp 50017 StarletTeamRedixData
+//	 *
+//	 */
+
+	// 主界面
+	message StarletDualMeetData{
+		optional int32 useNum = 1; 				 // 球队已挑战次数
+		optional int32 buyNum = 2; 				 // 球队购买挑战次数
+		repeated PlayerDualMeetData dualmeet = 3;  // 阵容内新秀比赛数据详细
+	}
+
+	// 新秀排位赛.阵容玩家数据
+	message StarletTeamData{
+		optional int32 playerRid = 1; 			// 玩家基础ID
+		required string position = 2;		    // 阵容位置
+		required int32 cap = 3;					// 新秀战力
+	}
+
+	// 新秀排位赛.阵容数据
+	message StarletTeam{
+		optional int64 teamId = 1;			 	 // 球队唯一ID
+		repeated StarletTeamData data = 2 ;		 // 阵容数据
+	}
+
+	// 新秀排位赛.主界面
+	message RankMatchData{
+		repeated StarletRankData ranks = 1;
+		optional int32 useNum = 2; 				 // 球队已挑战次数
+		optional int32 buyNum = 3; 				 // 球队购买挑战次数
+	}
+
+	// 新秀排位赛.排行榜
+	message StarletRankList{
+		repeated StarletRankData ranks = 1;		// 排行榜
+	}
+
+	// 新秀排位赛.排行榜数据
+	message StarletRankData{
+		optional int64 teamId = 1;			 	 // 球队唯一ID
+		optional int32 rank = 2; 				 // 排行
+		optional int32 teamLv = 3; 				 // 球队等级
+		optional string teamName = 4; 			 // 球队名字
+		optional int32 totalCap = 5; 			 // 新秀总战力
+		optional int32 playerRid = 6; 			 // 战力最强新秀基础ID
+	}
+
+	// 新秀比赛数据详细
+	message PlayerDualMeetData{
+		optional int32 playerRid = 1; 			 // 玩家基础ID
+		optional int32 cap = 2;					 // 新秀战力
+		optional int32 num = 3; 				 // 参加对抗赛的总次数
+		repeated BattlePlayerStatResp stat = 5;  // 球队比赛数据详细
+	}
+
+	// 新秀排位赛信息列表
+	message StarletRankInfoList{
+		repeated StarletInfoData infoList = 1; // 信息列表
+	}
+
+	// 排位赛挑战信息
+	message StarletInfoData{
+		optional int32 state = 1; 			//挑战状态(0:失败, 1:成功)
+		optional int32 cState = 2; 			//参数:(0:挑战,1:被挑战)
+		optional string teamName = 3; 		//参数:目标球队名
+		optional int32 num = 4; 			//参数:下降名次
+		optional int64 createTime = 5; 		//信息创建时间
+	}
+
+	// 对抗赛结束回包信息
+	message StarletTeamRedixData{
+		repeated TeamRedix redix = 1;
+	}
+

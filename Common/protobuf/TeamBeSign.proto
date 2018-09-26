@@ -1,0 +1,22 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "TeamBeSignPB";
+
+import "Player.proto";
+// 待签
+message TeamBeSignData {
+	//id
+	required int64 teamId = 1;
+	//列表
+	repeated BeSignPlayer beSignList = 2;
+}
+
+message BeSignPlayer {
+	required int32 id = 1;
+	required int32 playerId = 2;
+	required int32 price = 3;
+	required int64 endTime = 4; // 过期时间
+	optional PlayerTalentData talent  =5;
+	optional bool bind = 6;//是否绑定
+}
+

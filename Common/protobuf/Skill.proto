@@ -1,0 +1,33 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "SkillPB";
+
+message SkillMainData{
+	repeated SkillPlayerData playerSkillList =1;
+	repeated SkillFailData failList =2;
+}
+
+message SkillFailData{
+	required int32 skillId =1;
+	required int32 add =2;
+	/**球员Id*/
+	optional int32 playerId = 3;
+}
+
+message SkillPlayerData{
+	required int32 playerId =1;
+	repeated SkillStepData skillStepList =2;
+	required int32 attack =3;
+	required int32 defend =4;
+}
+
+message SkillStepData{
+	required int32 step =1;
+	required int32 s1 =2;
+	required int32 s2 =3;
+	required int32 s3 =4;
+	required int32 s4 =5;
+}
+
+
+

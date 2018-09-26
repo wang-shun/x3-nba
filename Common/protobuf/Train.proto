@@ -1,0 +1,134 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "TrainPB";
+
+///**
+// * 获取球队训练馆数据(主界面)
+// * req 32250
+// * resp 32255 TeamTrainMainData (球队所有训练馆)
+// * resq 32256 ChangeTrainData (抢夺列表)
+// *
+// * 训练
+// * req 32251
+// *	 -> 参数  trainId   训练馆唯一ID
+// *	 -> 参数  playerId  训练球员唯一ID
+// *	 -> 参数  trainType 训练类型
+// * resp 32256
+// * 	 -> ChangeTrainData (只推送改变的训练馆数据)
+// *
+// * 抢夺
+// * req 32252
+// * 	-> 参数 teamId 抢夺的球队ID(NPC球队ID为0)
+// *	-> 参数  trainId 训练馆唯一ID
+// * resp 32259
+// * 	-> ChangeTeamTrainData(推送抢夺者次数变化信息)
+// * resp 32256
+// *	-> ChangeTrainData(推送被抢者的训练馆数据)
+// * resp 32258
+// *	-> TrainGrabInfoList(推送抢夺记录)
+// * resp DefaultPB
+// *	 ->DefaultPB bigNum 抢夺状态(1:成功, 2:失败)
+// *
+// * 领取训练奖励
+// * req 32253
+// * 	-> 参数  trainId 训练馆唯一ID
+// * resp 32256
+// * 	-> ChangeTrainData (只推送改变的训练馆数据)
+// *
+// * 获取(刷新)训练馆数据(抢夺列表)
+// * req 32254
+// * resq 32256
+// * 	 -> ChangeTrainData (只推送改变的训练馆数据)
+// *
+// * 获取训练馆抢夺信息
+// * req 32257
+// * resq 32258
+// * 	-> TrainGrabInfoList
+// *
+// * 联盟训练馆.获取主界面数据
+// * req 32260
+// * resp DefaultPB
+// * resq 32261 LeagueTrainDataList(联盟训练馆信息)
+// *
+// * 联盟训练馆.选择球队
+// * req 32262
+// *  -> 参数  leagueTrainId  联盟训练馆ID(配置)
+// *  -> 参数  btid   配置球馆ID(配置)
+// * resp DefaultPB
+// * resq 32263 LeagueTrainDataList(改变的联盟训练馆信息)
+// *
+// */
+
+// 球队训练馆数据
+message TeamTrainMainData{
+	repeated TrainData train = 1; 		 // 球队训练馆数据
+	optional int32 grabCount = 2; 	 	 // 剩余抢夺次数
+	optional int64 grabTime = 3;  	 	 // 下次可枪夺时间(剩余时间 = 下次可枪夺时间 - 当前时间)
+	optional int64 refreshTime = 4;  	 // 抢夺次数可刷新时间(剩余时间 = 抢夺次数可刷新时间 - 当前时间)
+	optional int64 refreshListTime = 5;  // 抢夺列表可刷新时间(剩余时间 = 抢夺列表可刷新时间 - 当前时间)
+	optional int32 playerMaxCap = 6;	 // 仓库球员中最大的攻防值
+}
+
+message TrainData{
+	optional int32 test11 = 1; 	    	//占位
+	optional int64 teamId = 2; 	    	//球队唯一ID
+	optional int32 trainLevel = 3;      //训练馆等级
+   	optional int32 trainExp = 4;	    //训练馆总经验
+ 	optional int32 type = 5; 		    //训练类型 (0:未训练,1:默认4小时,2:8小时) 结算奖励
+    optional int64 playerId = 6;	    //球员ID
+    optional string teamName = 7;	    //球队名称
+ 	optional int64 endTime = 8; 	    //训练结束时间(剩余时间 = 训练结束时间 - 当前时间)
+	optional int32 playerCap = 9; 	    //训练球员攻防
+	optional int32 rewardState = 10;    //奖励领取状态(0:未领取, 1:可领取, 2:已领取)
+    optional int32 robbedNum = 11; 		//被抢夺资源次数
+    optional int32 isLeague = 12; 		//是否是联盟训练位 (0:个人位,1:联盟位,2:抢夺位)
+    optional int32 ttid = 13; 	   		//训练馆唯一ID
+    optional int32 vipLv = 14; 	   		//球队vip等级
+    optional int32 hour = 15; 	   		//联盟训练馆训练时间
+    optional int32 clear = 16; 	   		//联盟训练馆清理标识(1:清理)
+    optional int32 playerRid = 17; 	    //球员配置ID
+    optional int32 blId = 18; 	    	//联盟位ID
+}
+
+// 改变的训练馆数据
+message ChangeTrainData{
+	repeated TrainData train = 1; // 球队训练馆数据
+}
+
+// 训练馆抢夺信息列表
+message TrainGrabInfoList{
+	repeated TrainGrabInfoData infoList = 1; // 信息列表
+}
+
+// 训练馆抢夺信息
+message TrainGrabInfoData{
+	optional int32 state = 1; 			//抢夺状态(0:失败, 1:成功)
+	optional string teamName = 2; 		//参数:球队名
+	optional int32 num = 3; 			//参数:抢夺的技能点
+	optional int64 createTime = 4; 		//信息创建时间
+	optional int32 flag = 5; 			//0:未改变, 1:添加 2:删除
+}
+
+// 改变的球队训练馆信息
+message ChangeTeamTrainData{
+	optional int32 grabCount = 1; 	 // 剩余抢夺次数
+	optional int64 grabTime = 2;  	 // 下次可枪夺时间(剩余时间 = 下次可枪夺时间 - 当前时间)
+	optional int64 refreshTime = 3;  // 抢夺次数可刷新时间(剩余时间 = 抢夺次数可刷新时间 - 当前时间)
+}
+
+//*******************************************************************************************************
+
+// 获取联盟训练馆主界面
+message LeagueTrainDataList{
+ 	repeated LeagueTrainData list = 1;	
+	optional int32 leagueTrainId = 2; 	 // 当前可选球队的联盟训练位ID(大于0,可选)
+	optional int64 stopTime = 3; 	     // 选球队截止时间
+}
+
+// 联盟训练馆信息
+message LeagueTrainData{
+   optional int32 leagueTrainId = 1; // 取联盟训练馆ID(配置)
+   optional int32 leagueId = 2;   	 // 联盟ID
+   optional string leagueName = 3;	 // 参数:联盟名
+   optional int32 btId = 4;       	 // 配置球馆ID
+}

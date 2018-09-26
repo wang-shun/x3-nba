@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="Game">
+	<property environment="env" />
+	<!-- <property name="ECLIPSE_HOME" value="F:/eclipse1.8/eclipse/" /> -->
+	<property name="debug" value="true" />
+	<property name="debuglevel" value="source,lines,vars" />
+	<property name="target" value="1.8" />
+	<property name="source" value="1.8" />
+	<property name="src.dir" value="src" />
+	<property name="classes.dir" value="bin" />
+	<property name="excel.dir" value="excel" />
+	<property name="output.dir" value="tool" />
+	<property name="jarname" value="game.jar" />
+	<property name="project.name" value="GameServer" />
+	<property name="lib.dir" value="../GameCode/lib" />
+	<property name="mainclass" value="com.ftkj.GameStartup" />
+	<property name="des.config" value="false" />
+
+	<property name="code.path" value="../GameCode"/>
+	<property name="common.path" value="../Common"/>
+	<property name="zip.path" value="../BuildPlug/zip" />
+	<!--是否打包配置文件 -->
+	<property name="des.log" value="true" />
+	<!--是否打包log4j文件 -->
+	<property name="server.path" value="/data/ZGame" /> 
+	<property name="server.ip" value="192.168.10.181" />
+	<property name="server.port" value="22" /> 
+	<property name="server.password" value="123456" />
+
+	<target name="pro-local">
+		<property name="server.path" value="/data/ZGame" /> 
+		<property name="server.ip" value="192.168.10.181" />
+		<property name="server.port" value="22" /> 
+		<property name="server.password" value="123456" />
+	</target>
+
+	<target name="pro-bs">
+		<!--<property name="server.path" value="/data/ZGame/logic" />-->
+		<!--<property name="server.ip" value="120.79.37.214" />-->
+		<!--<property name="server.port" value="22" />-->
+		<!--<property name="server.password" value="DRy!NlAl" />-->
+	</target>
+
+	<path id="Game.classpath">
+		<pathelement location="bin" />
+	</path>
+	<target name="clean">
+		<delete dir="bin" />
+	</target>
+	<target depends="clean" name="cleanall" />
+	<!-- =================================
+          target: build
+         ================================= -->
+	<target name="build" depends="upload-all-run">
+
+	</target>
+	<target name="to-zip" depends="jar">
+			<condition property="dccondition">
+				<istrue value="${des.config}" />
+			</condition>
+			<antcall target="dest-config">
+			</antcall>
+			<condition property="zpcondition">
+				<istrue value="${des.log}" />
+			</condition>
+			<antcall target="zip-pro">
+			</antcall>
+			
+			<copy todir="${zip.path}">
+				<fileset dir="${output.dir}" >
+					<include name="${project.name}.zip" />
+				</fileset>
+			</copy>
+		</target>
+	<path id="lib-classpath">
+		<fileset dir="${lib.dir}">
+			<include name="**/*.jar" />
+			<exclude name="**/crossnode.jar" />
+			<exclude name="**/pknode.jar" />
+		</fileset>
+	</path>
+
+	<target name="init"  depends= "copy_common">
+		<delete dir="tool">
+		</delete>
+		<echo message="is ok!">
+		</echo>
+		<mkdir dir="${classes.dir}" />
+		<echo message="create outputdir ${output.dir}" />
+		<mkdir dir="${output.dir}" />
+		<mkdir dir="${output.dir}/lib" />
+		<mkdir dir="${output.dir}/bin" />
+		<mkdir dir="${output.dir}/excel" />
+
+		<copy includeemptydirs="false" todir="${output.dir}/bin">
+			<fileset dir="src">
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+	</target>
+
+	<!-- 2. 编译 -->
+	<target name="compile" depends="init">
+		<echo message="dir--${src.dir}">
+		</echo>
+		<echo message="classes--${classes.dir}">
+		</echo>
+		<javac srcdir="${src.dir}" destdir="${classes.dir}" debug="true" debuglevel="source,lines,vars">
+			<compilerarg line="-encoding UTF-8" />
+			<classpath refid="lib-classpath" />
+		</javac>
+		<copydir dest="${output.dir}/bin" src="${classes.dir}">
+		</copydir>
+	</target>
+
+	<!-- 3. 打包jar文件 -->
+	<target name="jar" depends="compile">
+
+		<!--<copy todir="${output.dir}/lib">
+			<fileset dir="${lib.dir}" />
+		</copy>
+	-->
+		<!--Create a property containing all .jar files,
+                          	        prefix lib/, and seperated with a space-->
+		<copy todir="${output.dir}/lib">
+			<fileset dir="${lib.dir}" />
+		</copy>
+		<pathconvert property="mf.classpath" pathsep="">
+			<mapper>
+				<chainedmapper>
+					<!-- jar包文件只留文件名，去掉目录信息 -->
+					<flattenmapper />
+					<!-- add lib/ prefix -->
+					<globmapper from="*" to="lib/*" />
+				</chainedmapper>
+			</mapper>
+			<path refid="lib-classpath" />
+		</pathconvert>
+	</target>
+
+
+	<target name="dest-config" if="dccondition">
+		<!-- 打包配置文件-->
+		<copy todir="${output.dir}/config">
+			<fileset dir="config">
+				<include name="config.js" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="zip-pro" if="zpcondition">
+		<!-- 打包成zip-->
+		<zip destfile="${output.dir}/${project.name}.zip" basedir="${output.dir}">
+			<exclude name="*.zip" />
+		</zip>
+	</target>
+
+	<target name="zip-pro-false" unless="zpcondition">
+		<zip destfile="${output.dir}/${project.name}.zip" basedir="${output.dir}">
+			<exclude name="**/*.zip" />
+			<exclude name="**/*.properties" />
+		</zip>
+	</target>
+
+	<target name="upload-all" depends="jar">
+		<condition property="dccondition">
+			<istrue value="${des.config}" />
+		</condition>
+		<antcall target="dest-config">
+		</antcall>
+		<condition property="zpcondition">
+			<istrue value="${des.log}" />
+		</condition>
+		<antcall target="zip-pro">
+		</antcall>
+
+		<scp port="${server.port}" todir="root:${server.password}@${server.ip}:${server.path}" trust="true" verbose="true" file="${output.dir}/${project.name}.zip" />
+		<!--<sshexec port="16333" host="10.10.3.117" username="root" password="love7road!" trust="true" command="source /etc/profile;cd /gamerver/app/;./antrun.sh stop;cd /game;unzip -o server_${time}.zip;cd /gamerver/app/;./antrun.sh start;jps" />-->
+	</target>
+
+	<target name="copy_code">
+		<ant antfile="ZGamePKNodeBuild.xml"
+			 dir="${code.path}"
+			 inheritall="false"
+			 inheritrefs="false"
+			 target="build"
+		/>
+	</target>
+
+	<target name="copy_common" depends="copy_code">
+		<ant antfile="ZGamePKNodebuild.xml"
+			 dir="${common.path}"
+			 inheritall="false"
+			 inheritrefs="false"
+			 target="build"
+		/>
+	</target>
+	<target name="test-python">
+		<echo message="python test start" />
+		<sshexec command="cd ${server.path};mv tx.py tx2.py;" host="192.168.10.69" port="22" username="root" password="123456" trust="true" />
+	</target>
+
+	<target name="upload-all-run" depends="upload-all">
+		<echo message="restart server" />
+		<!-- ;python console.py start -->
+		<sshexec command="cd ${server.path};python console.py stop;rm -rf bin;rm -rf lib;rm -rf excel;unzip -n ${project.name}.zip;python console.py start;" host="${server.ip}" port="${server.port}" username="root" password="${server.password}" trust="true" />
+	</target>
+
+	<target name="upload-all-quick" depends="upload-all">
+		<echo message="restart server" />
+		<!-- ;python console.py start -->
+		<sshexec command="cd ${server.path};python console.py stop;rm -rf bin;rm -rf lib;rm -rf excel;unzip -n ${project.name}.zip;python console.py start;" host="${server.ip}" port="${server.port}" username="root" password="${server.password}" trust="true" />
+	</target>
+
+
+</project>

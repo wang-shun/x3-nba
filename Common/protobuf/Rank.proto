@@ -1,0 +1,52 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "RankPB";
+
+message TeamLevelRankMainData{
+	repeated TeamLevelRankData rankList =1;
+	optional TeamLevelRankData my =2;
+
+}
+
+message TeamPowerRankMainData{
+	repeated TeamPowerRankData rankList =1;
+	optional TeamPowerRankData my =2;
+}
+
+message LeagueLevelRankMainData{
+	repeated LeagueLevelRankData rankList =1;
+	optional LeagueLevelRankData my =2;
+}
+
+message LeagueLevelRankData{
+	required int32 leagueId =1;
+	required string leagueName =2;
+	required int32 leagueLevel =3;
+	required int32 totalLevel =4;
+	required int32 peopleCount =5;
+	optional int32 rank =6;
+}
+
+
+
+message TeamPowerRankData{
+	required int64 teamId =1;
+	required string name =2;
+	required string leagueName =3;
+	required int32 totalPower =4;
+	required int32 lineupDefendPower =5;
+	required int32 rank =6;
+	optional string logo =7;
+	required int32 lineupAttackPower =8;
+}
+
+
+message TeamLevelRankData{
+	required int64 teamId =1;
+	required int32 level =2;
+	required string name =3;
+	optional string logo =4;
+	required int32 rank =5;
+	required string leagueName =6;
+}
+

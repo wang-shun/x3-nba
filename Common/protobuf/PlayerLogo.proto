@@ -1,0 +1,35 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "PlayerLogoPB";
+
+
+// 荣誉头像
+message PlayerLogoData {
+	repeated LogoHonorData honorList = 1;
+	required int32 lucky = 2;
+}
+
+// 头像
+message LogoData {
+	//id
+	required int32 id =1;
+	//球员
+	required int32 playerId =2;
+	//品质
+	required int32 quality =3;
+}
+
+// 佩戴
+message LogoHonorData {
+	//球员
+	required int32 playerId =1;
+	//佩戴头像，0默认
+	required int32 logoId =2;
+	//等级
+	required int32 lv =3;
+	//完成度（当前等级的小星脉点亮数）
+	required int32 step =4;
+	//拥有的头像列表
+	repeated LogoData logoList = 5;
+}
+

@@ -1,0 +1,130 @@
+package com.ftkj.proto;
+
+import "Common.proto";
+
+option java_outer_classname = "RankArenaPb";
+
+//竞技场. 个人排名竞技.
+
+// 39000 竞技场所有信息
+// req empty
+// resp DefaultData
+
+// 39001 竞技场所有信息推送
+message ArenaInfoResp {
+    //球队本身竞技场信息
+    optional ArenaSelfInfoResp self_arena = 1;
+    //对手信息
+    repeated ArenaOpponentResp opponents = 2;
+}
+
+//竞技场对手信息
+message ArenaOpponentResp {
+    //球队id
+    optional int64 team_id = 1;
+    //历史最高排名
+    optional int32 max_rank = 3;
+    //排名
+    optional int32 rank = 4;
+    //总战力
+    optional int32 cap = 5;
+
+    //球队信息
+    optional TeamSimpleData team = 9;
+    //阵容球员简单信息
+    repeated PlayerSimpleResp players = 10;
+
+}
+
+//球队本身竞技场信息
+message ArenaSelfInfoResp {
+    /** 竞技场排名. 越小越大(<=0没有排名) */
+    optional int32 rank = 1;
+    /** 历史最大排名. 越小越大 */
+    optional int32 max_rank = 2;
+    //上次比赛时间(毫秒)
+    optional int64 pre_match_time = 5;
+    /** 总比赛场数 */
+    optional int64 total_match_count = 6;
+    /** 总胜利场数 */
+    optional int64 total_win_count = 7;
+
+    /** 当天连胜场数 */
+//    required int32 max_winning_streak = 8;
+
+    //当前可以使用的比赛次数 = 已经购买的付费次数 + 每日免费次数配置 - 已经使用比赛次数
+    //已经使用比赛次数
+    optional int32 used_match_num = 9;
+    //每日免费次数配置
+    optional int32 free_match_num_cfg = 10;
+    //已经购买的付费次数
+    optional int32 buy_match_num = 11;
+    //挑战倒计时(毫秒)
+    optional int32 match_cd = 12;
+
+}
+
+// 39002 开始比赛
+// req args
+// int32 对手排名
+// int64 对手球队id
+// resp DefaultData
+
+// 39003 对手发生变化 推送
+message ArenaStartMatchResp {
+    //对手排名
+    optional int32 rank = 1;
+    //老对手排名发生变化, 新对手信息
+    optional ArenaOpponentResp new_target = 2;
+}
+
+// 39005 比赛结束 推送
+// resp ArenaSelfInfoResp
+
+// 39006 购买比赛次数 (关联配置 Team.xlsx -> Num 39000)
+// req args
+// int32 要购买的次数
+// resp DefaultData
+
+// 39007 购买比赛次数 推送
+// resp ArenaSelfInfoResp
+
+// 39008 排行榜
+// req empty args
+// resp ArenaRanksResp
+message ArenaRanksResp {
+    repeated ArenaRankResp teams = 1;
+}
+
+//竞技场排行榜信息
+message ArenaRankResp {
+    //球队id
+    optional int64 team_id = 1;
+    //历史最高排名
+    optional int32 max_rank = 3;
+    //排名
+    optional int32 rank = 4;
+    //总战力
+    optional int32 cap = 5;
+    //球队信息
+    optional TeamSimpleData team = 9;
+}
+
+// 39010 竞技场. 比赛历史信息
+// req args
+// int32 pageNo
+// resp BattleHisListResp
+
+// 37012 刷新对手
+// req empty
+// resp DefaultData
+
+// 37013 刷新对手 推送
+message ArenaTargetsResp {
+    //对手信息
+    repeated ArenaOpponentResp targets = 1;
+}
+
+// 37014 竞技场. 重置比赛cd (关联配置 Team.xlsx -> Num 39001)
+// req empty
+// resp DefaultData

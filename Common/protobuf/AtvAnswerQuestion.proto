@@ -1,0 +1,27 @@
+package com.ftkj.proto;
+//答题活动
+option java_outer_classname = "AtvAnswerQuestionPB";
+
+import "Prop.proto";
+
+/**获取玩家答题的题目*/
+message AtvAnswerQuestionData {
+	repeated AtvQuestionData atvQuestionList = 1;
+	optional int32 state = 2;//0未开始,1开始答题,2答题结束
+	optional int32 finishCount = 3;//答题完成的数量
+}
+
+/**题目*/
+message AtvQuestionData {
+	required int32 id = 1; //题目的Id
+	required string content = 2; //题目内容
+	repeated string optionList = 3;//题目可供选择的答案
+	required int32 answer = 4; //题目的正确答案序号
+}
+
+/**回答题目的返回*/
+message AtvAnswerQuestionResp {
+	optional bool correct = 1;	//true回答正确,false回答错误
+	repeated PropSimpleData awardList = 2;//答对答错获得的奖励
+	optional int32 finishCount = 3;//已经答过的题目数量
+}

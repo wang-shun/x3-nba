@@ -1,0 +1,27 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "PlayerArchivePB";
+import "TeamEqui.proto";
+import "Player.proto";
+
+// 图鉴
+message TeamPlayerArchiveMainData {
+	// 列表
+	repeated PlayerArchiveData playerList = 1;
+}
+
+// 图鉴内容
+message PlayerArchiveData {
+	required PlayerData playerInfo = 1;
+	required int32 lv = 2;
+	required int32 train = 3;
+	required int32 starLv = 4;
+	repeated EquiData equiList = 5;
+	required int32 atkId = 6;
+	required int32 atkLv = 7;
+	required int32 defId = 8;
+	required int32 defLv = 9;
+}
+
+
+

@@ -1,0 +1,28 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "TaskPB";
+
+message TaskMain{
+	repeated TaskData trunkList =1; // 任务列表
+	repeated TaskData dayList =2;   // 日常任务列表
+	optional int32 starNum = 3;		// 日常任务星数
+	repeated int32 starAwardId = 4;	// 已领取星数领奖id
+}
+
+message TaskData{
+	required int32 tid =1;
+	repeated TaskConditionData conditions =2;
+	required int32 status =3;
+	optional int32 lock =4;
+
+}
+
+message TaskConditionData{
+	required int32 cid =1;
+	required int32 valInt =2;
+	required string valStr =3;
+}
+
+message TaskPushData{
+	repeated TaskData taskList =1;
+}

@@ -1,0 +1,152 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "LeagueMatchPB";
+
+/**
+ *
+ * 获取联盟塞馆数据
+ * req 31901
+ * resp DefaultPB
+ * resp 31911 ChangeLeaguePostions
+ *
+ * 获取联盟赛历史排名数据
+ * req 31902
+ *  -> 参数 (塞馆类型[1:高级, 2:中级, 3:低级]:int)
+ * resp DefaultPB
+ * resp 31912 LeagueHistoryRanks *
+ *
+ * 获取周贡献排名数据
+ * req 31903
+ * 	 -> 参数  (贡献排行数据条数:int)
+ * resp DefaultPB
+ * resp 31913 LeagueScoreRanks
+ *
+ * 获取联盟赛总积分排行
+ * req 31904
+ *  -> 参数 (塞馆类型[1:高级, 2:中级, 3:低级]:int)
+ * resp DefaultPB
+ * resp 31914 LeagueMatchRanks
+ *
+ * 获取联盟赛球队胜利次数排行
+ * req 31905
+ * -> 参数 (塞馆类型[1:高级, 2:中级, 3:低级]:int)
+ * -> 参数 (条数:int)
+ * resp DefaultPB
+ * resp 31915 LeagueMatchTeamRanks
+ *
+ * 占领
+ * req 31906
+ * 	-> 参数  (赛馆位置ID:int)
+ *  -> 参数 (塞馆类型[1:高级, 2:中级, 3:低级]:int)
+ * resp 31911 ChangeLeaguePostions
+ * resp DefaultPB
+ *
+ * 挑战
+ * req 31907
+ * 	-> 参数  (赛馆位置ID:int)
+ *  -> 参数 (塞馆类型[1:高级, 2:中级, 3:低级]:int)
+ * resp 31911 ChangeLeaguePostions (给自己)
+ * resp DefaultPB (给自己)
+ * resp 31911 ChangeLeaguePostions (给目标)
+ * resp 31917 LeaguePostionChallangeState (分别推送给所有在联盟中的成员)
+ *
+ * 获取球队比赛数据
+ * req 31909
+ * resp DefaultPB
+ * resp 31916 leagueMatahTeamData
+ *
+ * 加速
+ * req 31908
+ * resp DefaultPB
+ * resp 31916 leagueMatahTeamData
+ *
+ */
+
+// 球队比赛数据
+message leagueMatahTeamData{
+	optional int64 teamId = 1; 		// 球队ID
+	optional int64 pkTime = 2;  	// 下次可挑战时间
+	optional int32 speedCount = 3; 	// 已加速次数
+}
+
+//赛馆位置数据
+message ChangeLeaguePostions {
+	optional int32 type = 1;				  // 赛馆类型
+	repeated LeaguePostionData postions = 2;  // 赛馆数据
+}
+
+//赛馆位置数据
+message LeaguePostionData {
+	optional int32 posId = 1;		// 赛馆位置ID(配置)
+	optional int64 teamId = 2; 		// 球队ID
+	optional int32 playerRid = 3; 	// 最高攻防球员ID
+	optional string teamName = 4;	// 球队名
+	optional int32 leagueId = 5;	// 联盟ID
+	optional string leagueName = 6; // 联盟名
+	optional int32 cap = 7; 	    // 球队总攻防
+	optional int32 state = 8; 		// 球队比赛状态
+	optional int64 battleId = 9; 	// 球队比赛ID(自己的比赛ID和当前位置的比赛ID相等时,battleId>0)
+}
+
+//获取历史排名数据
+message LeagueHistoryRanks {
+	repeated LeagueHistoryRankData rankList = 2;  // 赛馆历史排名
+}
+
+message LeagueHistoryRankData {
+	optional int32 leagueId = 1; 	// 联盟ID
+	optional string leagueName = 2; // 联盟名
+	optional int32 leagueNum = 3;	// 联盟当前人数
+	optional int32 leagueLevel = 4;	// 联盟等级
+	optional int32 leagueRank = 5;  // 联盟历史排名
+	optional string leagueLogo = 6;	// 联盟图标
+}
+
+//获取贡献值排行数据
+message LeagueScoreRanks {
+	repeated LeagueScoreRankData rankList = 1;
+	optional int32 type = 2; 	//可参加联盟赛类型(0:没有资格参赛, 1:高级, 2:中级, 3:低级)
+}
+
+message LeagueScoreRankData {
+	optional int32 leagueId = 1; 	// 联盟ID
+	optional int32 rank = 2;  		// 联盟排名
+	optional int32 score = 3;		// 联盟周贡献
+	optional string leagueName = 4; // 联盟名
+	optional int32 leagueNum = 5;	// 联盟当前人数
+	optional int32 leagueLevel = 6;	// 联盟等级
+	optional string leagueLogo = 7;	// 联盟图标
+}
+
+//获取联盟总积分排行数据
+message LeagueMatchRanks {
+	repeated LeagueMatchRankData rankList = 1; 	  // 联盟总积分排行
+}
+
+message LeagueMatchRankData {
+	optional string leagueName = 1; 	// 联盟名
+	optional int32 rank = 2;  			// 联盟排名
+	optional int32 matchScore = 3;		// 联盟赛总积分
+	optional int32 winCount = 4;  		// 联盟总胜利场次
+	optional int32 failCount = 5;		// 联盟总失败场次
+}
+
+//获取联盟球队排行数据
+message LeagueMatchTeamRanks {
+	repeated LeagueMatchTeamRankData rankList = 1; // 联盟球队排行数据
+}
+
+message LeagueMatchTeamRankData {
+	optional int32 rank = 1;  		// 联盟排名
+	optional string leagueName = 2; // 联盟名
+	optional string teamName = 3;	// 球队名
+	optional int32 winCount = 4;  	// 球队总胜利场次
+	optional int32 failCount = 5;	// 球队总失败场次
+}
+
+// 赛馆占领状态数据推送
+message LeaguePostionChallangeState {
+	optional int32 state = 1;  		// 1:获得位置, 2:丢失位置
+	optional string teamName = 2;	// 球队名称
+}
+

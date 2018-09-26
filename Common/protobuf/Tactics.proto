@@ -1,0 +1,26 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "TacticsPB";
+
+
+// 战术
+message TeamTacticsData {
+	// 默认进攻id
+	required int32 defJg = 1;
+	// 默认防守id
+	required int32 defFs = 2;
+
+	// 战术列表
+	repeated TacticsData tacticsList = 3;
+}
+
+// 战术
+message TacticsData {
+	required int32 id = 1;
+	required int32 lv = 2;
+	// 突破剩余时间
+	required int64 buffTime = 3;
+}
+
+
+

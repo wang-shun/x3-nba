@@ -1,0 +1,14 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "AtvLotteryPB";
+
+
+/**
+ * 主界面
+ */
+message AtvLotteryViewData {
+	// 总抽奖次数
+	optional int32 totalCount = 1;
+	optional int64 luckyTeamId = 2;
+	optional string luckyTeamName = 3;
+}

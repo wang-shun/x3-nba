@@ -1,0 +1,13 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "VipPB";
+
+/**
+ * 活动通用协议回包
+ */
+message VipData {
+	required int64 teamId = 1;
+	required int32 exp = 2;
+	required int32 level = 3;
+	repeated int32 buyStatus = 4; // VIP等级礼包购买状态，买过的才会记录，如，买了2,3级礼包： 2,3
+}

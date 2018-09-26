@@ -1,0 +1,2 @@
+UPDATE t_u_league_group_season a,(SELECT id,start_time,CONCAT(DATE_FORMAT(end_time,"%y-%m-%d"),' 23:00:00') t FROM t_u_league_group_season) b
+ SET a.end_time = b.t,a.start_time=b.start_time WHERE a.id = b.id;

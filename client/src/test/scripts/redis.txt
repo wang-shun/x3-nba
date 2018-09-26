@@ -1,0 +1,5 @@
+
+/data/tools/redis-3.2.8/src/redis-cli -p 6379 -a zgame2017 KEYS "Task_Day_*" | xargs /data/tools/redis-3.2.8/src/redis-cli -p 6379 -a zgame2017 del
+/data/tools/redis-3.2.8/src/redis-cli -p 6379 -a zgame2017 KEYS "Team_Day_Statistics_*" | xargs /data/tools/redis-3.2.8/src/redis-cli -p 6379 -a zgame2017 del
+/data/tools/redis-3.2.8/src/redis-cli -p 6379 -a zgame2017 KEYS "Battle_End_Source_*" | xargs /data/tools/redis-3.2.8/src/redis-cli -p 6379 -a zgame2017 del
+

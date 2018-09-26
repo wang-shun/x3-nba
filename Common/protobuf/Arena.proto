@@ -1,0 +1,70 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "ArenaPB";
+
+message ArenaMainData{
+	required ArenaTeamData teamData =1;
+}
+
+
+message ArenaConstructionMainData{
+	repeated ArenaConstructionData cList =1;
+}
+
+message ArenaAttackMainData{
+	repeated ArenaAttackTeamData teams =1;
+	optional string bossName =2;
+	optional int32 bossGold =3;
+
+}
+
+message ArenaPlayerTeamMainData{
+	repeated ArenaPlayerData players =1;
+}
+
+message ArenaVengeanceMainData{
+	repeated ArenaVengeanceData vengeanceList = 1;
+}
+
+message ArenaVengeanceData{
+	required int64 teamId =1;
+	required string logo =2;
+	required string name =3;
+	optional string nodeName =4;
+
+}
+
+message ArenaAttackTeamData{
+	required ArenaConstructionMainData cData =1;
+	required int32 level =2;
+	required string name =3;
+	optional int32 gold =4;
+	required int64 teamId =5;
+	optional string nodeName =6;
+
+}
+
+message ArenaTeamData{
+	required int32 gold =1;
+	required int32 defend =2;
+	required int32 power =3;
+	required int32 level =4;
+	optional int32 powerSecond =5;
+
+}
+
+message ArenaPlayerData{
+	required int32 pid =1;
+	required int32 playerId =2;
+	required int32 tid =3;
+	required int32 grade =4;
+	required int32 position =5;
+}
+
+message ArenaConstructionData{
+	required int32 cid =1;
+	required int32 curGold =2;
+	required int32 maxGold =3;
+	required int32 playerId =4;
+	required int32 playerGrade =5;
+}

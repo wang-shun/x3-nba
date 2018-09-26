@@ -1,0 +1,31 @@
+package com.ftkj.proto;
+
+import "Prop.proto";
+import "Player.proto";
+option java_outer_classname = "TradeP2PPB";
+
+// 求购
+message TradeP2PData {
+	required int32 id =1;
+	required int64 teamId =2;
+	required string teamName =3;
+	required int32 playerId =4;
+	required int32 maxPrice =5;
+	required int32 minTalent =6;
+	required int32 money =7;
+	required int32 position =8;
+	required int32 status =9;// 0是上架状态； 1自行下架；	2交易完成
+	required int64 endTime	 =10;
+	optional bool sticky = 11; //是否置顶
+}
+
+// 我的求购列表
+message MyBuyingTradeData {
+	repeated TradeP2PData tradeList = 1;
+}
+
+// 列表
+message TradeP2PMainData {
+	repeated TradeP2PData tradeList = 1;
+}
+

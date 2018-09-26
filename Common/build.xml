@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="Common">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="F:/eclipse1.8/eclipse/"/>
+    <property name="CrossNodeServer.location" value="../CrossNodeServer"/>
+    <property name="GMServer.location" value="../GMServer"/>
+    <property name="GameClient.location" value="../GameClient"/>
+    <property name="NBAGameServer.location" value="../NBAGameServer"/>
+    <property name="PKNodeServer.location" value="../PKNodeServer"/>
+    <property name="GameCode.location" value="../GameCode"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+    <path id="JUnit 4.libraryclasspath">
+        <pathelement location="${ECLIPSE_HOME}plugins/org.junit_4.11.0.v201303080030/junit.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.hamcrest.core_1.3.0.v201303031735.jar"/>
+    </path>
+    <path id="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER.libraryclasspath"/>
+    <path id="GameCode.classpath">
+        <pathelement location="${GameCode.location}/target/classes"/>
+        <!--<path refid="JUnit 4.libraryclasspath"/>-->
+        <!--<path refid="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER.libraryclasspath"/>-->
+        <pathelement location="${GameCode.location}/lib/bonecp-0.8.0.RELEASE.jar"/>
+        <pathelement location="${GameCode.location}/lib/HikariCP-3.2.0.jar"/>
+        <pathelement location="${GameCode.location}/lib/commons-codec-1.9.jar"/>
+        <pathelement location="${GameCode.location}/lib/commons-lang-2.6.jar"/>
+        <pathelement location="${GameCode.location}/lib/commons-logging-1.2.jar"/>
+        <pathelement location="${GameCode.location}/lib/commons-pool2-2.4.2.jar"/>
+        <pathelement location="${GameCode.location}/lib/commons-validator-1.4.0.jar"/>
+        <pathelement location="${GameCode.location}/lib/disruptor-3.3.6.jar"/>
+        <pathelement location="${GameCode.location}/lib/fluent-hc-4.5.2.jar"/>
+        <pathelement location="${GameCode.location}/lib/gson-2.8.0.jar"/>
+        <pathelement location="${GameCode.location}/lib/guava-19.0.jar"/>
+        <pathelement location="${GameCode.location}/lib/httpclient-4.5.2.jar"/>
+        <pathelement location="${GameCode.location}/lib/httpclient-cache-4.5.2.jar"/>
+        <pathelement location="${GameCode.location}/lib/httpclient-win-4.5.2.jar"/>
+        <pathelement location="${GameCode.location}/lib/httpcore-4.4.4.jar"/>
+        <pathelement location="${GameCode.location}/lib/httpmime-4.5.2.jar"/>
+        <pathelement location="${GameCode.location}/lib/jedis-2.9.0.jar"/>
+        <pathelement location="${GameCode.location}/lib/jna-4.1.0.jar"/>
+        <pathelement location="${GameCode.location}/lib/jna-platform-4.1.0.jar"/>
+        <pathelement location="${GameCode.location}/lib/joda-time-2.9.9.jar"/>
+        <pathelement location="${GameCode.location}/lib/json-lib-2.4-jdk15.jar"/>
+        <pathelement location="${GameCode.location}/lib/kafka-clients-0.10.1.1.jar"/>
+        <pathelement location="${GameCode.location}/lib/log4j-api-2.8.2.jar"/>
+        <pathelement location="${GameCode.location}/lib/log4j-core-2.8.2.jar"/>
+        <pathelement location="${GameCode.location}/lib/log4j-jcl-2.8.2.jar"/>
+        <pathelement location="${GameCode.location}/lib/log4j-slf4j-impl-2.8.2.jar"/>
+        <pathelement location="${GameCode.location}/lib/mina-core-2.0.13.jar"/>
+        <pathelement location="${GameCode.location}/lib/mysql-connector-java-5.1.6-bin.jar"/>
+        <pathelement location="${GameCode.location}/lib/poi-3.13-20150929.jar"/>
+        <pathelement location="${GameCode.location}/lib/poi-excelant-3.13-20150929.jar"/>
+        <pathelement location="${GameCode.location}/lib/poi-ooxml-3.13-20150929.jar"/>
+        <pathelement location="${GameCode.location}/lib/poi-ooxml-schemas-3.13-20150929.jar"/>
+        <pathelement location="${GameCode.location}/lib/poi-scratchpad-3.13-20150929.jar"/>
+        <pathelement location="${GameCode.location}/lib/protobuf-java-2.4.1.jar"/>
+        <pathelement location="${GameCode.location}/lib/protostuff-api-1.5.3.jar"/>
+        <pathelement location="${GameCode.location}/lib/protostuff-collectionschema-1.5.3.jar"/>
+        <pathelement location="${GameCode.location}/lib/protostuff-core-1.5.3.jar"/>
+        <pathelement location="${GameCode.location}/lib/protostuff-runtime-1.5.3.jar"/>
+        <pathelement location="${GameCode.location}/lib/quartz-2.1.7.jar"/>
+        <pathelement location="${GameCode.location}/lib/slf4j-api-1.7.25.jar"/>
+        <pathelement location="${GameCode.location}/lib/xmlbeans-2.6.0.jar"/>
+        <pathelement location="${GameCode.location}/lib/zookeeper-3.4.8.jar"/>
+    </path>
+    <path id="Common.classpath">
+        <pathelement location="bin"/>
+        <pathelement location="lib/commons-codec-1.9.jar"/>
+        <pathelement location="lib/guava-19.0.jar"/>
+        <pathelement location="lib/protobuf-java-2.4.1.jar"/>
+        <pathelement location="lib/zookeeper-3.4.8.jar"/>
+        <pathelement location="lib/mina-core-2.0.13.jar"/>
+        <pathelement location="lib/log4j-api-2.8.2.jar"/>
+        <pathelement location="lib/log4j-core-2.8.2.jar"/>
+        <pathelement location="lib/joda-time-2.9.9.jar"/>
+        <pathelement location="lib/log4j-jcl-2.8.2.jar"/>
+        <pathelement location="lib/log4j-slf4j-impl-2.8.2.jar"/>
+        <pathelement location="lib/slf4j-api-1.7.25.jar"/>
+        <path refid="GameCode.classpath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.xtend"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall">
+        <ant antfile="build.xml" dir="${GameCode.location}" inheritAll="false" target="clean"/>
+    </target>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects">
+        <ant antfile="build.xml" dir="${GameCode.location}" inheritAll="false" target="build-project">
+            <propertyset>
+                <propertyref name="build.compiler"/>
+            </propertyset>
+        </ant>
+    </target>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="source,lines,vars" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="Common.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects">
+        <ant antfile="build.xml" dir="${CrossNodeServer.location}" inheritAll="false" target="clean"/>
+        <ant antfile="build.xml" dir="${CrossNodeServer.location}" inheritAll="false" target="build">
+            <propertyset>
+                <propertyref name="build.compiler"/>
+            </propertyset>
+        </ant>
+        <ant antfile="build.xml" dir="${GMServer.location}" inheritAll="false" target="clean"/>
+        <ant antfile="build.xml" dir="${GMServer.location}" inheritAll="false" target="build">
+            <propertyset>
+                <propertyref name="build.compiler"/>
+            </propertyset>
+        </ant>
+        <ant antfile="build.xml" dir="${GameClient.location}" inheritAll="false" target="clean"/>
+        <ant antfile="build.xml" dir="${GameClient.location}" inheritAll="false" target="build">
+            <propertyset>
+                <propertyref name="build.compiler"/>
+            </propertyset>
+        </ant>
+        <ant antfile="build.xml" dir="${NBAGameServer.location}" inheritAll="false" target="clean"/>
+        <ant antfile="build.xml" dir="${NBAGameServer.location}" inheritAll="false" target="build">
+            <propertyset>
+                <propertyref name="build.compiler"/>
+            </propertyset>
+        </ant>
+        <ant antfile="build.xml" dir="${PKNodeServer.location}" inheritAll="false" target="clean"/>
+        <ant antfile="build.xml" dir="${PKNodeServer.location}" inheritAll="false" target="build">
+            <propertyset>
+                <propertyref name="build.compiler"/>
+            </propertyset>
+        </ant>
+    </target>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="TeamNode">
+        <java classname="com.ftkj.manager.team.TeamNode" failonerror="true" fork="yes">
+            <classpath refid="Common.classpath"/>
+        </java>
+    </target>
+</project>

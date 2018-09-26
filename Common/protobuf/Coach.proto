@@ -1,0 +1,14 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "CoachPB";
+
+
+message CoachMainData{
+	repeated CoachData coachList =1;
+}
+
+
+message CoachData{
+	optional int32 cid =1;
+	optional int32 status =2;
+}

@@ -1,0 +1,145 @@
+package com.ftkj.proto;
+
+import "Prop.proto";
+option java_outer_classname = "MatchPB";
+
+// 多人赛列表
+message MatchListData {
+	repeated MatchData MatchList = 1;
+}
+
+// 多人赛
+message MatchData {
+	// 序列
+	required int32 seq = 1;
+	// 比赛类型
+	required int32 id = 2;
+	// 报名数
+	required int32 signNum = 3;
+	// 报名状态
+	required bool isSign = 4;
+//	 * 比赛状态
+//	 * 开始报名(1),
+//	 * 报名截止(4),
+//	 * 比赛中(2),
+//	 * 比赛结束(3)
+	required int32 status = 5;
+	// 比赛时间
+	required int64 matchTime = 6;
+	//奖杯超快赛报名次数
+	optional int32 dailySignupNum = 7;
+}
+
+// 某场比赛推包数据
+message MatchTopicData {
+	// 序列
+	required int32 seq = 1;
+	// 比赛类型
+	required int32 id = 2;
+	// 报名数
+	required int32 signNum = 3;
+	// 比赛状态
+	required int32 status = 4;
+	//奖杯超快赛报名次数
+	optional int32 dailySignupNum = 5;
+}
+
+// 比赛详细对战列表数据
+message MatchDetailData {
+	// 当前轮数0是未开始
+	required int32 round =1;
+	// 当前轮比赛列表
+	repeated MatchPKData pkList = 2;
+}
+
+// 某次比赛
+message MatchPKData {
+	required int64 battleId = 1;
+	required int64 homeId = 2;
+	required int64 awatId = 3;
+	required string homeName = 4;
+	required string awayName = 5;
+	required string homeLogo = 6;
+	required string awayLogo = 7;
+	required int32 homeScore = 8;
+	required int32 awayScore = 9;
+	// 状态，0进行中， 1已打完
+	required int32 status = 10;
+	optional int32 homeLevel = 11;
+	optional int32 awayLevel = 12;
+	optional string homeLeague = 13;
+	optional string awayLeague = 14;
+}
+
+// 历史最佳列表
+message MatchBestListData {
+	required int64 teamId = 1;
+	repeated MatchBestData bestList = 2;
+}
+
+// 历史最佳
+message MatchBestData {
+	required int32 matchId = 1;
+	required int32 rank = 2;
+}
+
+// 排名列表
+message MatchRankListData {
+	repeated MatchRankData rankList = 1;
+}
+
+// 排名
+message MatchRankData {
+	required string teamName = 1;
+	required int32 rank = 2;
+}
+
+// 比赛结算界面，名次
+message MatchReportData {
+	// 序列
+	required int32 seq = 1;
+	// 比赛类型
+	required int32 id = 2;
+	// 名次
+	required int32 rank = 3;
+	// 类型，备用
+	optional int32 type = 4;
+}
+
+// 赛前通知
+message MatchStartTipData {
+	// 序列
+	required int32 seq = 1;
+	// 比赛类型
+	required int32 id = 2;
+	// 分钟数
+	required int32 min = 3;
+	// 字符串内容，备用
+	optional string msg = 4;
+}
+
+// 宝箱刷新列表
+message BoxListData {
+	repeated BoxData boxList = 1;
+}
+
+// 宝箱
+message BoxData {
+	// id，也是位置
+	required int32 id = 1;
+	// 类型
+	required int32 type = 2;
+}
+
+// 抢宝箱推送内容
+message RobBoxData {
+	// id，也是位置
+	required int32 id = 1;
+	// 类型
+	required int32 type = 2;
+	// 抢到的人
+	required int64 teamId = 3;
+	// 奖励列表
+	repeated PropSimpleData propList = 4;
+}
+

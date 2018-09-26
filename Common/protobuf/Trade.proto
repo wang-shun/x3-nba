@@ -1,0 +1,80 @@
+package com.ftkj.proto;
+
+import "Prop.proto";
+import "Player.proto";
+option java_outer_classname = "TradePB";
+
+// 自由买卖
+message TradeData {
+	required int32 id =1;
+	required int64 teamId =2;
+	required string teamName =3;
+	required int32 pid =4;
+	required int32 playerId =5;
+	required int32 price =6;
+	required int32 money =7;
+	required int32 status =8;// 0是上架状态； 1自行下架；	2交易完成
+	required int64 endTime	 =9;
+	optional PlayerTalentData talent =10;
+	required int32 position =11;
+	optional bool sticky = 12; //是否置顶
+}
+
+message TradeHelpData{
+	required int32 playerId =1;
+	optional PlayerTalentData talent = 2;
+}
+
+// 历史成交
+message HisTradeData {
+	required int32 playerId =1;
+	required int32 price =2;
+	required int32 marketPrice =3;
+	required int32 money =4;
+	required int64 dealTime =5;
+	required int32 position =6;
+}
+
+// 交易记录
+message TranData {
+	required int64 dealTime =1;
+	required int32 type =2; // 1购买 2，出售
+	required int32 playerId =3;
+	required int32 price =4;
+	required int32 money =5;
+	// 交易玩家
+	required int64 teamId =6;
+	required string teamName = 7;
+	required int32 position =8;
+}
+
+// 列表
+message TradeListData {
+	repeated TradeData tradeList = 1;
+	required int32 size =2;
+	required int32 buyMaxMoney =3;
+}
+// 某球员的历史交易记录
+message HisTradeListData {
+	repeated HisTradeData historyList = 1;
+}
+
+// 我的交易记录
+message TranListData {
+	repeated TranData TranList = 1;
+}
+
+// 交易留言列表
+message TradeChatListData{
+	repeated TradeChatMsg tradeChat = 1; 	// 交易留言列表
+	optional int32 tradeChatState = 2; 		// 交易留言状态(0:未留言, 1:已留言)
+}
+
+message TradeChatMsg{
+	required int64  sendTeamId = 1; 	// 来源球队ID
+	optional string sendTeamLogo = 2;  	// 来源球队图标
+	optional string sendTeamName = 3; 	// 来源球队名称
+	optional int32  sendTeamLevel = 4;	// 来源球队等级
+	optional int64 cerateTime = 5; 		// 创建时间
+	optional string content = 6;		// 消息内容
+}

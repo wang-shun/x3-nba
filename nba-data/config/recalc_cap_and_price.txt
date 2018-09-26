@@ -1,0 +1,13 @@
+修正球员身价和cap值
+
+清除 已经完成计算的 数据状态:
+
+mysql -uroot -pzgame2017 -h127.0.0.1 -e"
+delete from player_money where time >= '2018-06-07';
+delete FROM data_game_vs where date_time >= '2018-06-07';
+delete from data_job_runlog where run_time >= '2018-06-07';
+"
+
+然后重新运行程序计算一遍身价和cap. 执行命令:
+
+com.ftkj.ao.data.job.GameDataJob /data/ZGame/nbasource/config/config.js 1 192.168.10.70 2222 updateNBAPlayer

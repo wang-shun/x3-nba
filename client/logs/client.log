@@ -1,0 +1,685 @@
+[INFO ] 07-10 16:30:30:653 [main] RunnableTask.java:26: spring config [class com.ftkj.x3.client.X3SpringConfig$AppConfig] activeProfile [logictask], start with [class com.ftkj.x3.client.task.single.team.TeamCodeClient] ...
+[INFO ] 07-10 16:30:30:655 [main] RunnableTask.java:27: command line args []. init spring...
+[INFO ] 07-10 16:30:31:634 [main] RunnableTask.java:33: init spring done.
+[INFO ] 07-10 16:30:31:754 [main] ClientStart.java:47: client confg {
+"shardId":101
+, "loginUseWanIp":false
+, "serverSize":3
+, "defaultServer":{"sid":101, "hostname":"s101", "wanIp":"192.168.10.181", "lanIp":"192.168.10.181", "port":8038, "opPort":9001, "mainSid":101, "mergedSid":[64]}
+, "locale":"zh_CN"
+, "excelPath":"~/x3_plan/游戏配置文档"
+, "gm":true
+, "simpleLog":false
+, "logMsgStatics":false
+, "cacheGlobalPrefix":"client/"
+, "cacheL2Enable":true
+, "cacheL2Address":"127.0.0.1:6379"
+, "cacheL1MaxElements":20000}
+[INFO ] 07-10 16:30:31:775 [main] JedisUtil.java:77: redis init. host 127.0.0.1:6379 db 0
+[INFO ] 07-10 16:30:31:811 [main] CM.java:537: init excel. zk false debugpath ~/x3_plan/游戏配置文档 zkpath /zgame/config redis true
+[WARN ] 07-10 16:30:31:811 [main] CM.java:541: excel convert to bean..
+[ERROR] 07-10 16:30:32:840 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_Config~/x3_plan/游戏配置文档\Global.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:30:32:841 [main] CM.java:518: 读本地excel[~/x3_plan/游戏配置文档\Global.xlsx]
+[ERROR] 07-10 16:30:32:842 [main] CM.java:521: 配置文件不存在~/x3_plan/游戏配置文档\Global.xlsx
+[ERROR] 07-10 16:30:33:854 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_Config~/x3_plan/游戏配置文档\Global.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:30:33:854 [main] CM.java:559: 配置文件不存在Global-Config
+[ERROR] 07-10 16:30:34:855 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_Equi~/x3_plan/游戏配置文档\Equi.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:30:34:855 [main] CM.java:518: 读本地excel[~/x3_plan/游戏配置文档\Equi.xlsx]
+[ERROR] 07-10 16:30:34:855 [main] CM.java:521: 配置文件不存在~/x3_plan/游戏配置文档\Equi.xlsx
+[ERROR] 07-10 16:30:35:854 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_Equi~/x3_plan/游戏配置文档\Equi.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:30:35:854 [main] CM.java:559: 配置文件不存在Equi-Equi
+[ERROR] 07-10 16:30:36:855 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_UpLv~/x3_plan/游戏配置文档\Equi.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:30:37:866 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_UpLv~/x3_plan/游戏配置文档\Equi.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:30:37:866 [main] CM.java:559: 配置文件不存在Equi-UpLv
+[ERROR] 07-10 16:30:38:877 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_UpStrLv~/x3_plan/游戏配置文档\Equi.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:30:39:887 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_UpStrLv~/x3_plan/游戏配置文档\Equi.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:30:39:887 [main] CM.java:559: 配置文件不存在Equi-UpStrLv
+[ERROR] 07-10 16:30:40:899 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_UpQuality~/x3_plan/游戏配置文档\Equi.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:30:41:900 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_UpQuality~/x3_plan/游戏配置文档\Equi.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:30:41:901 [main] CM.java:559: 配置文件不存在Equi-UpQuality
+[ERROR] 07-10 16:30:42:912 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_ClothesQua~/x3_plan/游戏配置文档\Equi.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:30:43:912 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_ClothesQua~/x3_plan/游戏配置文档\Equi.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:30:43:912 [main] CM.java:559: 配置文件不存在Equi-ClothesQua
+[ERROR] 07-10 16:30:44:923 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_Refresh~/x3_plan/游戏配置文档\Equi.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:30:45:923 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_Refresh~/x3_plan/游戏配置文档\Equi.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:30:45:923 [main] CM.java:559: 配置文件不存在Equi-Refresh
+[ERROR] 07-10 16:30:46:924 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_Lv~/x3_plan/游戏配置文档\LogoPlayer.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:30:46:924 [main] CM.java:518: 读本地excel[~/x3_plan/游戏配置文档\LogoPlayer.xlsx]
+[ERROR] 07-10 16:30:46:924 [main] CM.java:521: 配置文件不存在~/x3_plan/游戏配置文档\LogoPlayer.xlsx
+[ERROR] 07-10 16:30:47:925 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_Lv~/x3_plan/游戏配置文档\LogoPlayer.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:30:47:925 [main] CM.java:559: 配置文件不存在LogoPlayer-Lv
+[ERROR] 07-10 16:30:48:936 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_Quality~/x3_plan/游戏配置文档\LogoPlayer.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:30:49:946 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_Quality~/x3_plan/游戏配置文档\LogoPlayer.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:30:49:946 [main] CM.java:559: 配置文件不存在LogoPlayer-Quality
+[ERROR] 07-10 16:30:50:945 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_Player~/x3_plan/游戏配置文档\LogoPlayer.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:30:51:956 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_Player~/x3_plan/游戏配置文档\LogoPlayer.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:30:51:956 [main] CM.java:559: 配置文件不存在LogoPlayer-Player
+[ERROR] 07-10 16:30:52:956 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_CardGroup~/x3_plan/游戏配置文档\PlayerCollect.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:30:52:956 [main] CM.java:518: 读本地excel[~/x3_plan/游戏配置文档\PlayerCollect.xlsx]
+[ERROR] 07-10 16:30:52:957 [main] CM.java:521: 配置文件不存在~/x3_plan/游戏配置文档\PlayerCollect.xlsx
+[ERROR] 07-10 16:30:53:967 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_CardGroup~/x3_plan/游戏配置文档\PlayerCollect.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:30:53:967 [main] CM.java:559: 配置文件不存在PlayerCollect-CardGroup
+[ERROR] 07-10 16:30:54:978 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_Composite~/x3_plan/游戏配置文档\PlayerCollect.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:30:55:988 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_Composite~/x3_plan/游戏配置文档\PlayerCollect.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:30:55:988 [main] CM.java:559: 配置文件不存在PlayerCollect-Composite
+[ERROR] 07-10 16:30:56:999 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_StarLvExp~/x3_plan/游戏配置文档\PlayerCollect.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:30:58:018 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_StarLvExp~/x3_plan/游戏配置文档\PlayerCollect.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:30:58:018 [main] CM.java:559: 配置文件不存在PlayerCollect-StarLvExp
+[ERROR] 07-10 16:30:59:029 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_CardPlayerGradeCap~/x3_plan/游戏配置文档\PlayerCollect.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:31:00:040 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_CardPlayerGradeCap~/x3_plan/游戏配置文档\PlayerCollect.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:31:00:041 [main] CM.java:559: 配置文件不存在PlayerCollect-CardPlayerGradeCap
+[ERROR] 07-10 16:31:01:041 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_GameNpc~/x3_plan/游戏配置文档\GameNPC.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:31:01:041 [main] CM.java:518: 读本地excel[~/x3_plan/游戏配置文档\GameNPC.xlsx]
+[ERROR] 07-10 16:31:01:041 [main] CM.java:521: 配置文件不存在~/x3_plan/游戏配置文档\GameNPC.xlsx
+[ERROR] 07-10 16:31:02:052 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_GameNpc~/x3_plan/游戏配置文档\GameNPC.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:31:02:052 [main] CM.java:559: 配置文件不存在GameNPC-GameNpc
+[ERROR] 07-10 16:31:03:053 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_Mirrors~/x3_plan/游戏配置文档\GameNPC.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:31:04:061 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_Mirrors~/x3_plan/游戏配置文档\GameNPC.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:31:04:061 [main] CM.java:559: 配置文件不存在GameNPC-Mirrors
+[ERROR] 07-10 16:31:05:072 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_ItemDrops~/x3_plan/游戏配置文档\Drop.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:31:05:072 [main] CM.java:518: 读本地excel[~/x3_plan/游戏配置文档\Drop.xlsx]
+[ERROR] 07-10 16:31:05:073 [main] CM.java:521: 配置文件不存在~/x3_plan/游戏配置文档\Drop.xlsx
+[ERROR] 07-10 16:31:06:083 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_ItemDrops~/x3_plan/游戏配置文档\Drop.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:31:06:083 [main] CM.java:559: 配置文件不存在Drop-ItemDrops
+[ERROR] 07-10 16:31:07:094 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_Main~/x3_plan/游戏配置文档\MainSchedule.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:31:07:094 [main] CM.java:518: 读本地excel[~/x3_plan/游戏配置文档\MainSchedule.xlsx]
+[ERROR] 07-10 16:31:07:094 [main] CM.java:521: 配置文件不存在~/x3_plan/游戏配置文档\MainSchedule.xlsx
+[ERROR] 07-10 16:31:08:108 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_Main~/x3_plan/游戏配置文档\MainSchedule.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:31:08:109 [main] CM.java:559: 配置文件不存在MainSchedule-Main
+[ERROR] 07-10 16:31:09:120 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_Exp~/x3_plan/游戏配置文档\Upgrade.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:31:09:120 [main] CM.java:518: 读本地excel[~/x3_plan/游戏配置文档\Upgrade.xlsx]
+[ERROR] 07-10 16:31:09:120 [main] CM.java:521: 配置文件不存在~/x3_plan/游戏配置文档\Upgrade.xlsx
+[ERROR] 07-10 16:31:10:123 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_Exp~/x3_plan/游戏配置文档\Upgrade.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:31:10:123 [main] CM.java:559: 配置文件不存在Upgrade-Exp
+[ERROR] 07-10 16:31:11:134 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_Num~/x3_plan/游戏配置文档\Team.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:31:11:134 [main] CM.java:518: 读本地excel[~/x3_plan/游戏配置文档\Team.xlsx]
+[ERROR] 07-10 16:31:11:135 [main] CM.java:521: 配置文件不存在~/x3_plan/游戏配置文档\Team.xlsx
+[ERROR] 07-10 16:31:12:135 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_Num~/x3_plan/游戏配置文档\Team.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:31:12:135 [main] CM.java:559: 配置文件不存在Team-Num
+[ERROR] 07-10 16:31:13:146 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_Items~/x3_plan/游戏配置文档\Items.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:31:13:146 [main] CM.java:518: 读本地excel[~/x3_plan/游戏配置文档\Items.xlsx]
+[ERROR] 07-10 16:31:13:146 [main] CM.java:521: 配置文件不存在~/x3_plan/游戏配置文档\Items.xlsx
+[ERROR] 07-10 16:31:14:160 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_Items~/x3_plan/游戏配置文档\Items.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:31:14:160 [main] CM.java:559: 配置文件不存在Items-Items
+[ERROR] 07-10 16:31:15:171 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_Drop~/x3_plan/游戏配置文档\Items.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:31:16:181 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_Drop~/x3_plan/游戏配置文档\Items.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:31:16:181 [main] CM.java:559: 配置文件不存在Items-Drop
+[ERROR] 07-10 16:31:17:185 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_Convert~/x3_plan/游戏配置文档\Items.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:31:18:196 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_Convert~/x3_plan/游戏配置文档\Items.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:31:18:196 [main] CM.java:559: 配置文件不存在Items-Convert
+[ERROR] 07-10 16:31:19:207 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_Player~/x3_plan/游戏配置文档\PlayerUpdate.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:31:19:207 [main] CM.java:518: 读本地excel[~/x3_plan/游戏配置文档\PlayerUpdate.xlsx]
+[ERROR] 07-10 16:31:19:207 [main] CM.java:521: 配置文件不存在~/x3_plan/游戏配置文档\PlayerUpdate.xlsx
+[ERROR] 07-10 16:31:20:218 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_Player~/x3_plan/游戏配置文档\PlayerUpdate.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:31:20:218 [main] CM.java:559: 配置文件不存在PlayerUpdate-Player
+[ERROR] 07-10 16:31:21:231 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_UpLv~/x3_plan/游戏配置文档\Tactics.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:31:21:231 [main] CM.java:518: 读本地excel[~/x3_plan/游戏配置文档\Tactics.xlsx]
+[ERROR] 07-10 16:31:21:231 [main] CM.java:521: 配置文件不存在~/x3_plan/游戏配置文档\Tactics.xlsx
+[INFO ] 07-10 16:31:28:180 [main] RunnableTask.java:26: spring config [class com.ftkj.x3.client.X3SpringConfig$AppConfig] activeProfile [logictask], start with [class com.ftkj.x3.client.task.single.team.TeamCodeClient] ...
+[INFO ] 07-10 16:31:28:182 [main] RunnableTask.java:27: command line args []. init spring...
+[INFO ] 07-10 16:31:29:366 [main] RunnableTask.java:33: init spring done.
+[INFO ] 07-10 16:31:29:570 [main] ClientStart.java:47: client confg {
+"shardId":101
+, "loginUseWanIp":false
+, "serverSize":3
+, "defaultServer":{"sid":101, "hostname":"s101", "wanIp":"192.168.10.181", "lanIp":"192.168.10.181", "port":8038, "opPort":9001, "mainSid":101, "mergedSid":[64]}
+, "locale":"zh_CN"
+, "excelPath":"F:/nba/FTXNBADataSystem/游戏配置文档"
+, "gm":true
+, "simpleLog":false
+, "logMsgStatics":false
+, "cacheGlobalPrefix":"client/"
+, "cacheL2Enable":true
+, "cacheL2Address":"127.0.0.1:6379"
+, "cacheL1MaxElements":20000}
+[INFO ] 07-10 16:31:29:597 [main] JedisUtil.java:77: redis init. host 127.0.0.1:6379 db 0
+[INFO ] 07-10 16:31:29:644 [main] CM.java:537: init excel. zk false debugpath F:/nba/FTXNBADataSystem/游戏配置文档 zkpath /zgame/config redis true
+[WARN ] 07-10 16:31:29:645 [main] CM.java:541: excel convert to bean..
+[ERROR] 07-10 16:31:30:674 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_ConfigF:/nba/FTXNBADataSystem/游戏配置文档\Global.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:31:30:675 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Global.xlsx]
+[ERROR] 07-10 16:31:32:261 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_ConfigF:/nba/FTXNBADataSystem/游戏配置文档\Global.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:31:33:275 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_EquiF:/nba/FTXNBADataSystem/游戏配置文档\Equi.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:31:33:275 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Equi.xlsx]
+[ERROR] 07-10 16:31:34:345 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_EquiF:/nba/FTXNBADataSystem/游戏配置文档\Equi.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:31:35:349 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_UpLvF:/nba/FTXNBADataSystem/游戏配置文档\Equi.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:31:36:413 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_UpLvF:/nba/FTXNBADataSystem/游戏配置文档\Equi.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:31:37:424 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_UpStrLvF:/nba/FTXNBADataSystem/游戏配置文档\Equi.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:31:38:478 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_UpStrLvF:/nba/FTXNBADataSystem/游戏配置文档\Equi.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:31:39:492 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_UpQualityF:/nba/FTXNBADataSystem/游戏配置文档\Equi.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[INFO ] 07-10 16:31:52:570 [main] RunnableTask.java:26: spring config [class com.ftkj.x3.client.X3SpringConfig$AppConfig] activeProfile [logictask], start with [class com.ftkj.x3.client.task.single.team.TeamCodeClient] ...
+[INFO ] 07-10 16:31:52:572 [main] RunnableTask.java:27: command line args []. init spring...
+[INFO ] 07-10 16:31:53:700 [main] RunnableTask.java:33: init spring done.
+[INFO ] 07-10 16:31:53:848 [main] ClientStart.java:47: client confg {
+"shardId":101
+, "loginUseWanIp":false
+, "serverSize":3
+, "defaultServer":{"sid":101, "hostname":"s101", "wanIp":"192.168.10.181", "lanIp":"192.168.10.181", "port":8038, "opPort":9001, "mainSid":101, "mergedSid":[64]}
+, "locale":"zh_CN"
+, "excelPath":"F:/nba/FTXNBADataSystem/游戏配置文档"
+, "gm":true
+, "simpleLog":false
+, "logMsgStatics":false
+, "cacheGlobalPrefix":"client/"
+, "cacheL2Enable":true
+, "cacheL2Address":"127.0.0.1:6379"
+, "cacheL1MaxElements":20000}
+[INFO ] 07-10 16:31:53:875 [main] JedisUtil.java:77: redis init. host 127.0.0.1:6379 db 0
+[INFO ] 07-10 16:31:53:923 [main] CM.java:537: init excel. zk false debugpath F:/nba/FTXNBADataSystem/游戏配置文档 zkpath /zgame/config redis true
+[WARN ] 07-10 16:31:53:923 [main] CM.java:541: excel convert to bean..
+[ERROR] 07-10 16:31:54:942 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_ConfigF:/nba/FTXNBADataSystem/游戏配置文档\Global.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:31:54:944 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Global.xlsx]
+[ERROR] 07-10 16:31:56:560 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_ConfigF:/nba/FTXNBADataSystem/游戏配置文档\Global.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:31:57:574 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_EquiF:/nba/FTXNBADataSystem/游戏配置文档\Equi.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:31:57:575 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Equi.xlsx]
+[ERROR] 07-10 16:31:58:655 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_EquiF:/nba/FTXNBADataSystem/游戏配置文档\Equi.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:31:59:668 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_UpLvF:/nba/FTXNBADataSystem/游戏配置文档\Equi.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:32:00:727 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_UpLvF:/nba/FTXNBADataSystem/游戏配置文档\Equi.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:32:01:729 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_UpStrLvF:/nba/FTXNBADataSystem/游戏配置文档\Equi.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[INFO ] 07-10 16:33:04:220 [main] RunnableTask.java:26: spring config [class com.ftkj.x3.client.X3SpringConfig$AppConfig] activeProfile [logictask], start with [class com.ftkj.x3.client.task.single.team.TeamCodeClient] ...
+[INFO ] 07-10 16:33:04:222 [main] RunnableTask.java:27: command line args []. init spring...
+[INFO ] 07-10 16:33:05:391 [main] RunnableTask.java:33: init spring done.
+[INFO ] 07-10 16:33:05:599 [main] ClientStart.java:47: client confg {
+"shardId":101
+, "loginUseWanIp":false
+, "serverSize":3
+, "defaultServer":{"sid":101, "hostname":"s101", "wanIp":"192.168.10.181", "lanIp":"192.168.10.181", "port":8038, "opPort":9001, "mainSid":101, "mergedSid":[64]}
+, "locale":"zh_CN"
+, "excelPath":"F:/nba/FTXNBADataSystem/游戏配置文档"
+, "gm":true
+, "simpleLog":false
+, "logMsgStatics":false
+, "cacheGlobalPrefix":"client/"
+, "cacheL2Enable":true
+, "cacheL2Address":"127.0.0.1:6379"
+, "cacheL1MaxElements":20000}
+[INFO ] 07-10 16:33:05:640 [main] JedisUtil.java:77: redis init. host 127.0.0.1:6379 db 0
+[INFO ] 07-10 16:33:05:687 [main] CM.java:537: init excel. zk false debugpath F:/nba/FTXNBADataSystem/游戏配置文档 zkpath /zgame/config redis true
+[WARN ] 07-10 16:33:05:688 [main] CM.java:541: excel convert to bean..
+[ERROR] 07-10 16:33:05:715 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_ConfigF:/nba/FTXNBADataSystem/游戏配置文档\Global.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:05:716 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Global.xlsx]
+[ERROR] 07-10 16:33:06:315 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_ConfigF:/nba/FTXNBADataSystem/游戏配置文档\Global.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:06:319 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_EquiF:/nba/FTXNBADataSystem/游戏配置文档\Equi.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:06:319 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Equi.xlsx]
+[ERROR] 07-10 16:33:06:383 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_EquiF:/nba/FTXNBADataSystem/游戏配置文档\Equi.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:06:388 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_UpLvF:/nba/FTXNBADataSystem/游戏配置文档\Equi.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:06:446 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_UpLvF:/nba/FTXNBADataSystem/游戏配置文档\Equi.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:06:451 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_UpStrLvF:/nba/FTXNBADataSystem/游戏配置文档\Equi.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:06:515 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_UpStrLvF:/nba/FTXNBADataSystem/游戏配置文档\Equi.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:06:520 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_UpQualityF:/nba/FTXNBADataSystem/游戏配置文档\Equi.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[WARN ] 07-10 16:33:06:567 [main] ExcelRead.java:87: 配置数据出现空行 Equi_UpQuality row=10
+[ERROR] 07-10 16:33:06:568 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_UpQualityF:/nba/FTXNBADataSystem/游戏配置文档\Equi.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:06:578 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_ClothesQuaF:/nba/FTXNBADataSystem/游戏配置文档\Equi.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:06:623 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_ClothesQuaF:/nba/FTXNBADataSystem/游戏配置文档\Equi.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:06:625 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_RefreshF:/nba/FTXNBADataSystem/游戏配置文档\Equi.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:06:666 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_RefreshF:/nba/FTXNBADataSystem/游戏配置文档\Equi.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:06:668 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_LvF:/nba/FTXNBADataSystem/游戏配置文档\LogoPlayer.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:06:669 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\LogoPlayer.xlsx]
+[ERROR] 07-10 16:33:06:692 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_LvF:/nba/FTXNBADataSystem/游戏配置文档\LogoPlayer.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:06:694 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_QualityF:/nba/FTXNBADataSystem/游戏配置文档\LogoPlayer.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:06:722 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_QualityF:/nba/FTXNBADataSystem/游戏配置文档\LogoPlayer.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:06:724 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_PlayerF:/nba/FTXNBADataSystem/游戏配置文档\LogoPlayer.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:06:771 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_PlayerF:/nba/FTXNBADataSystem/游戏配置文档\LogoPlayer.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:06:773 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_CardGroupF:/nba/FTXNBADataSystem/游戏配置文档\PlayerCollect.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:06:774 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\PlayerCollect.xlsx]
+[ERROR] 07-10 16:33:06:802 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_CardGroupF:/nba/FTXNBADataSystem/游戏配置文档\PlayerCollect.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:06:805 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_CompositeF:/nba/FTXNBADataSystem/游戏配置文档\PlayerCollect.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:06:832 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_CompositeF:/nba/FTXNBADataSystem/游戏配置文档\PlayerCollect.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:06:835 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_StarLvExpF:/nba/FTXNBADataSystem/游戏配置文档\PlayerCollect.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:06:864 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_StarLvExpF:/nba/FTXNBADataSystem/游戏配置文档\PlayerCollect.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:06:867 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_CardPlayerGradeCapF:/nba/FTXNBADataSystem/游戏配置文档\PlayerCollect.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[WARN ] 07-10 16:33:06:891 [main] ExcelRead.java:87: 配置数据出现空行 PlayerCollect_CardPlayerGradeCap row=41
+[WARN ] 07-10 16:33:06:892 [main] ExcelRead.java:87: 配置数据出现空行 PlayerCollect_CardPlayerGradeCap row=42
+[ERROR] 07-10 16:33:06:892 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_CardPlayerGradeCapF:/nba/FTXNBADataSystem/游戏配置文档\PlayerCollect.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:06:897 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_GameNpcF:/nba/FTXNBADataSystem/游戏配置文档\GameNPC.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:06:897 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\GameNPC.xlsx]
+[ERROR] 07-10 16:33:07:344 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_GameNpcF:/nba/FTXNBADataSystem/游戏配置文档\GameNPC.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:07:354 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_MirrorsF:/nba/FTXNBADataSystem/游戏配置文档\GameNPC.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:07:717 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_MirrorsF:/nba/FTXNBADataSystem/游戏配置文档\GameNPC.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:07:739 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_ItemDropsF:/nba/FTXNBADataSystem/游戏配置文档\Drop.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:07:739 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Drop.xlsx]
+[ERROR] 07-10 16:33:07:889 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_ItemDropsF:/nba/FTXNBADataSystem/游戏配置文档\Drop.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:07:899 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_MainF:/nba/FTXNBADataSystem/游戏配置文档\MainSchedule.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:07:900 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\MainSchedule.xlsx]
+[ERROR] 07-10 16:33:08:102 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_MainF:/nba/FTXNBADataSystem/游戏配置文档\MainSchedule.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:08:106 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_ExpF:/nba/FTXNBADataSystem/游戏配置文档\Upgrade.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:08:106 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Upgrade.xlsx]
+[ERROR] 07-10 16:33:08:121 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_ExpF:/nba/FTXNBADataSystem/游戏配置文档\Upgrade.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:08:125 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_NumF:/nba/FTXNBADataSystem/游戏配置文档\Team.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:08:125 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Team.xlsx]
+[ERROR] 07-10 16:33:08:138 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_NumF:/nba/FTXNBADataSystem/游戏配置文档\Team.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:08:154 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_ItemsF:/nba/FTXNBADataSystem/游戏配置文档\Items.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:08:154 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Items.xlsx]
+[ERROR] 07-10 16:33:08:246 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_ItemsF:/nba/FTXNBADataSystem/游戏配置文档\Items.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:08:250 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_DropF:/nba/FTXNBADataSystem/游戏配置文档\Items.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:08:307 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_DropF:/nba/FTXNBADataSystem/游戏配置文档\Items.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:08:309 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_ConvertF:/nba/FTXNBADataSystem/游戏配置文档\Items.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:08:409 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_ConvertF:/nba/FTXNBADataSystem/游戏配置文档\Items.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:08:466 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_PlayerF:/nba/FTXNBADataSystem/游戏配置文档\PlayerUpdate.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:08:467 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\PlayerUpdate.xlsx]
+[ERROR] 07-10 16:33:09:196 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_PlayerF:/nba/FTXNBADataSystem/游戏配置文档\PlayerUpdate.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:09:231 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_UpLvF:/nba/FTXNBADataSystem/游戏配置文档\Tactics.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:09:231 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Tactics.xlsx]
+[ERROR] 07-10 16:33:09:260 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_UpLvF:/nba/FTXNBADataSystem/游戏配置文档\Tactics.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:09:262 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_AdditionF:/nba/FTXNBADataSystem/游戏配置文档\Tactics.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:09:344 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_AdditionF:/nba/FTXNBADataSystem/游戏配置文档\Tactics.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:09:349 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_LearnF:/nba/FTXNBADataSystem/游戏配置文档\Tactics.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:09:370 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_LearnF:/nba/FTXNBADataSystem/游戏配置文档\Tactics.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:09:371 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_PowerF:/nba/FTXNBADataSystem/游戏配置文档\Tactics.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:09:394 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_PowerF:/nba/FTXNBADataSystem/游戏配置文档\Tactics.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:09:397 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_RoomF:/nba/FTXNBADataSystem/游戏配置文档\Draft.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:09:398 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Draft.xlsx]
+[ERROR] 07-10 16:33:09:406 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_RoomF:/nba/FTXNBADataSystem/游戏配置文档\Draft.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:09:408 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_BattleF:/nba/FTXNBADataSystem/游戏配置文档\Battle.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:09:409 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Battle.xlsx]
+[ERROR] 07-10 16:33:09:456 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_BattleF:/nba/FTXNBADataSystem/游戏配置文档\Battle.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:09:476 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_ActionGroupF:/nba/FTXNBADataSystem/游戏配置文档\Battle.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:09:583 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_ActionGroupF:/nba/FTXNBADataSystem/游戏配置文档\Battle.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:09:585 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_ActionF:/nba/FTXNBADataSystem/游戏配置文档\Battle.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:09:622 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_ActionF:/nba/FTXNBADataSystem/游戏配置文档\Battle.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:09:626 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_SubActionF:/nba/FTXNBADataSystem/游戏配置文档\Battle.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:09:659 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_SubActionF:/nba/FTXNBADataSystem/游戏配置文档\Battle.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:09:662 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_SkillPowerF:/nba/FTXNBADataSystem/游戏配置文档\Battle.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:09:695 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_SkillPowerF:/nba/FTXNBADataSystem/游戏配置文档\Battle.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:09:700 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_PlayerPowerF:/nba/FTXNBADataSystem/游戏配置文档\Battle.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:09:737 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_PlayerPowerF:/nba/FTXNBADataSystem/游戏配置文档\Battle.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:09:744 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_HintGroupF:/nba/FTXNBADataSystem/游戏配置文档\Battle.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:09:776 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_HintGroupF:/nba/FTXNBADataSystem/游戏配置文档\Battle.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:09:778 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_HintF:/nba/FTXNBADataSystem/游戏配置文档\Battle.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:09:840 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_HintF:/nba/FTXNBADataSystem/游戏配置文档\Battle.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:09:850 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_CustomF:/nba/FTXNBADataSystem/游戏配置文档\BattleCustom.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:09:850 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\BattleCustom.xlsx]
+[ERROR] 07-10 16:33:09:870 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_CustomF:/nba/FTXNBADataSystem/游戏配置文档\BattleCustom.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:09:874 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_RoundF:/nba/FTXNBADataSystem/游戏配置文档\BattleCustom.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:09:899 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_RoundF:/nba/FTXNBADataSystem/游戏配置文档\BattleCustom.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:09:903 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_SubActionF:/nba/FTXNBADataSystem/游戏配置文档\BattleCustom.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:09:928 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_SubActionF:/nba/FTXNBADataSystem/游戏配置文档\BattleCustom.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:09:931 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_TeamStatF:/nba/FTXNBADataSystem/游戏配置文档\BattleCustom.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:09:952 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_TeamStatF:/nba/FTXNBADataSystem/游戏配置文档\BattleCustom.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:09:955 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_PlayerStatF:/nba/FTXNBADataSystem/游戏配置文档\BattleCustom.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:09:980 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_PlayerStatF:/nba/FTXNBADataSystem/游戏配置文档\BattleCustom.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:09:984 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_MatchF:/nba/FTXNBADataSystem/游戏配置文档\Match.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:09:984 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Match.xlsx]
+[ERROR] 07-10 16:33:10:017 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_MatchF:/nba/FTXNBADataSystem/游戏配置文档\Match.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:10:020 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_RankAwardF:/nba/FTXNBADataSystem/游戏配置文档\Match.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:10:041 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_RankAwardF:/nba/FTXNBADataSystem/游戏配置文档\Match.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:10:045 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_TaskF:/nba/FTXNBADataSystem/游戏配置文档\League.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:10:045 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\League.xlsx]
+[ERROR] 07-10 16:33:10:068 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_TaskF:/nba/FTXNBADataSystem/游戏配置文档\League.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:10:070 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_HonorF:/nba/FTXNBADataSystem/游戏配置文档\League.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:10:088 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_HonorF:/nba/FTXNBADataSystem/游戏配置文档\League.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:10:089 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_PropF:/nba/FTXNBADataSystem/游戏配置文档\League.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:10:106 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_PropF:/nba/FTXNBADataSystem/游戏配置文档\League.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:10:108 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_ArenaRewardF:/nba/FTXNBADataSystem/游戏配置文档\League.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:10:125 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_ArenaRewardF:/nba/FTXNBADataSystem/游戏配置文档\League.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:10:126 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_PostionScoreF:/nba/FTXNBADataSystem/游戏配置文档\League.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:10:143 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_PostionScoreF:/nba/FTXNBADataSystem/游戏配置文档\League.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:10:145 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_LeagueF:/nba/FTXNBADataSystem/游戏配置文档\Shop.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:10:146 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Shop.xlsx]
+[ERROR] 07-10 16:33:10:156 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_LeagueF:/nba/FTXNBADataSystem/游戏配置文档\Shop.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:10:159 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_MoneyF:/nba/FTXNBADataSystem/游戏配置文档\Shop.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:10:180 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_MoneyF:/nba/FTXNBADataSystem/游戏配置文档\Shop.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:10:183 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_BDMoneyF:/nba/FTXNBADataSystem/游戏配置文档\Shop.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:10:196 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_BDMoneyF:/nba/FTXNBADataSystem/游戏配置文档\Shop.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:10:199 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_PriceF:/nba/FTXNBADataSystem/游戏配置文档\Shop.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:10:213 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_PriceF:/nba/FTXNBADataSystem/游戏配置文档\Shop.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:10:215 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_StarF:/nba/FTXNBADataSystem/游戏配置文档\Task.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:10:215 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Task.xlsx]
+[ERROR] 07-10 16:33:10:340 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_StarF:/nba/FTXNBADataSystem/游戏配置文档\Task.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:10:343 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_TaskF:/nba/FTXNBADataSystem/游戏配置文档\Task.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:10:581 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_TaskF:/nba/FTXNBADataSystem/游戏配置文档\Task.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:10:592 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_StarArardF:/nba/FTXNBADataSystem/游戏配置文档\Task.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:10:672 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_StarArardF:/nba/FTXNBADataSystem/游戏配置文档\Task.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:10:679 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_ConditionF:/nba/FTXNBADataSystem/游戏配置文档\Task.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:10:796 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_ConditionF:/nba/FTXNBADataSystem/游戏配置文档\Task.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:10:806 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_PlayerMoneyF:/nba/FTXNBADataSystem/游戏配置文档\PlayerMoney.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:10:806 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\PlayerMoney.xlsx]
+[ERROR] 07-10 16:33:12:267 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_PlayerMoneyF:/nba/FTXNBADataSystem/游戏配置文档\PlayerMoney.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:12:520 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_PlayerPriceF:/nba/FTXNBADataSystem/游戏配置文档\PlayerPrice.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:12:520 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\PlayerPrice.xlsx]
+[ERROR] 07-10 16:33:13:028 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_PlayerPriceF:/nba/FTXNBADataSystem/游戏配置文档\PlayerPrice.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:030 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_MailF:/nba/FTXNBADataSystem/游戏配置文档\Mail.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:13:030 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Mail.xlsx]
+[ERROR] 07-10 16:33:13:039 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_MailF:/nba/FTXNBADataSystem/游戏配置文档\Mail.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:041 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_ConstructionF:/nba/FTXNBADataSystem/游戏配置文档\Arena.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:13:041 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Arena.xlsx]
+[ERROR] 07-10 16:33:13:073 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_ConstructionF:/nba/FTXNBADataSystem/游戏配置文档\Arena.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:075 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_ArenaF:/nba/FTXNBADataSystem/游戏配置文档\Arena.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:096 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_ArenaF:/nba/FTXNBADataSystem/游戏配置文档\Arena.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:099 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_RollF:/nba/FTXNBADataSystem/游戏配置文档\Arena.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:135 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_RollF:/nba/FTXNBADataSystem/游戏配置文档\Arena.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:138 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_StreetBallF:/nba/FTXNBADataSystem/游戏配置文档\StreetBall.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:13:138 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\StreetBall.xlsx]
+[ERROR] 07-10 16:33:13:157 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_StreetBallF:/nba/FTXNBADataSystem/游戏配置文档\StreetBall.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:163 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_TrainF:/nba/FTXNBADataSystem/游戏配置文档\Train.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:13:164 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Train.xlsx]
+[ERROR] 07-10 16:33:13:177 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_TrainF:/nba/FTXNBADataSystem/游戏配置文档\Train.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:178 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_TrainTypeF:/nba/FTXNBADataSystem/游戏配置文档\Train.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:188 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_TrainTypeF:/nba/FTXNBADataSystem/游戏配置文档\Train.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:190 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_monthF:/nba/FTXNBADataSystem/游戏配置文档\Sign.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:13:190 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Sign.xlsx]
+[ERROR] 07-10 16:33:13:212 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_monthF:/nba/FTXNBADataSystem/游戏配置文档\Sign.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:216 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_weekF:/nba/FTXNBADataSystem/游戏配置文档\Sign.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:229 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_weekF:/nba/FTXNBADataSystem/游戏配置文档\Sign.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:233 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_ActiveF:/nba/FTXNBADataSystem/游戏配置文档\SystemActive.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:13:234 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\SystemActive.xlsx]
+[ERROR] 07-10 16:33:13:258 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_ActiveF:/nba/FTXNBADataSystem/游戏配置文档\SystemActive.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:260 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_ConfigF:/nba/FTXNBADataSystem/游戏配置文档\SystemActive.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:288 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_ConfigF:/nba/FTXNBADataSystem/游戏配置文档\SystemActive.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:307 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_levelF:/nba/FTXNBADataSystem/游戏配置文档\Vip.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:13:308 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Vip.xlsx]
+[ERROR] 07-10 16:33:13:325 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_levelF:/nba/FTXNBADataSystem/游戏配置文档\Vip.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:330 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_skillF:/nba/FTXNBADataSystem/游戏配置文档\Skill.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:13:330 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Skill.xlsx]
+[ERROR] 07-10 16:33:13:347 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_skillF:/nba/FTXNBADataSystem/游戏配置文档\Skill.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:349 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_buffF:/nba/FTXNBADataSystem/游戏配置文档\Skill.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:364 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_buffF:/nba/FTXNBADataSystem/游戏配置文档\Skill.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:365 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_positionF:/nba/FTXNBADataSystem/游戏配置文档\Skill.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:379 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_positionF:/nba/FTXNBADataSystem/游戏配置文档\Skill.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:380 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_playerF:/nba/FTXNBADataSystem/游戏配置文档\Skill.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:393 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_playerF:/nba/FTXNBADataSystem/游戏配置文档\Skill.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:394 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_levelF:/nba/FTXNBADataSystem/游戏配置文档\Skill.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:410 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_levelF:/nba/FTXNBADataSystem/游戏配置文档\Skill.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:413 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_PhysicalF:/nba/FTXNBADataSystem/游戏配置文档\PlayerPhysical.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:13:413 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\PlayerPhysical.xlsx]
+[ERROR] 07-10 16:33:13:459 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_PhysicalF:/nba/FTXNBADataSystem/游戏配置文档\PlayerPhysical.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:464 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_coachF:/nba/FTXNBADataSystem/游戏配置文档\Coach.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:13:464 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Coach.xlsx]
+[ERROR] 07-10 16:33:13:479 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_coachF:/nba/FTXNBADataSystem/游戏配置文档\Coach.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:481 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_skillF:/nba/FTXNBADataSystem/游戏配置文档\Coach.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:497 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_skillF:/nba/FTXNBADataSystem/游戏配置文档\Coach.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:501 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_playerGradeF:/nba/FTXNBADataSystem/游戏配置文档\LevelUp.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:13:501 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\LevelUp.xlsx]
+[ERROR] 07-10 16:33:13:518 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_playerGradeF:/nba/FTXNBADataSystem/游戏配置文档\LevelUp.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:521 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_playerStarF:/nba/FTXNBADataSystem/游戏配置文档\LevelUp.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:535 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_playerStarF:/nba/FTXNBADataSystem/游戏配置文档\LevelUp.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:537 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_LvF:/nba/FTXNBADataSystem/游戏配置文档\TrainPlayer.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:13:537 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\TrainPlayer.xlsx]
+[ERROR] 07-10 16:33:13:548 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_LvF:/nba/FTXNBADataSystem/游戏配置文档\TrainPlayer.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:552 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_ArchiveF:/nba/FTXNBADataSystem/游戏配置文档\PlayerArchive.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:13:552 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\PlayerArchive.xlsx]
+[ERROR] 07-10 16:33:13:558 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_ArchiveF:/nba/FTXNBADataSystem/游戏配置文档\PlayerArchive.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:561 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_DivF:/nba/FTXNBADataSystem/游戏配置文档\MainMatch.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:13:561 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\MainMatch.xlsx]
+[WARN ] 07-10 16:33:13:600 [main] ExcelRead.java:87: 配置数据出现空行 MainMatch_Div row=23
+[WARN ] 07-10 16:33:13:601 [main] ExcelRead.java:87: 配置数据出现空行 MainMatch_Div row=24
+[WARN ] 07-10 16:33:13:601 [main] ExcelRead.java:87: 配置数据出现空行 MainMatch_Div row=25
+[ERROR] 07-10 16:33:13:602 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_DivF:/nba/FTXNBADataSystem/游戏配置文档\MainMatch.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:607 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_LevF:/nba/FTXNBADataSystem/游戏配置文档\MainMatch.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:665 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_LevF:/nba/FTXNBADataSystem/游戏配置文档\MainMatch.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:691 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_WinConditionF:/nba/FTXNBADataSystem/游戏配置文档\MainMatch.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:773 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_WinConditionF:/nba/FTXNBADataSystem/游戏配置文档\MainMatch.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:781 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_MedalF:/nba/FTXNBADataSystem/游戏配置文档\MatchRanked.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:13:781 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\MatchRanked.xlsx]
+[ERROR] 07-10 16:33:13:801 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_MedalF:/nba/FTXNBADataSystem/游戏配置文档\MatchRanked.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:803 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_TierF:/nba/FTXNBADataSystem/游戏配置文档\MatchRanked.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:823 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_TierF:/nba/FTXNBADataSystem/游戏配置文档\MatchRanked.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:825 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_SeasonF:/nba/FTXNBADataSystem/游戏配置文档\MatchRanked.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:846 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_SeasonF:/nba/FTXNBADataSystem/游戏配置文档\MatchRanked.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:854 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_FirstAwardF:/nba/FTXNBADataSystem/游戏配置文档\MatchRanked.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:870 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_FirstAwardF:/nba/FTXNBADataSystem/游戏配置文档\MatchRanked.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:872 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_RatingConvertF:/nba/FTXNBADataSystem/游戏配置文档\MatchRanked.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:972 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_RatingConvertF:/nba/FTXNBADataSystem/游戏配置文档\MatchRanked.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:974 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_WinningStreakF:/nba/FTXNBADataSystem/游戏配置文档\MatchRanked.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:989 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_WinningStreakF:/nba/FTXNBADataSystem/游戏配置文档\MatchRanked.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:13:991 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_CodeF:/nba/FTXNBADataSystem/游戏配置文档\CDKey.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:13:992 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\CDKey.xlsx]
+[ERROR] 07-10 16:33:13:999 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_CodeF:/nba/FTXNBADataSystem/游戏配置文档\CDKey.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:14:002 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_PlayerShopF:/nba/FTXNBADataSystem/游戏配置文档\PlayerShop.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:14:002 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\PlayerShop.xlsx]
+[ERROR] 07-10 16:33:14:008 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_PlayerShopF:/nba/FTXNBADataSystem/游戏配置文档\PlayerShop.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:14:010 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_guessF:/nba/FTXNBADataSystem/游戏配置文档\NBABattleGuess.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:14:010 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\NBABattleGuess.xlsx]
+[ERROR] 07-10 16:33:14:025 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_guessF:/nba/FTXNBADataSystem/游戏配置文档\NBABattleGuess.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:14:030 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_AllStarF:/nba/FTXNBADataSystem/游戏配置文档\AllStar.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:14:030 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\AllStar.xlsx]
+[ERROR] 07-10 16:33:14:042 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_AllStarF:/nba/FTXNBADataSystem/游戏配置文档\AllStar.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:14:047 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_NpcF:/nba/FTXNBADataSystem/游戏配置文档\AllStar.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:14:057 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_NpcF:/nba/FTXNBADataSystem/游戏配置文档\AllStar.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:14:059 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_AwardF:/nba/FTXNBADataSystem/游戏配置文档\AllStar.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:14:070 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_AwardF:/nba/FTXNBADataSystem/游戏配置文档\AllStar.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:14:072 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_GroupF:/nba/FTXNBADataSystem/游戏配置文档\AI.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:14:072 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\AI.xlsx]
+[ERROR] 07-10 16:33:14:094 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_GroupF:/nba/FTXNBADataSystem/游戏配置文档\AI.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:14:100 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_CoachRuleF:/nba/FTXNBADataSystem/游戏配置文档\AI.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:14:124 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_CoachRuleF:/nba/FTXNBADataSystem/游戏配置文档\AI.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:14:134 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_CoachRespF:/nba/FTXNBADataSystem/游戏配置文档\AI.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:14:158 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_CoachRespF:/nba/FTXNBADataSystem/游戏配置文档\AI.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:14:160 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_TacticRuleF:/nba/FTXNBADataSystem/游戏配置文档\AI.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:14:186 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_TacticRuleF:/nba/FTXNBADataSystem/游戏配置文档\AI.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:14:193 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_TacticRespF:/nba/FTXNBADataSystem/游戏配置文档\AI.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:14:217 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_TacticRespF:/nba/FTXNBADataSystem/游戏配置文档\AI.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:14:219 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_SubstituteF:/nba/FTXNBADataSystem/游戏配置文档\AI.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:14:245 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_SubstituteF:/nba/FTXNBADataSystem/游戏配置文档\AI.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:14:247 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_SeasonF:/nba/FTXNBADataSystem/游戏配置文档\LeagueGroupWar.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:14:247 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\LeagueGroupWar.xlsx]
+[ERROR] 07-10 16:33:14:261 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_SeasonF:/nba/FTXNBADataSystem/游戏配置文档\LeagueGroupWar.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:14:272 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_TierF:/nba/FTXNBADataSystem/游戏配置文档\LeagueGroupWar.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:14:286 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_TierF:/nba/FTXNBADataSystem/游戏配置文档\LeagueGroupWar.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:14:288 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_WeekAwardF:/nba/FTXNBADataSystem/游戏配置文档\LeagueGroupWar.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:14:299 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_WeekAwardF:/nba/FTXNBADataSystem/游戏配置文档\LeagueGroupWar.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:14:301 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_ArenaF:/nba/FTXNBADataSystem/游戏配置文档\RankArena.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:14:301 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\RankArena.xlsx]
+[ERROR] 07-10 16:33:14:354 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_ArenaF:/nba/FTXNBADataSystem/游戏配置文档\RankArena.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:14:356 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_NpcF:/nba/FTXNBADataSystem/游戏配置文档\RankArena.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:14:471 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_NpcF:/nba/FTXNBADataSystem/游戏配置文档\RankArena.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[ERROR] 07-10 16:33:14:479 [main] JedisUtil.java:312: Redis Error->key[Local_Config_v6_LevelF:/nba/FTXNBADataSystem/游戏配置文档\Modules.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[DEBUG] 07-10 16:33:14:479 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Modules.xlsx]
+[ERROR] 07-10 16:33:14:491 [main] JedisUtil.java:215: Redis Error->key[Local_Config_v6_LevelF:/nba/FTXNBADataSystem/游戏配置文档\Modules.xlsx],stack[redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool]
+[WARN ] 07-10 16:33:14:493 [main] CM.java:568: excel convert to bean done
+[INFO ] 07-10 16:33:14:507 [main] ConfigConsole.java:73: global config major version [bbMqyZiFIgjeY, oGW0SYpU4ehbr, 20180709_1926]
+[INFO ] 07-10 16:33:14:520 [main] PlayerConsole.java:85: init player console start...
+[INFO ] 07-10 16:33:14:896 [main] PlayerConsole.java:193: 创建SF球队符合条件的球员有386种
+[INFO ] 07-10 16:36:25:941 [main] RunnableTask.java:26: spring config [class com.ftkj.x3.client.X3SpringConfig$AppConfig] activeProfile [logictask], start with [class com.ftkj.x3.client.task.single.team.TeamCodeClient] ...
+[INFO ] 07-10 16:36:25:944 [main] RunnableTask.java:27: command line args []. init spring...
+[INFO ] 07-10 16:36:27:256 [main] RunnableTask.java:33: init spring done.
+[INFO ] 07-10 16:36:27:433 [main] ClientStart.java:48: client confg {
+"shardId":101
+, "loginUseWanIp":false
+, "serverSize":3
+, "defaultServer":{"sid":101, "hostname":"s101", "wanIp":"192.168.10.181", "lanIp":"192.168.10.181", "port":8038, "opPort":9001, "mainSid":101, "mergedSid":[64]}
+, "locale":"zh_CN"
+, "excelPath":"F:/nba/FTXNBADataSystem/游戏配置文档"
+, "gm":true
+, "simpleLog":false
+, "logMsgStatics":false
+, "cacheGlobalPrefix":"client/"
+, "cacheL2Enable":true
+, "cacheL2Address":"127.0.0.1:6379"
+, "cacheL1MaxElements":20000}
+[INFO ] 07-10 16:36:27:467 [main] JedisUtil.java:75: redis init. host 127.0.0.1:6379 db 0
+[INFO ] 07-10 16:36:27:518 [main] CM.java:537: init excel. zk false debugpath F:/nba/FTXNBADataSystem/游戏配置文档 zkpath /zgame/config redis true
+[WARN ] 07-10 16:36:27:519 [main] CM.java:541: excel convert to bean..
+[DEBUG] 07-10 16:36:27:557 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Global.xlsx]
+[DEBUG] 07-10 16:36:28:277 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Equi.xlsx]
+[WARN ] 07-10 16:36:28:582 [main] ExcelRead.java:87: 配置数据出现空行 Equi_UpQuality row=10
+[DEBUG] 07-10 16:36:28:688 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\LogoPlayer.xlsx]
+[DEBUG] 07-10 16:36:28:762 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\PlayerCollect.xlsx]
+[WARN ] 07-10 16:36:28:915 [main] ExcelRead.java:87: 配置数据出现空行 PlayerCollect_CardPlayerGradeCap row=41
+[WARN ] 07-10 16:36:28:915 [main] ExcelRead.java:87: 配置数据出现空行 PlayerCollect_CardPlayerGradeCap row=42
+[DEBUG] 07-10 16:36:28:925 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\GameNPC.xlsx]
+[DEBUG] 07-10 16:36:29:789 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Drop.xlsx]
+[DEBUG] 07-10 16:36:30:041 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\MainSchedule.xlsx]
+[DEBUG] 07-10 16:36:30:311 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Upgrade.xlsx]
+[DEBUG] 07-10 16:36:30:357 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Team.xlsx]
+[DEBUG] 07-10 16:36:30:389 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Items.xlsx]
+[DEBUG] 07-10 16:36:30:825 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\PlayerUpdate.xlsx]
+[DEBUG] 07-10 16:36:31:804 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Tactics.xlsx]
+[DEBUG] 07-10 16:36:31:952 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Draft.xlsx]
+[DEBUG] 07-10 16:36:31:964 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Battle.xlsx]
+[DEBUG] 07-10 16:36:32:455 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\BattleCustom.xlsx]
+[DEBUG] 07-10 16:36:32:633 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Match.xlsx]
+[DEBUG] 07-10 16:36:32:698 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\League.xlsx]
+[DEBUG] 07-10 16:36:32:837 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Shop.xlsx]
+[DEBUG] 07-10 16:36:32:892 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Task.xlsx]
+[DEBUG] 07-10 16:36:33:476 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\PlayerMoney.xlsx]
+[DEBUG] 07-10 16:36:35:357 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\PlayerPrice.xlsx]
+[DEBUG] 07-10 16:36:35:841 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Mail.xlsx]
+[DEBUG] 07-10 16:36:35:851 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Arena.xlsx]
+[DEBUG] 07-10 16:36:35:951 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\StreetBall.xlsx]
+[DEBUG] 07-10 16:36:35:984 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Train.xlsx]
+[DEBUG] 07-10 16:36:36:008 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Sign.xlsx]
+[DEBUG] 07-10 16:36:36:054 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\SystemActive.xlsx]
+[DEBUG] 07-10 16:36:36:133 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Vip.xlsx]
+[DEBUG] 07-10 16:36:36:157 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Skill.xlsx]
+[DEBUG] 07-10 16:36:36:265 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\PlayerPhysical.xlsx]
+[DEBUG] 07-10 16:36:36:333 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Coach.xlsx]
+[DEBUG] 07-10 16:36:36:380 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\LevelUp.xlsx]
+[DEBUG] 07-10 16:36:36:414 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\TrainPlayer.xlsx]
+[DEBUG] 07-10 16:36:36:424 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\PlayerArchive.xlsx]
+[DEBUG] 07-10 16:36:36:431 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\MainMatch.xlsx]
+[WARN ] 07-10 16:36:36:470 [main] ExcelRead.java:87: 配置数据出现空行 MainMatch_Div row=23
+[WARN ] 07-10 16:36:36:470 [main] ExcelRead.java:87: 配置数据出现空行 MainMatch_Div row=24
+[WARN ] 07-10 16:36:36:471 [main] ExcelRead.java:87: 配置数据出现空行 MainMatch_Div row=25
+[DEBUG] 07-10 16:36:36:628 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\MatchRanked.xlsx]
+[DEBUG] 07-10 16:36:36:758 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\CDKey.xlsx]
+[DEBUG] 07-10 16:36:36:770 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\PlayerShop.xlsx]
+[DEBUG] 07-10 16:36:36:780 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\NBABattleGuess.xlsx]
+[DEBUG] 07-10 16:36:36:800 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\AllStar.xlsx]
+[DEBUG] 07-10 16:36:36:841 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\AI.xlsx]
+[DEBUG] 07-10 16:36:37:012 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\LeagueGroupWar.xlsx]
+[DEBUG] 07-10 16:36:37:054 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\RankArena.xlsx]
+[DEBUG] 07-10 16:36:37:338 [main] CM.java:518: 读本地excel[F:/nba/FTXNBADataSystem/游戏配置文档\Modules.xlsx]
+[WARN ] 07-10 16:36:37:354 [main] CM.java:568: excel convert to bean done
+[INFO ] 07-10 16:36:37:371 [main] ConfigConsole.java:73: global config major version [bbMqyZiFIgjeY, oGW0SYpU4ehbr, 20180709_1926]
+[INFO ] 07-10 16:36:37:395 [main] PlayerConsole.java:85: init player console start...
+[INFO ] 07-10 16:36:37:786 [main] PlayerConsole.java:193: 创建SF球队符合条件的球员有391种
+[INFO ] 07-10 16:36:38:145 [main] PlayerConsole.java:208: 创建C球队符合条件的球员有385种
+[INFO ] 07-10 16:36:38:498 [main] PlayerConsole.java:224: 创建PF球队符合条件的球员有347种
+[INFO ] 07-10 16:36:38:858 [main] PlayerConsole.java:240: 创建PG球队符合条件的球员有376种
+[INFO ] 07-10 16:36:39:208 [main] PlayerConsole.java:256: 创建SG球队符合条件的球员有379种
+[INFO ] 07-10 16:36:39:216 [main] PlayerConsole.java:115: init player console done. time 1819ms
+[INFO ] 07-10 16:36:39:680 [main] CacheManager.java:253: validate excel console com.ftkj.console.AIConsole
+[INFO ] 07-10 16:36:39:680 [main] CacheManager.java:253: validate excel console com.ftkj.console.AllStarConsole
+[INFO ] 07-10 16:36:39:681 [main] CacheManager.java:253: validate excel console com.ftkj.console.ArenaConsole
+[INFO ] 07-10 16:36:39:682 [main] CacheManager.java:253: validate excel console com.ftkj.console.BattleConsole
+[INFO ] 07-10 16:36:39:689 [main] CacheManager.java:253: validate excel console com.ftkj.console.BattleCustomConsole
+[INFO ] 07-10 16:36:39:690 [main] CacheManager.java:253: validate excel console com.ftkj.console.ConfigConsole
+[INFO ] 07-10 16:36:39:691 [main] CacheManager.java:253: validate excel console com.ftkj.console.MainMatchConsole
+[INFO ] 07-10 16:36:39:698 [main] CacheManager.java:253: validate excel console com.ftkj.console.ModuleConsole
+[INFO ] 07-10 16:36:39:699 [main] CacheManager.java:253: validate excel console com.ftkj.console.NPCConsole
+[INFO ] 07-10 16:36:39:700 [main] CacheManager.java:253: validate excel console com.ftkj.console.PropConsole
+[INFO ] 07-10 16:36:39:701 [main] CacheManager.java:253: validate excel console com.ftkj.console.RankedMatchConsole
+[INFO ] 07-10 16:36:39:702 [main] CacheManager.java:253: validate excel console com.ftkj.console.TeamConsole
+[INFO ] 07-10 16:36:39:702 [main] CacheManager.java:262: validate excel done.
+[INFO ] 07-10 16:36:39:704 [main] ClientStart.java:56: client confg done. xplayer size 20
+[INFO ] 07-10 16:36:39:708 [main] X3ClientMessageMetric.java:37: code num 517
+[DEBUG] 07-10 16:36:39:707 [metric-1-t-1] AbstractMessageMetric.java:101: 开始统计接收到的消息信息
+[DEBUG] 07-10 16:36:39:739 [main] AbstractMessageMetric.java:133: code num 519 globalPrefix code_stats unknownCode -1 allCode 0 startTime 1531211799739 maxCode 999999 maxCodeNameLen 44
+[INFO ] 07-10 16:36:39:739 [main] SingleCodeTask.java:16: 
+=================  single code (class com.ftkj.x3.client.task.single.team.TeamCodeClient) test start  ================
+[DEBUG] 07-10 16:36:39:744 [main] InternalLoggerFactory.java:24: Using SLF4J as the default logging framework
+[DEBUG] 07-10 16:36:39:932 [main] ClientBootStrap.java:63: create new connection to server [192.168.10.181:8038]. channel [id: 0x5f317522, L:/192.168.12.82:53860 - R:/192.168.10.181:8038, aid 0 uid 0]
+[DEBUG] 07-10 16:36:39:932 [client-async-3-t-1] XXsClientHandler.java:33: Active [id: 0x5f317522, L:/192.168.12.82:53860 - R:/192.168.10.181:8038, aid 0 uid 0]
+[DEBUG] 07-10 16:36:39:932 [main] ClientChannelGroup.java:107: add channel [id: 0x5f317522, L:/192.168.12.82:53860 - R:/192.168.10.181:8038, aid 0 uid 0]
+[DEBUG] 07-10 16:36:39:934 [main] MessageUtil.java:19: create msg code 88892 req args 1000040833Ω6aa9349f18104c62fdfae5bfb7e0d6bdΩ1531211799932ΩbbMqyZiFIgjeYΩ4Ω
+[TRACE] 07-10 16:36:39:950 [main] ClientMsgHandler.java:250: send msg code 88892 mid 1 aid 1000040833 len 81
+[TRACE] 07-10 16:36:39:989 [client-async-3-t-1] XXsClientHandler.java:56: resp msg code 88892 mid 1 aid 1000040833 len 22 ret 0 ok
+[INFO ] 07-10 16:36:39:993 [main] LoginHelper.java:245: load nba player data
+[DEBUG] 07-10 16:36:39:993 [main] MessageUtil.java:19: create msg code 100010 req args 
+[TRACE] 07-10 16:36:39:993 [main] ClientMsgHandler.java:250: send msg code 100010 mid 2 aid 1000040833 len 2
+[TRACE] 07-10 16:36:40:041 [client-async-3-t-1] XXsClientHandler.java:56: resp msg code 100010 mid 2 aid 1000040833 len 94883 ret 0 ok
+[INFO ] 07-10 16:36:40:080 [main] PlayerConsole.java:85: init player console start...
+[INFO ] 07-10 16:36:40:338 [main] PlayerConsole.java:193: 创建SF球队符合条件的球员有397种
+[INFO ] 07-10 16:36:40:563 [main] PlayerConsole.java:208: 创建C球队符合条件的球员有386种
+[INFO ] 07-10 16:36:40:795 [main] PlayerConsole.java:224: 创建PF球队符合条件的球员有382种
+[INFO ] 07-10 16:36:41:026 [main] PlayerConsole.java:240: 创建PG球队符合条件的球员有398种
+[INFO ] 07-10 16:36:41:256 [main] PlayerConsole.java:256: 创建SG球队符合条件的球员有379种
+[INFO ] 07-10 16:36:41:257 [main] PlayerConsole.java:115: init player console done. time 1177ms
+[INFO ] 07-10 16:36:41:257 [main] LoginHelper.java:265: client confg done. xplayer size 20 resp size 1166
+[DEBUG] 07-10 16:36:41:257 [main] MessageUtil.java:19: create msg code 20003 req args 
+[TRACE] 07-10 16:36:41:257 [main] ClientMsgHandler.java:250: send msg code 20003 mid 3 aid 1000040833 len 2
+[TRACE] 07-10 16:36:41:318 [client-async-3-t-1] XXsClientHandler.java:56: resp msg code 20003 mid 3 aid 1000040833 len 1612 ret 0 ok
+[INFO ] 07-10 16:36:41:368 [main] LoginHelper.java:228: account aid[1000040833] tid[1011000040833]:[555551] team login success. length 1599
+[INFO ] 07-10 16:36:41:375 [main] LoginHelper.java:367: tid 1011000040833 lev 34 money 129959 viplev 8 player 5 StroagePlayer 3
+[INFO ] 07-10 16:36:41:375 [main] RunnableTask.java:88: 
+===========================================================> 模块测试日志结束. 耗时1636ms<===========
+
+[INFO ] 07-10 16:36:41:875 [main] RunnableTask.java:46: trigger auto close.
+[INFO ] 07-10 16:36:41:876 [client-stop] ClientStop.java:36: close client...
+[INFO ] 07-10 16:36:41:879 [client-stop] ClientStop.java:46: gracefulShutdownNow message metric
+[DEBUG] 07-10 16:36:41:890 [client-stop] AbstractMessageMetric.java:157: Executor did not terminate in the specified time.
+[DEBUG] 07-10 16:36:41:890 [client-stop] AbstractMessageMetric.java:159: Executor was abruptly shut down. 0 tasks will not be executed.
+[INFO ] 07-10 16:36:41:890 [metric-1-t-1] AbstractMessageMetric.java:193: single code queue Interrupted
+[INFO ] 07-10 16:36:41:891 [client-stop] RunnableTask.java:66: closed client.
+[INFO ] 07-10 16:47:55:428 [main] RunnableTask.java:26: spring config [class com.ftkj.x3.client.X3SpringConfig$AppConfig] activeProfile [logictask], start with [class com.ftkj.x3.client.task.single.team.TeamCodeClient] ...
+[INFO ] 07-10 16:47:55:430 [main] RunnableTask.java:27: command line args []. init spring...
+[INFO ] 07-10 16:47:56:951 [main] RunnableTask.java:33: init spring done.
+[INFO ] 07-10 16:47:57:185 [main] ClientStart.java:48: client confg {
+"shardId":101
+, "loginUseWanIp":false
+, "serverSize":3
+, "defaultServer":{"sid":101, "hostname":"s101", "wanIp":"192.168.12.82", "lanIp":"192.168.12.82", "port":8038, "opPort":9001, "mainSid":101, "mergedSid":[64]}
+, "locale":"zh_CN"
+, "excelPath":"F:/nba/FTXNBADataSystem/游戏配置文档"
+, "gm":true
+, "simpleLog":false
+, "logMsgStatics":false
+, "cacheGlobalPrefix":"client/"
+, "cacheL2Enable":true
+, "cacheL2Address":"127.0.0.1:6379"
+, "cacheL1MaxElements":20000}
+[INFO ] 07-10 16:47:57:230 [main] JedisUtil.java:75: redis init. host 127.0.0.1:6379 db 0
+[INFO ] 07-10 16:47:57:276 [main] CM.java:537: init excel. zk false debugpath F:/nba/FTXNBADataSystem/游戏配置文档 zkpath /zgame/config redis true
+[WARN ] 07-10 16:47:57:277 [main] CM.java:541: excel convert to bean..
+[WARN ] 07-10 16:47:58:529 [main] CM.java:568: excel convert to bean done
+[INFO ] 07-10 16:47:58:540 [main] ConfigConsole.java:73: global config major version [bbMqyZiFIgjeY, oGW0SYpU4ehbr, 20180709_1926]
+[INFO ] 07-10 16:47:58:551 [main] PlayerConsole.java:85: init player console start...
+[INFO ] 07-10 16:47:58:895 [main] PlayerConsole.java:193: 创建SF球队符合条件的球员有372种
+[INFO ] 07-10 16:47:59:186 [main] PlayerConsole.java:208: 创建C球队符合条件的球员有363种
+[INFO ] 07-10 16:47:59:485 [main] PlayerConsole.java:224: 创建PF球队符合条件的球员有355种
+[INFO ] 07-10 16:47:59:778 [main] PlayerConsole.java:240: 创建PG球队符合条件的球员有384种
+[INFO ] 07-10 16:48:00:080 [main] PlayerConsole.java:256: 创建SG球队符合条件的球员有393种
+[INFO ] 07-10 16:48:00:089 [main] PlayerConsole.java:115: init player console done. time 1537ms
+[INFO ] 07-10 16:48:00:591 [main] CacheManager.java:253: validate excel console com.ftkj.console.AIConsole
+[INFO ] 07-10 16:48:00:591 [main] CacheManager.java:253: validate excel console com.ftkj.console.AllStarConsole
+[INFO ] 07-10 16:48:00:593 [main] CacheManager.java:253: validate excel console com.ftkj.console.ArenaConsole
+[INFO ] 07-10 16:48:00:595 [main] CacheManager.java:253: validate excel console com.ftkj.console.BattleConsole
+[INFO ] 07-10 16:48:00:618 [main] CacheManager.java:253: validate excel console com.ftkj.console.BattleCustomConsole
+[INFO ] 07-10 16:48:00:620 [main] CacheManager.java:253: validate excel console com.ftkj.console.ConfigConsole
+[INFO ] 07-10 16:48:00:621 [main] CacheManager.java:253: validate excel console com.ftkj.console.MainMatchConsole
+[INFO ] 07-10 16:48:00:637 [main] CacheManager.java:253: validate excel console com.ftkj.console.ModuleConsole
+[INFO ] 07-10 16:48:00:638 [main] CacheManager.java:253: validate excel console com.ftkj.console.NPCConsole
+[INFO ] 07-10 16:48:00:640 [main] CacheManager.java:253: validate excel console com.ftkj.console.PropConsole
+[INFO ] 07-10 16:48:00:642 [main] CacheManager.java:253: validate excel console com.ftkj.console.RankedMatchConsole
+[INFO ] 07-10 16:48:00:643 [main] CacheManager.java:253: validate excel console com.ftkj.console.TeamConsole
+[INFO ] 07-10 16:48:00:644 [main] CacheManager.java:262: validate excel done.
+[INFO ] 07-10 16:48:00:647 [main] ClientStart.java:56: client confg done. xplayer size 20
+[INFO ] 07-10 16:48:00:654 [main] X3ClientMessageMetric.java:37: code num 517
+[DEBUG] 07-10 16:48:00:709 [main] AbstractMessageMetric.java:133: code num 519 globalPrefix code_stats unknownCode -1 allCode 0 startTime 1531212480708 maxCode 999999 maxCodeNameLen 44
+[INFO ] 07-10 16:48:00:709 [main] SingleCodeTask.java:16: 
+=================  single code (class com.ftkj.x3.client.task.single.team.TeamCodeClient) test start  ================
+[DEBUG] 07-10 16:48:00:715 [main] InternalLoggerFactory.java:24: Using SLF4J as the default logging framework
+[DEBUG] 07-10 16:48:00:747 [metric-2-t-1] AbstractMessageMetric.java:101: 开始统计接收到的消息信息
+[DEBUG] 07-10 16:48:01:010 [main] ClientBootStrap.java:63: create new connection to server [192.168.12.82:8038]. channel [id: 0x644f249b, L:/192.168.12.82:54424 - R:/192.168.12.82:8038, aid 0 uid 0]
+[DEBUG] 07-10 16:48:01:011 [main] ClientChannelGroup.java:107: add channel [id: 0x644f249b, L:/192.168.12.82:54424 - R:/192.168.12.82:8038, aid 0 uid 0]
+[DEBUG] 07-10 16:48:01:128 [client-async-3-t-1] XXsClientHandler.java:33: Active [id: 0x644f249b, L:/192.168.12.82:54424 - R:/192.168.12.82:8038, aid 1000040833 uid 0]
+[DEBUG] 07-10 16:48:01:130 [main] MessageUtil.java:19: create msg code 88892 req args 1000040833Ωe513d5103173869245e945b43136515aΩ1531212481011ΩbbMqyZiFIgjeYΩ4Ω
+[TRACE] 07-10 16:48:01:146 [main] ClientMsgHandler.java:250: send msg code 88892 mid 1 aid 1000040833 len 81
+[TRACE] 07-10 16:48:01:203 [client-async-3-t-1] XXsClientHandler.java:56: resp msg code 88892 mid 1 aid 1000040833 len 22 ret 0 ok
+[INFO ] 07-10 16:48:01:209 [main] LoginHelper.java:245: load nba player data
+[DEBUG] 07-10 16:48:01:209 [main] MessageUtil.java:19: create msg code 100010 req args 
+[TRACE] 07-10 16:48:01:209 [main] ClientMsgHandler.java:250: send msg code 100010 mid 2 aid 1000040833 len 2
+[TRACE] 07-10 16:48:01:306 [client-async-3-t-1] XXsClientHandler.java:56: resp msg code 100010 mid 2 aid 1000040833 len 95203 ret 0 ok
+[INFO ] 07-10 16:48:01:352 [main] PlayerConsole.java:85: init player console start...
+[INFO ] 07-10 16:48:01:572 [main] PlayerConsole.java:193: 创建SF球队符合条件的球员有396种
+[INFO ] 07-10 16:48:01:766 [main] PlayerConsole.java:208: 创建C球队符合条件的球员有383种
+[INFO ] 07-10 16:48:01:965 [main] PlayerConsole.java:224: 创建PF球队符合条件的球员有404种
+[INFO ] 07-10 16:48:02:166 [main] PlayerConsole.java:240: 创建PG球队符合条件的球员有396种
+[INFO ] 07-10 16:48:02:380 [main] PlayerConsole.java:256: 创建SG球队符合条件的球员有391种
+[INFO ] 07-10 16:48:02:381 [main] PlayerConsole.java:115: init player console done. time 1028ms
+[INFO ] 07-10 16:48:02:381 [main] LoginHelper.java:265: client confg done. xplayer size 20 resp size 1166
+[DEBUG] 07-10 16:48:02:381 [main] MessageUtil.java:19: create msg code 20003 req args 
+[TRACE] 07-10 16:48:02:382 [main] ClientMsgHandler.java:250: send msg code 20003 mid 3 aid 1000040833 len 2
+[TRACE] 07-10 16:48:02:558 [client-async-3-t-1] XXsClientHandler.java:56: resp msg code 20003 mid 3 aid 1000040833 len 1613 ret 0 ok
+[INFO ] 07-10 16:48:02:616 [main] LoginHelper.java:228: account aid[1000040833] tid[1011000040833]:[555551] team login success. length 1600
+[INFO ] 07-10 16:48:02:624 [main] LoginHelper.java:367: tid 1011000040833 lev 34 money 129959 viplev 8 player 5 StroagePlayer 3
+[INFO ] 07-10 16:48:02:624 [main] RunnableTask.java:88: 
+===========================================================> 模块测试日志结束. 耗时1915ms<===========
+
+[INFO ] 07-10 16:48:03:124 [main] RunnableTask.java:46: trigger auto close.
+[INFO ] 07-10 16:48:03:125 [client-stop] ClientStop.java:36: close client...
+[INFO ] 07-10 16:48:03:129 [client-stop] ClientStop.java:46: gracefulShutdownNow message metric
+[DEBUG] 07-10 16:48:03:140 [client-stop] AbstractMessageMetric.java:157: Executor did not terminate in the specified time.
+[DEBUG] 07-10 16:48:03:140 [client-stop] AbstractMessageMetric.java:159: Executor was abruptly shut down. 0 tasks will not be executed.
+[INFO ] 07-10 16:48:03:140 [metric-2-t-1] AbstractMessageMetric.java:193: single code queue Interrupted
+[INFO ] 07-10 16:48:03:143 [client-stop] RunnableTask.java:66: closed client.

@@ -1,0 +1,1 @@
+ALTER TABLE t_u_card ADD COLUMN qua INT DEFAULT 0;

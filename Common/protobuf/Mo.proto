@@ -1,0 +1,7 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "MoPB";
+
+message MoData{
+	required string msg =1;
+}

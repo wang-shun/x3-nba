@@ -1,0 +1,39 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "AtvCommonPB";
+import "Prop.proto";
+
+/**
+ * 活动通用协议回包
+ * showView回包
+ */
+message AtvCommonData {
+	required int32 atvId = 1; //活动ID
+	optional int32 value = 2; //
+	optional int64 other = 3; //
+	optional string extend = 4; //
+	repeated int32 finishStatus = 5; // 完成状态，包含奖励ID即完成
+	repeated int32 awardStatus = 6;  // 领奖状态，包含即领取
+	repeated int32 otherStatus = 7; // 备用，其他状态
+	repeated PropSimpleData viewAward = 8; // 显示的奖励
+}
+
+// 默认领奖通用回包
+message AtvAwardData {
+	optional int32 atvId = 1; //活动ID
+	optional int32 awardId = 2; //奖励ID，不存在奖励ID的，回的是-1
+	optional int32 code =3;
+	optional int32 value =4;
+	repeated PropSimpleData awardList = 5;
+	repeated int32 finishStatus = 6;
+	repeated int32 awardStatus = 7;
+}
+
+/**
+ * 充值成功推包
+ */
+message AddMoneyItem {
+	required int32 type = 1;
+	optional int32 fk = 2;
+}
+

@@ -1,0 +1,24 @@
+package com.ftkj.proto;
+
+option java_outer_classname = "SignPB";
+
+message SignMainData {
+	// 月第一次签到奖励开始天数
+	required int32 monthStartDay =1;
+	// 月周期
+	required int32 monthPeriod =2;
+	// 本月签到次数(包括补签)
+	required int32 monthSignNum =3;
+	// 可补签次数
+	required int32 monthPatchNum =4;
+	// 是否已签，0否1是
+	required bool monthLastSign =5;
+	// 7天签到周期
+	required int32 ServenPeriod =6;
+	// 7天签到次数
+	required int32 servenSignNum =7;
+	// 7天 奖励是否已领0未领，1已领，格式1,1,1,1,1,1,1
+	repeated int32 servenStatus =8;
+	// vip每日福利领取状态, 0可领，1已领
+	optional bool vipSign = 9;
+}
